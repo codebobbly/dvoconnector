@@ -5,9 +5,9 @@ namespace RGU\Dvoconnector\Service;
 
 class AssociationsApiService extends GenericApiService
 {
-    protected const CO_XML_ATTRIBUT_VALID_CONTEXT = 'valid-context';
-    protected const CO_XML_ATTRIBUT_VALID_CONTEXT_TRUE = 'yes';
-    protected const CO_XML_ATTRIBUT_VALID_CONTEXT_FALSE = 'no';
+    const CO_XML_ATTRIBUT_VALID_CONTEXT = 'valid-context';
+    const CO_XML_ATTRIBUT_VALID_CONTEXT_TRUE = 'yes';
+    const CO_XML_ATTRIBUT_VALID_CONTEXT_FALSE = 'no';
 
     /**
     * return the root association IDs
