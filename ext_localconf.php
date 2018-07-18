@@ -2,21 +2,20 @@
 defined('TYPO3_MODE') or die();
 
 $boot = function () {
-
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-		'RGU.Dvoconnector',
-		'Pi1',
-		array(
-			'Association' => 'index,detailEvent,detailAnnouncement,detailFunctionary,detailAssociation,filterEvents,listEvents,filterAnnouncements,listAnnouncements,filterFunctionaries,listFunctionaries,filterAssociations,listAssociations,listSubAssociations',
-			'AssociationStatic' => 'singleAssociation,listAssociations',
-			'Announcement' => 'detailAnnouncement,filterAnnouncements,listAnnouncements',
-			'AnnouncementStatic' => 'listAnnouncements,singleAnnouncement',
-			'Event' => 'detailEvent,filterEvents,listEvents',
-			'EventStatic' => 'listEvents,singleEvent',
-			'Functionary' => 'detailFunctionary,filterFunctionaries,listFunctionaries',
-			'FunctionaryStatic' => 'listFunctionaries,singleFunctionary',
-		),
-		array()
+        'RGU.Dvoconnector',
+        'Pi1',
+        [
+            'Association' => 'index,detailEvent,detailAnnouncement,detailFunctionary,detailAssociation,filterEvents,listEvents,filterAnnouncements,listAnnouncements,filterFunctionaries,listFunctionaries,filterAssociations,listAssociations,listSubAssociations',
+            'AssociationStatic' => 'singleAssociation,listAssociations',
+            'Announcement' => 'detailAnnouncement,filterAnnouncements,listAnnouncements',
+            'AnnouncementStatic' => 'listAnnouncements,singleAnnouncement',
+            'Event' => 'detailEvent,filterEvents,listEvents',
+            'EventStatic' => 'listEvents,singleEvent',
+            'Functionary' => 'detailFunctionary,filterFunctionaries,listFunctionaries',
+            'FunctionaryStatic' => 'listFunctionaries,singleFunctionary',
+        ],
+        []
     );
 
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:Dvoconnector/Configuration/TSconfig/ContentElementWizard.txt">');
@@ -51,10 +50,7 @@ $boot = function () {
     if (!isset($GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['cache_Dvoconnector_images']['frontend'])) {
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['cache_Dvoconnector_images']['frontend'] = \TYPO3\CMS\Core\Cache\Frontend\StringFrontend::class;
     }
-
 };
 
 $boot();
 unset($boot);
-
-?>

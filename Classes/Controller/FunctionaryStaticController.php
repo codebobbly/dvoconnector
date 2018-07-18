@@ -1,46 +1,42 @@
 <?php
 namespace RGU\Dvoconnector\Controller;
 
-use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
+class FunctionaryStaticController extends AbstractController
+{
 
-class FunctionaryStaticController extends AbstractController {
+    /**
+     * list functionaries action.
+     *
+     * @return string
+     */
+    public function listFunctionariesAction()
+    {
+        $this->checkStaticTemplateIsIncluded();
+        $this->checkSettings();
 
-	/**
-	 * list functionaries action.
-	 *
-	 * @return string
-	 */
-	public function listFunctionariesAction() {
+        $this->slotExtendedAssignMultiple([
+            'associationID' => $this->settings['associationID'],
+            'filter' => $this->getFunctionariesFilter()
+        ], __CLASS__, __FUNCTION__);
 
-		$this->checkStaticTemplateIsIncluded();
-		$this->checkSettings();
+        return $this->view->render();
+    }
 
-		$this->slotExtendedAssignMultiple([
-			'associationID' => $this->settings['associationID'],
-			'filter' => $this->getFunctionariesFilter()
-		], __CLASS__, __FUNCTION__);
+    /**
+     * single functionary action.
+     *
+     * @return string
+     */
+    public function singleFunctionaryAction()
+    {
+        $this->checkStaticTemplateIsIncluded();
+        $this->checkSettings();
 
-		return $this->view->render();
+        $this->slotExtendedAssignMultiple([
+            'associationID' => $this->settings['associationID'],
+            'functionaryID' => $this->settings['functionaryID']
+        ], __CLASS__, __FUNCTION__);
 
-	}
-
-	/**
-	 * single functionary action.
-	 *
-	 * @return string
-	 */
-	public function singleFunctionaryAction() {
-
-		$this->checkStaticTemplateIsIncluded();
-		$this->checkSettings();
-
-		$this->slotExtendedAssignMultiple([
-			'associationID' => $this->settings['associationID'],
-			'functionaryID' => $this->settings['functionaryID']
-		], __CLASS__, __FUNCTION__);
-
-		return $this->view->render();
-
-	}
-
+        return $this->view->render();
+    }
 }

@@ -1,204 +1,186 @@
 <?php
 namespace RGU\Dvoconnector\Domain\Repository;
 
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use \RGU\Dvoconnector\Domain\Model\Meta\Association\Categories;
-use \RGU\Dvoconnector\Domain\Model\Meta\Association\Category;
-use \RGU\Dvoconnector\Domain\Model\Meta\Association\Performancelevel;
-use \RGU\Dvoconnector\Domain\Model\Meta\Association\Performancelevels;
-use \RGU\Dvoconnector\Domain\Model\Meta\Association\Repertoire;
-use \RGU\Dvoconnector\Domain\Model\Meta\Association\Repertoires;
-use \RGU\Dvoconnector\Domain\Model\Meta\Event\Type;
-use \RGU\Dvoconnector\Domain\Model\Meta\Event\Types;
-use \RGU\Dvoconnector\Service\metaApiService;
+use RGU\Dvoconnector\Domain\Model\Meta\Association\Categories;
+use RGU\Dvoconnector\Domain\Model\Meta\Association\Category;
+use RGU\Dvoconnector\Domain\Model\Meta\Association\Performancelevel;
+use RGU\Dvoconnector\Domain\Model\Meta\Association\Performancelevels;
+use RGU\Dvoconnector\Domain\Model\Meta\Association\Repertoire;
+use RGU\Dvoconnector\Domain\Model\Meta\Association\Repertoires;
+use RGU\Dvoconnector\Domain\Model\Meta\Event\Type;
+use RGU\Dvoconnector\Domain\Model\Meta\Event\Types;
 
-class MetaRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
+class MetaRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+{
 
-	/**
-	 * $metaApiService
-	 * @var \RGU\Dvoconnector\Service\MetaApiService
-	 * @inject
- 	*/
-	protected $metaApiService;
+    /**
+     * $metaApiService
+     * @var \RGU\Dvoconnector\Service\MetaApiService
+     * @inject
+    */
+    protected $metaApiService;
 
-	/**
-	 * return a association category
-	 *
-	 * @param string category id
-	 *
-	 * @return Category
- 	*/
-	public function findAssociationCategoryByID($id) {
+    /**
+     * return a association category
+     *
+     * @param string category id
+     *
+     * @return Category
+    */
+    public function findAssociationCategoryByID($id)
+    {
+        $categories = $this->findAssociationCategories()->getCategories();
 
-		$categories = $this->findAssociationCategories()->getCategories();
+        $categories->rewind();
 
-		$categories->rewind();
+        while ($categories->valid()) {
+            $category = $categories->current();
+            if ($category->getID() == $id) {
+                return $category;
+            }
 
-		while($categories->valid()) {
+            $categories->next();
+        }
+    }
 
-		    $category = $categories->current();
-				if($category->getID() == $id) {
-					return $category;
-				}
+    /**
+     * return all association categories
+     *
+     *
+     * @return Categories
+    */
+    public function findAssociationCategories()
+    {
+        $xmlQuery = $this->metaApiService->getAssociationCategories();
 
-		    $categories->next();
+        $categories = new Categories();
 
-		}
+        $mapper = new \RGU\Dvoconnector\Mapper\AssociationCategories($xmlQuery);
+        $mapper->mapToAbstractEntity($categories);
 
-	}
+        return $categories;
+    }
 
-	/**
-	 * return all association categories
-	 *
-	 *
-	 * @return Categories
- 	*/
-	public function findAssociationCategories() {
+    /**
+     * return a association repertoire
+     *
+     * @param string repertoire id
+     *
+     * @return Repertoire
+    */
+    public function findAssociationRepertoireByID($id)
+    {
+        $repertoires = $this->findAssociationRepertoires()->getRepertoires();
 
-		$xmlQuery = $this->metaApiService->getAssociationCategories();
+        $repertoires->rewind();
 
-		$categories = new Categories();
+        while ($repertoires->valid()) {
+            $repertoire = $repertoires->current();
+            if ($repertoire->getID() == $id) {
+                return $repertoire;
+            }
 
-		$mapper = new \RGU\Dvoconnector\Mapper\AssociationCategories($xmlQuery);
-		$mapper->mapToAbstractEntity($categories);
+            $repertoires->next();
+        }
+    }
 
-		return $categories;
+    /**
+     * return all association repertoires
+     *
+     *
+     * @return Repertoires
+    */
+    public function findAssociationRepertoires()
+    {
+        $xmlQuery = $this->metaApiService->getAssociationRepertoires();
 
-	}
+        $repertoires = new Repertoires();
 
-	/**
-	 * return a association repertoire
-	 *
-	 * @param string repertoire id
-	 *
-	 * @return Repertoire
- 	*/
-	public function findAssociationRepertoireByID($id) {
+        $mapper = new \RGU\Dvoconnector\Mapper\AssociationRepertoires($xmlQuery);
+        $mapper->mapToAbstractEntity($repertoires);
 
-		$repertoires = $this->findAssociationRepertoires()->getRepertoires();
+        return $repertoires;
+    }
 
-		$repertoires->rewind();
+    /**
+     * return a association performancelevel
+     *
+     * @param string performancelevel id
+     *
+     * @return Performancelevel
+    */
+    public function findAssociationPerformancelevelByID($id)
+    {
+        $performancelevels = $this->findAssociationPerformancelevels()->getPerformancelevels();
 
-		while($repertoires->valid()) {
+        $performancelevels->rewind();
 
-		    $repertoire = $repertoires->current();
-				if($repertoire->getID() == $id) {
-					return $repertoire;
-				}
+        while ($performancelevels->valid()) {
+            $performancelevel = $performancelevels->current();
+            if ($performancelevel->getID() == $id) {
+                return $performancelevel;
+            }
 
-		    $repertoires->next();
+            $performancelevels->next();
+        }
+    }
 
-		}
+    /**
+     * return all association performancelevels
+     *
+     *
+     * @return Performancelevels
+    */
+    public function findAssociationPerformancelevels()
+    {
+        $xmlQuery = $this->metaApiService->getAssociationPerformancelevels();
 
-	}
+        $performancelevels = new Performancelevels();
 
-	/**
-	 * return all association repertoires
-	 *
-	 *
-	 * @return Repertoires
- 	*/
-	public function findAssociationRepertoires() {
+        $mapper = new \RGU\Dvoconnector\Mapper\AssociationPerformancelevels($xmlQuery);
+        $mapper->mapToAbstractEntity($performancelevels);
 
-		$xmlQuery = $this->metaApiService->getAssociationRepertoires();
+        return $performancelevels;
+    }
 
-		$repertoires = new Repertoires();
+    /**
+     * return a event type
+     *
+     * @param string event type id
+     *
+     * @return Event
+    */
+    public function findEventTypeByID($id)
+    {
+        $eventTypes = $this->findEventTypes()->getTypes();
 
-		$mapper = new \RGU\Dvoconnector\Mapper\AssociationRepertoires($xmlQuery);
-		$mapper->mapToAbstractEntity($repertoires);
+        $eventTypes->rewind();
 
-		return $repertoires;
+        while ($eventTypes->valid()) {
+            $eventType = $eventTypes->current();
+            if ($eventType->getID() == $id) {
+                return $eventType;
+            }
 
-	}
+            $eventTypes->next();
+        }
+    }
 
-	/**
-	 * return a association performancelevel
-	 *
-	 * @param string performancelevel id
-	 *
-	 * @return Performancelevel
- 	*/
-	public function findAssociationPerformancelevelByID($id) {
+    /**
+     * return all event types
+     *
+     *
+     * @return Events
+    */
+    public function findEventTypes()
+    {
+        $xmlQuery = $this->metaApiService->getEventTypes();
 
-		$performancelevels = $this->findAssociationPerformancelevels()->getPerformancelevels();
+        $types = new Types();
 
-		$performancelevels->rewind();
+        $mapper = new \RGU\Dvoconnector\Mapper\EventTypes($xmlQuery);
+        $mapper->mapToAbstractEntity($types);
 
-		while($performancelevels->valid()) {
-
-		    $performancelevel = $performancelevels->current();
-				if($performancelevel->getID() == $id) {
-					return $performancelevel;
-				}
-
-		    $performancelevels->next();
-
-		}
-
-	}
-
-	/**
-	 * return all association performancelevels
-	 *
-	 *
-	 * @return Performancelevels
- 	*/
-	public function findAssociationPerformancelevels() {
-
-		$xmlQuery = $this->metaApiService->getAssociationPerformancelevels();
-
-		$performancelevels = new Performancelevels();
-
-		$mapper = new \RGU\Dvoconnector\Mapper\AssociationPerformancelevels($xmlQuery);
-		$mapper->mapToAbstractEntity($performancelevels);
-
-		return $performancelevels;
-
-	}
-
-	/**
-	 * return a event type
-	 *
-	 * @param string event type id
-	 *
-	 * @return Event
- 	*/
-	public function findEventTypeByID($id) {
-
-		$eventTypes = $this->findEventTypes()->getTypes();
-
-		$eventTypes->rewind();
-
-		while($eventTypes->valid()) {
-
-		    $eventType = $eventTypes->current();
-				if($eventType->getID() == $id) {
-					return $eventType;
-				}
-
-		    $eventTypes->next();
-
-		}
-
-	}
-
-	/**
-	 * return all event types
-	 *
-	 *
-	 * @return Events
- 	*/
-	public function findEventTypes() {
-
-		$xmlQuery = $this->metaApiService->getEventTypes();
-
-		$types = new Types();
-
-		$mapper = new \RGU\Dvoconnector\Mapper\EventTypes($xmlQuery);
-		$mapper->mapToAbstractEntity($types);
-
-		return $types;
-
-	}
-
+        return $types;
+    }
 }

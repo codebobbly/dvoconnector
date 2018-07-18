@@ -1,46 +1,42 @@
 <?php
 namespace RGU\Dvoconnector\Controller;
 
-use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
+class EventStaticController extends AbstractController
+{
 
-class EventStaticController extends AbstractController {
+    /**
+     * list events action.
+     *
+     * @return string
+     */
+    public function listEventsAction()
+    {
+        $this->checkStaticTemplateIsIncluded();
+        $this->checkSettings();
 
-	/**
-	 * list events action.
-	 *
-	 * @return string
-	 */
-	public function listEventsAction() {
+        $this->slotExtendedAssignMultiple([
+            'associationID' => $this->settings['associationID'],
+            'filter' => $this->getEventsFilter()
+        ], __CLASS__, __FUNCTION__);
 
-		$this->checkStaticTemplateIsIncluded();
-		$this->checkSettings();
+        return $this->view->render();
+    }
 
-		$this->slotExtendedAssignMultiple([
-			'associationID' => $this->settings['associationID'],
-			'filter' => $this->getEventsFilter()
-		], __CLASS__, __FUNCTION__);
+    /**
+     * single event action.
+     *
+     * @return string
+     */
+    public function singleEventAction()
+    {
+        $this->checkStaticTemplateIsIncluded();
+        $this->checkSettings();
 
-		return $this->view->render();
+        $this->slotExtendedAssignMultiple([
+            'associationID' => $this->settings['associationID'],
+            'event' => $this->settings['eventID']
+        ], __CLASS__, __FUNCTION__);
 
-	}
-
-	/**
-	 * single event action.
-	 *
-	 * @return string
-	 */
-	public function singleEventAction() {
-
-		$this->checkStaticTemplateIsIncluded();
-		$this->checkSettings();
-
-		$this->slotExtendedAssignMultiple([
-			'associationID' => $this->settings['associationID'],
-			'event' => $this->settings['eventID']
-		], __CLASS__, __FUNCTION__);
-
-		return $this->view->render();
-
-	}
-
+        return $this->view->render();
+    }
 }

@@ -44,8 +44,8 @@ use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
  * that this ViewHelper can coexist with other extensions in
  * a fully controllable way.
  */
-class TitleTagViewHelper extends AbstractViewHelper {
-
+class TitleTagViewHelper extends AbstractViewHelper
+{
     use DefaultRenderMethodViewHelperTrait;
     use PageRendererTrait;
 
