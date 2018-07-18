@@ -2,110 +2,118 @@
 
 namespace RGU\Dvoconnector\Domain\Model;
 
-use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+{
 
-class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+    /**
+     * Street
+     * @var string
+     */
+    protected $street;
 
-	/**
-	 * Street
-	 * @var string
-	 */
-	protected $street;
+    /**
+     * Zipcode
+     * @var string
+     */
+    protected $zipcode;
 
-	/**
-	 * Zipcode
-	 * @var string
-	 */
-	protected $zipcode;
+    /**
+     * Location
+     * @var string
+     */
+    protected $location;
 
-	/**
-	 * Location
-	 * @var string
-	 */
-	protected $location;
-	
-	/**
-	 * Country
-	 * @var string
-	 */
-	protected $country;
-	
-	public function __construct() {}
+    /**
+     * Country
+     * @var string
+     */
+    protected $country;
 
-	/**
-	 * sets the street attribute
-	 *
-	 * @param string $street
-	 * @return void
-	 */
-	public function setStreet($street) {
-		$this->street = $street;
-	}
+    public function __construct()
+    {
+    }
 
-	/**
-	 * returns the street attribute
-	 *
-	 * @return string
-	 */
-	public function getStreet() {
-		return $this->street;
-	}
+    /**
+     * sets the street attribute
+     *
+     * @param string $street
+     * @return void
+     */
+    public function setStreet($street)
+    {
+        $this->street = $street;
+    }
 
-	/**
-	 * sets the zipcode attribute
-	 *
-	 * @param string $zipcode
-	 * @return void
-	 */
-	public function setZipcode($zipcode) {
-		$this->zipcode = $zipcode;
-	}
+    /**
+     * returns the street attribute
+     *
+     * @return string
+     */
+    public function getStreet()
+    {
+        return $this->street;
+    }
 
-	/**
-	 * returns the zipcode attribute
-	 *
-	 * @return string
-	 */
-	public function getZipcode() {
-		return $this->zipcode;
-	}
-	
-	/**
-	 * sets the location attribute
-	 *
-	 * @param string $location
-	 * @return void
-	 */
-	public function setLocation($location) {
-		$this->location = $location;
-	}
+    /**
+     * sets the zipcode attribute
+     *
+     * @param string $zipcode
+     * @return void
+     */
+    public function setZipcode($zipcode)
+    {
+        $this->zipcode = $zipcode;
+    }
 
-	/**
-	 * returns the location attribute
-	 *
-	 * @return string
-	 */
-	public function getLocation() {
-		return $this->location;
-	}
-	
-	/**
-	 * sets the country attribute
-	 *
-	 * @param string $country
-	 * @return void
-	 */
-	public function setCountry($country) {
-		$this->country = $country;
-	}
+    /**
+     * returns the zipcode attribute
+     *
+     * @return string
+     */
+    public function getZipcode()
+    {
+        return $this->zipcode;
+    }
 
-	/**
-	 * returns the country attribute
-	 *
-	 * @return string
-	 */
-	public function getCountry() {
-		return $this->country;
-	}
-	
+    /**
+     * sets the location attribute
+     *
+     * @param string $location
+     * @return void
+     */
+    public function setLocation($location)
+    {
+        $this->location = $location;
+    }
+
+    /**
+     * returns the location attribute
+     *
+     * @return string
+     */
+    public function getLocation()
+    {
+        return $this->location;
+    }
+
+    /**
+     * sets the country attribute
+     *
+     * @param string $country
+     * @return void
+     */
+    public function setCountry($country)
+    {
+        $this->country = $country;
+    }
+
+    /**
+     * returns the country attribute
+     *
+     * @return string
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
 }

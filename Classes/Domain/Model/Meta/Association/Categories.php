@@ -1,48 +1,49 @@
 <?php
 namespace RGU\Dvoconnector\Domain\Model\Meta\Association;
+
 /** copyright notice **/
-use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+class Categories extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+{
 
-class Categories extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
-
-	/**
+    /**
    * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RGU\Dvoconnector\Domain\Model\Meta\Association\Category>
    */
-  protected $categories;
+    protected $categories;
 
-	public function __construct() {
-		$this->categories = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-	}
+    public function __construct()
+    {
+        $this->categories = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+    }
 
-	/**
-	 * Adds a Category
-	 *
-	 * @param \RGU\Dvoconnector\Domain\Model\Meta\Association\Category $category
-	 * @return void
-	 */
-	public function addCategory($category)
-	{
-			$this->getCategories()->attach($category);
-	}
+    /**
+     * Adds a Category
+     *
+     * @param \RGU\Dvoconnector\Domain\Model\Meta\Association\Category $category
+     * @return void
+     */
+    public function addCategory($category)
+    {
+        $this->getCategories()->attach($category);
+    }
 
-	 /**
-	 * Removes a Category
-	 *
-	 * @param \RGU\Dvoconnector\Domain\Model\Meta\Association\Category $category
-	 * @return void
-	 */
-	public function removeCategory($category)
-	{
-			$this->getCategories()->detach($category);
-	}
+    /**
+    * Removes a Category
+    *
+    * @param \RGU\Dvoconnector\Domain\Model\Meta\Association\Category $category
+    * @return void
+    */
+    public function removeCategory($category)
+    {
+        $this->getCategories()->detach($category);
+    }
 
-	/**
-	 * returns the Categories
-	 *
-	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RGU\Dvoconnector\Domain\Model\Meta\Association\Category>
-	 */
-	public function getCategories() {
-		return $this->categories;
-	}
-
+    /**
+     * returns the Categories
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RGU\Dvoconnector\Domain\Model\Meta\Association\Category>
+     */
+    public function getCategories()
+    {
+        return $this->categories;
+    }
 }

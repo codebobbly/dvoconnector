@@ -1,120 +1,112 @@
 <?php
 namespace RGU\Dvoconnector\Domain\Repository;
 
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use \RGU\Dvoconnector\Domain\Model\Association;
-use \RGU\Dvoconnector\Domain\Model\Functionary;
-use \RGU\Dvoconnector\Domain\Model\Functionaries;
-use \RGU\Dvoconnector\Service\AssociationsApiService;
+use RGU\Dvoconnector\Domain\Model\Functionaries;
+use RGU\Dvoconnector\Domain\Model\Functionary;
 
-class FunctionaryRepository extends \RGU\Dvoconnector\Domain\Repository\GenericRepository {
+class FunctionaryRepository extends \RGU\Dvoconnector\Domain\Repository\GenericRepository
+{
 
-	/**
-	 * $associationsApiService
-	 * @var \RGU\Dvoconnector\Service\AssociationsApiService
-	 * @inject
- 	*/
-	protected $associationsApiService;
+    /**
+     * $associationsApiService
+     * @var \RGU\Dvoconnector\Service\AssociationsApiService
+     * @inject
+    */
+    protected $associationsApiService;
 
-	/**
-	 * Finds an object matching the given identifier.
-	 *
-	 * @param int $uid The identifier of the object to find
-	 *
-	 * @throws \RuntimeException
-	 * @throws \InvalidArgumentException
-	 * @return object The matching object
-	 * @api
-	 */
-	public function findByUid($uid) {
-		return $this->findByID($uid);
-	}
+    /**
+     * Finds an object matching the given identifier.
+     *
+     * @param int $uid The identifier of the object to find
+     *
+     * @throws \RuntimeException
+     * @throws \InvalidArgumentException
+     * @return object The matching object
+     * @api
+     */
+    public function findByUid($uid)
+    {
+        return $this->findByID($uid);
+    }
 
-	/**
-	 * return a functionary
-	 *
-	 * @param string functionary id $eid
-	 *
-	 * @return Functionary
- 	*/
-	public function findByID($fid, $functionaryFilter = null) {
+    /**
+     * return a functionary
+     *
+     * @param string functionary id $eid
+     *
+     * @return Functionary
+    */
+    public function findByID($fid, $functionaryFilter = null)
+    {
+        $xmlQuery = $this->associationsApiService->getFunctionaryFromID($fid, $functionaryFilter);
 
-		$xmlQuery = $this->associationsApiService->getFunctionaryFromID($fid, $functionaryFilter);
+        $functionary = new Functionary();
 
-		$functionary = new Functionary();
+        $mapper = new \RGU\Dvoconnector\Mapper\Functionary($xmlQuery);
+        $mapper->mapToAbstractEntity($functionary);
 
-		$mapper = new \RGU\Dvoconnector\Mapper\Functionary($xmlQuery);
-		$mapper->mapToAbstractEntity($functionary);
+        return $this->completeEntity($functionary);
+    }
 
-		return $this->completeEntity($functionary);
+    /**
+     * return a functionary
+     *
+     * @param \RGU\Dvoconnector\Domain\Model\Association $association
+     * @param string functionary id $eid
+     * @param \RGU\Dvoconnector\Domain\Filter\FunctionaryFilter $functionaryFilter
+     *
+     * @return Functionary
+    */
+    public function findByAssociationAndID($association, $fid, $functionaryFilter = null)
+    {
+        $xmlQuery = $this->associationsApiService->getFunctionaryFromAssociation($association->getID(), $fid, $functionaryFilter);
 
-	}
+        $functionary = new Functionary();
 
-	/**
-	 * return a functionary
-	 *
-	 * @param \RGU\Dvoconnector\Domain\Model\Association $association
-	 * @param string functionary id $eid
-	 * @param \RGU\Dvoconnector\Domain\Filter\FunctionaryFilter $functionaryFilter
-	 *
-	 * @return Functionary
- 	*/
-	public function findByAssociationAndID($association, $fid, $functionaryFilter = null) {
+        $mapper = new \RGU\Dvoconnector\Mapper\Functionary($xmlQuery);
+        $mapper->mapToAbstractEntity($functionary);
 
-		$xmlQuery = $this->associationsApiService->getFunctionaryFromAssociation($association->getID(), $fid, $functionaryFilter);
+        return $this->completeEntity($functionary);
+    }
 
-		$functionary = new Functionary();
+    /**
+     * return all functionarys
+     *
+     * @param \RGU\Dvoconnector\Domain\Model\Association $association
+     * @param \RGU\Dvoconnector\Domain\Filter\FunctionariesFilter $functionariesFilter
+     *
+     * @return Functionaries
+    */
+    public function findFunctionariesByAssociation($association, $functionariesFilter = null)
+    {
+        $xmlQuery = $this->associationsApiService->getFunctionariesFromAssociation($association->getID(), $functionariesFilter);
 
-		$mapper = new \RGU\Dvoconnector\Mapper\Functionary($xmlQuery);
-		$mapper->mapToAbstractEntity($functionary);
+        $functionaries = new Functionaries();
 
-		return $this->completeEntity($functionary);
+        $mapper = new \RGU\Dvoconnector\Mapper\Functionaries($xmlQuery);
+        $mapper->mapToAbstractEntity($functionaries);
 
-	}
+        return $this->completeEntity($functionaries);
+    }
 
-	/**
-	 * return all functionarys
-	 *
-	 * @param \RGU\Dvoconnector\Domain\Model\Association $association
-	 * @param \RGU\Dvoconnector\Domain\Filter\FunctionariesFilter $functionariesFilter
-	 *
-	 * @return Functionaries
- 	*/
-	public function findFunctionariesByAssociation($association, $functionariesFilter = null) {
+    /**
+     * return all functionarys
+     *
+     * @param \RGU\Dvoconnector\Domain\Filter\FunctionariesFilter $functionariesFilter
+     *
+     * @return Functionaries
+    */
+    public function findFunctionariesByRootAssociations($functionariesFilter = null)
+    {
+        $arrayWithFunctionaries = $this->associationsApiService->getEventsFromRootAssociations($functionariesFilter);
 
-		$xmlQuery = $this->associationsApiService->getFunctionariesFromAssociation($association->getID(), $functionariesFilter);
+        $functionaries = new Functionaries();
 
-		$functionaries = new Functionaries();
+        foreach ($arrayWithFunctionaries as $xmlQuery) {
+            $mapper = new \RGU\Dvoconnector\Mapper\Functionaries($xmlQuery);
+            $mapper->mapToAbstractEntity($functionaries);
+        }
 
-		$mapper = new \RGU\Dvoconnector\Mapper\Functionaries($xmlQuery);
-		$mapper->mapToAbstractEntity($functionaries);
-
-		return $this->completeEntity($functionaries);
-
-	}
-
-	/**
-	 * return all functionarys
-	 *
-	 * @param \RGU\Dvoconnector\Domain\Filter\FunctionariesFilter $functionariesFilter
-	 *
-	 * @return Functionaries
- 	*/
-	public function findFunctionariesByRootAssociations($functionariesFilter = null) {
-
-		$arrayWithFunctionaries = $this->associationsApiService->getEventsFromRootAssociations($functionariesFilter);
-
-		$functionaries = new Functionaries();
-
-		foreach ($arrayWithFunctionaries as $xmlQuery) {
-
-				$mapper = new \RGU\Dvoconnector\Mapper\Functionaries($xmlQuery);
-				$mapper->mapToAbstractEntity($functionaries);
-
-		}
-
-		return $this->completeEntity($functionaries);
-
-	}
-
+        return $this->completeEntity($functionaries);
+    }
 }

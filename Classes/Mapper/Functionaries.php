@@ -2,67 +2,63 @@
 
 namespace RGU\Dvoconnector\Mapper;
 
-use \RGU\Dvoconnector\Mapper\Generic;
-use \RGU\Dvoconnector\Domain\Model\Association;
-use \RGU\Dvoconnector\Domain\Model\Address;
+use RGU\Dvoconnector\Domain\Model\Association;
 
-class Functionaries extends Generic {
+class Functionaries extends Generic
+{
 
-	/**
-	 * map attributName to property
-	 *
-	 * @param SimpleXMLElement xmlElement
-	 * @param string attributName
-	 *
-	 * @return string
- 	*/
-	protected function mapAttributToProperty($xmlEntry, $attributName, $stackEntity) {
-
-		switch ($attributName) {
-			case 'firstname';
+    /**
+     * map attributName to property
+     *
+     * @param SimpleXMLElement xmlElement
+     * @param string attributName
+     *
+     * @return string
+    */
+    protected function mapAttributToProperty($xmlEntry, $attributName, $stackEntity)
+    {
+        switch ($attributName) {
+            case 'firstname':
         return 'firstName';
         break;
-      case 'lastname';
+      case 'lastname':
         return 'lastName';
         break;
-			case 'associationid';
+            case 'associationid':
         return 'id';
         break;
-			default:
-				return $attributName;
-				break;
-		}
+            default:
+                return $attributName;
+                break;
+        }
+    }
 
-	}
-
-	/**
-	 * get Entity for attribut
-	 *
-	 * @param AbstractEntity entity
-	 * @param SimpleXMLElement xmlElement
-	 * @param string attributName
-	 *
-	 * @return AbstractEntity
- 	*/
-	protected function getEntityForAttribut($entity, $xmlEntry, $attributName, $stackEntity) {
-
-    switch ($attributName) {
-      case 'associationid';
+    /**
+     * get Entity for attribut
+     *
+     * @param AbstractEntity entity
+     * @param SimpleXMLElement xmlElement
+     * @param string attributName
+     *
+     * @return AbstractEntity
+    */
+    protected function getEntityForAttribut($entity, $xmlEntry, $attributName, $stackEntity)
+    {
+        switch ($attributName) {
+      case 'associationid':
 
         $association = $entity->getAssociation();
 
-        if(!$association) {
-          $association = new Association();
-          $entity->setAssociation($association);
+        if (!$association) {
+            $association = new Association();
+            $entity->setAssociation($association);
         }
 
         return $association;
         break;
-			default:
-				return $entity;
-				break;
-		}
-
-	}
-
+            default:
+                return $entity;
+                break;
+        }
+    }
 }
