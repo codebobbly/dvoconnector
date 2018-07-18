@@ -21,17 +21,17 @@ class RealUrlAutoConfiguration
         return array_merge_recursive($params['config'], [
           'postVarSets' => [
             '_DEFAULT' => [
-              'Dvoconnector' => [
+              'dvoconnector' => [
                 [
-                    'GETvar' => 'tx_Dvoconnector_pi1[controller]',
+                    'GETvar' => 'tx_dvoconnector_pi1[controller]',
                     'noMatch' => 'bypass',
                 ],
                 [
-                    'GETvar' => 'tx_Dvoconnector_pi1[aID]',
+                    'GETvar' => 'tx_dvoconnector_pi1[aID]',
                     'userFunc' => RGU\Dvoconnector\Service\Url\RealUrlAssociation::class . '->convert',
                 ],
                 [
-                    'GETvar' => 'tx_Dvoconnector_pi1[action]',
+                    'GETvar' => 'tx_dvoconnector_pi1[action]',
                     'valueMap' => [
                       'veranstaltungen' => 'listEvents',
                       'meldungen' => 'listAnnouncements',
@@ -48,23 +48,23 @@ class RealUrlAutoConfiguration
                     'noMatch' => 'bypass',
                 ],
                 [
-                              'GETvar' => 'tx_Dvoconnector_pi1[@widget_0][currentPage]',
+                              'GETvar' => 'tx_dvoconnector_pi1[@widget_0][currentPage]',
                               'noMatch' => 'bypass',
                           ],
                 [
-                    'GETvar' => 'tx_Dvoconnector_pi1[eID]',
+                    'GETvar' => 'tx_dvoconnector_pi1[eID]',
                     'userFunc' => RGU\Dvoconnector\Service\Url\RealUrlEvent::class . '->convert',
                 ],
                 [
-                    'GETvar' => 'tx_Dvoconnector_pi1[anID]',
+                    'GETvar' => 'tx_dvoconnector_pi1[anID]',
                     'userFunc' => RGU\Dvoconnector\Service\Url\RealUrlAnnouncement::class . '->convert',
                 ],
                 [
-                    'GETvar' => 'tx_Dvoconnector_pi1[fID]',
+                    'GETvar' => 'tx_dvoconnector_pi1[fID]',
                     'userFunc' => RGU\Dvoconnector\Service\Url\RealUrlFunctionary::class . '->convert',
                 ],
                 [
-                    'GETvar' => 'tx_Dvoconnector_pi1[filter]',
+                    'GETvar' => 'tx_dvoconnector_pi1[filter]',
                     'userFunc' => RGU\Dvoconnector\Service\Url\RealUrlFilter::class . '->convert',
                 ],
               ]

@@ -13,7 +13,7 @@ use TYPO3\CMS\Extbase\Object\ObjectManager;
  */
 class ImageService implements SingletonInterface
 {
-    const UPLOAD_DIRECTORY = 'Dvoconnector';
+    const UPLOAD_DIRECTORY = 'dvoconnector';
     const IMAGES_DIRECTORY = 'images';
     const TYPO3TEMP_DIRECTORY = 'typo3temp/assets';
 
@@ -35,7 +35,7 @@ class ImageService implements SingletonInterface
         $this->objectManager = GeneralUtility::makeInstance(ObjectManager::class);
         $this->resourceFactory = $this->objectManager->get(ResourceFactory::class);
 
-        $this->cacheManager = GeneralUtility::makeInstance(CacheManager::class)->getCache('cache_Dvoconnector_images');
+        $this->cacheManager = GeneralUtility::makeInstance(CacheManager::class)->getCache('cache_dvoconnector_images');
     }
 
     /**
@@ -74,7 +74,7 @@ class ImageService implements SingletonInterface
         $imageContent = GeneralUtility::getUrl(
             $fileString,
             0,
-            ['User-Agent: Dvoconnector/1.0']
+            ['User-Agent: ' . \RGU\Dvoconnector\Utility\EmConfiguration::getSettings()->getHttpUserAgent()]
         );
 
         if (!$imageContent) {
@@ -95,8 +95,8 @@ class ImageService implements SingletonInterface
 
         $tempFolder = $storage->getFolder(self::TYPO3TEMP_DIRECTORY);
 
-        if (!$tempFolder->hasFolder(self::IMAGES_DIRECTORY)) {
-            $tempFolder->createFolder(self::IMAGES_DIRECTORY);
+        if (!$tempFolder->hasFolder(self::UPLOAD_DIRECTORY)) {
+            $tempFolder->createFolder(self::UPLOAD_DIRECTORY);
         }
 
         $uploadFolder = $tempFolder->getSubfolder(self::UPLOAD_DIRECTORY);

@@ -61,8 +61,8 @@ class TyposcriptUserFuncs
      */
     public function getBreadcrumbFunctionary(string $content, array $conf): string
     {
-        $tx_Dvoconnector = GeneralUtility::_GP('tx_Dvoconnector_pi1');
-        $functionary = $this->functionaryRepository->findByID($tx_Dvoconnector['fID']);
+        $tx_dvoconnector = GeneralUtility::_GP('tx_dvoconnector_pi1');
+        $functionary = $this->functionaryRepository->findByID($tx_dvoconnector['fID']);
 
         return $functionary->getLastName() . ' ' . $functionary->getFirstName();
     }
@@ -76,8 +76,8 @@ class TyposcriptUserFuncs
      */
     public function getBreadcrumbAnnouncement(string $content, array $conf): string
     {
-        $tx_Dvoconnector = GeneralUtility::_GP('tx_Dvoconnector_pi1');
-        $announcement = $this->announcementRepository->findByID($tx_Dvoconnector['anID']);
+        $tx_dvoconnector = GeneralUtility::_GP('tx_dvoconnector_pi1');
+        $announcement = $this->announcementRepository->findByID($tx_dvoconnector['anID']);
 
         return $announcement->getTitle();
     }
@@ -91,8 +91,8 @@ class TyposcriptUserFuncs
      */
     public function getBreadcrumbEvent(string $content, array $conf): string
     {
-        $tx_Dvoconnector = GeneralUtility::_GP('tx_Dvoconnector_pi1');
-        $event = $this->eventRepository->findByID($tx_Dvoconnector['eID']);
+        $tx_dvoconnector = GeneralUtility::_GP('tx_dvoconnector_pi1');
+        $event = $this->eventRepository->findByID($tx_dvoconnector['eID']);
 
         return $event->getTitle();
     }
@@ -106,8 +106,8 @@ class TyposcriptUserFuncs
      */
     public function getBreadcrumbAssociation(string $content, array $conf): string
     {
-        $tx_Dvoconnector = GeneralUtility::_GP('tx_Dvoconnector_pi1');
-        $association = $this->associationRepository->findByID($tx_Dvoconnector['aID']);
+        $tx_dvoconnector = GeneralUtility::_GP('tx_dvoconnector_pi1');
+        $association = $this->associationRepository->findByID($tx_dvoconnector['aID']);
 
         return $association->getName();
     }

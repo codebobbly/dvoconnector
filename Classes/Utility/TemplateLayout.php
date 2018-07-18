@@ -23,10 +23,10 @@ class TemplateLayout implements SingletonInterface
         $templateLayouts = [];
 
         // Check if the layouts are extended by ext_tables
-        if (isset($GLOBALS['TYPO3_CONF_VARS']['EXT']['Dvoconnector']['templateLayouts'])
-            && is_array($GLOBALS['TYPO3_CONF_VARS']['EXT']['Dvoconnector']['templateLayouts'])
+        if (isset($GLOBALS['TYPO3_CONF_VARS']['EXT']['dvoconnector']['templateLayouts'])
+            && is_array($GLOBALS['TYPO3_CONF_VARS']['EXT']['dvoconnector']['templateLayouts'])
         ) {
-            $templateLayouts = $GLOBALS['TYPO3_CONF_VARS']['EXT']['Dvoconnector']['templateLayouts'];
+            $templateLayouts = $GLOBALS['TYPO3_CONF_VARS']['EXT']['dvoconnector']['templateLayouts'];
         }
 
         // Add TsConfig values
@@ -52,8 +52,8 @@ class TemplateLayout implements SingletonInterface
     {
         $templateLayouts = [];
         $pagesTsConfig = BackendUtility::getPagesTSconfig($pageUid);
-        if (isset($pagesTsConfig['tx_Dvoconnector.']['templateLayouts.']) && is_array($pagesTsConfig['tx_Dvoconnector.']['templateLayouts.'])) {
-            $templateLayouts = $pagesTsConfig['tx_Dvoconnector.']['templateLayouts.'];
+        if (isset($pagesTsConfig['tx_dvoconnector.']['templateLayouts.']) && is_array($pagesTsConfig['tx_dvoconnector.']['templateLayouts.'])) {
+            $templateLayouts = $pagesTsConfig['tx_dvoconnector.']['templateLayouts.'];
         }
         return $templateLayouts;
     }

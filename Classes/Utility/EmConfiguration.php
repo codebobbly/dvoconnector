@@ -20,7 +20,7 @@ class EmConfiguration
     public static function getSettings()
     {
         $configuration = self::parseSettings();
-        require_once(ExtensionManagementUtility::extPath('Dvoconnector') . 'Classes/Domain/Model/EmConfiguration.php');
+        require_once(ExtensionManagementUtility::extPath('dvoconnector') . 'Classes/Domain/Model/EmConfiguration.php');
         $settings = new \RGU\Dvoconnector\Domain\Model\EmConfiguration($configuration);
         return $settings;
     }
@@ -32,7 +32,7 @@ class EmConfiguration
      */
     public static function parseSettings()
     {
-        $settings = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['Dvoconnector']);
+        $settings = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['dvoconnector']);
 
         if (!is_array($settings)) {
             $settings = [];

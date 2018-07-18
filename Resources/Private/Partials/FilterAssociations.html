@@ -5,16 +5,16 @@
   <form action="{f:uri.action(action: 'filterAssociations', arguments: '{aID: associationID}')}" method="post">
     <f:if condition="{allowedProperty.name}">
       <div class="form-group">
-        <label for="name"><f:translate key="LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_ff.xml:associations.filter.name.label" /></label>
-        <input name="tx_Dvoconnector_pi1[filter][name]" value="{userFilter.name}" class="form-control" id="name" aria-describedby="nameHelp" placeholder="<f:translate key="LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_ff.xml:associations.filter.name.placeholder" />">
-        <small id="nameHelp" class="form-text text-muted"><f:translate key="LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_ff.xml:associations.filter.name.describedby" /></small>
+        <label for="name"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:associations.filter.name.label" /></label>
+        <input name="tx_dvoconnector_pi1[filter][name]" value="{userFilter.name}" class="form-control" id="name" aria-describedby="nameHelp" placeholder="<f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:associations.filter.name.placeholder" />">
+        <small id="nameHelp" class="form-text text-muted"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:associations.filter.name.describedby" /></small>
       </div>
     </f:if>
     <f:if condition="{allowedProperty.categoryid}">
       <div class="form-group">
-        <label for="categoryid"><f:translate key="LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_ff.xml:associations.filter.categoryid.label" /></label>
+        <label for="categoryid"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:associations.filter.categoryid.label" /></label>
         <rgdvo:AssociationCategories as="associationCategories">
-          <f:form.select class="form-control" id="categoryid" value="{userFilter.categoryid}" name="tx_Dvoconnector_pi1[filter][categoryid]" optionValueField="id" optionLabelField="name" options="{associationCategories}" optionsAfterContent="true">
+          <f:form.select class="form-control" id="categoryid" value="{userFilter.categoryid}" name="tx_dvoconnector_pi1[filter][categoryid]" optionValueField="id" optionLabelField="name" options="{associationCategories}" optionsAfterContent="true">
             <option value=""></option>
           </f:form.select>
         </rgdvo:AssociationCategories>
@@ -22,9 +22,9 @@
     </f:if>
     <f:if condition="{allowedProperty.repertoireid}">
       <div class="form-group">
-        <label for="repertoireid"><f:translate key="LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_ff.xml:associations.filter.repertoireid.label" /></label>
+        <label for="repertoireid"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:associations.filter.repertoireid.label" /></label>
         <rgdvo:AssociationRepertoires as="associationRepertoires">
-          <f:form.select class="form-control" id="repertoireid" value="{userFilter.repertoireid}" name="tx_Dvoconnector_pi1[filter][repertoireid]" optionValueField="id" optionLabelField="name" options="{associationRepertoires}" optionsAfterContent="true">
+          <f:form.select class="form-control" id="repertoireid" value="{userFilter.repertoireid}" name="tx_dvoconnector_pi1[filter][repertoireid]" optionValueField="id" optionLabelField="name" options="{associationRepertoires}" optionsAfterContent="true">
             <option value=""></option>
           </f:form.select>
         </rgdvo:AssociationRepertoires>
@@ -32,12 +32,12 @@
     </f:if>
     <f:if condition="{allowedProperty.location}">
       <div class="form-group">
-        <label for="location"><f:translate key="LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_ff.xml:associations.filter.location.label" /></label>
-        <input name="tx_Dvoconnector_pi1[filter][location]" value="{userFilter.location}" class="form-control" id="location" aria-describedby="locationHelp" placeholder="<f:translate key="LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_ff.xml:associations.filter.location.placeholder" />">
-        <small id="locationHelp" class="form-text text-muted"><f:translate key="LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_ff.xml:associations.filter.location.describedby" /></small>
+        <label for="location"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:associations.filter.location.label" /></label>
+        <input name="tx_dvoconnector_pi1[filter][location]" value="{userFilter.location}" class="form-control" id="location" aria-describedby="locationHelp" placeholder="<f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:associations.filter.location.placeholder" />">
+        <small id="locationHelp" class="form-text text-muted"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:associations.filter.location.describedby" /></small>
       </div>
     </f:if>
-    <button type="submit" class="btn btn-primary"><f:translate key="LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_ff.xml:associations.filter.submit" /></button>
+    <button type="submit" class="btn btn-primary"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:associations.filter.submit" /></button>
   </form>
 
 </f:if>

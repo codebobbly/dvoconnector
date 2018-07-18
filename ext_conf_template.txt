@@ -1,13 +1,13 @@
 # Records
 ###########################
-# cat=apiservice/enable/101; type=string; label=LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:extmng.apiUrl
+# cat=apiservice/enable/101; type=string; label=LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:extmng.apiUrl
 apiUrl =
 
-# cat=apiservice/enable/102; type=string; label=LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:extmng.httpUserAgent
+# cat=apiservice/enable/102; type=string; label=LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:extmng.httpUserAgent
 httpUserAgent = Dvoconnector/1.0
 
-# cat=apiservice/enable/103; type=int; label=LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:extmng.cachetime
+# cat=apiservice/enable/103; type=int; label=LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:extmng.cachetime
 cachetime = 600
 
-# cat=apiservice/enable/103; type=string; label=LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:extmng.rootAssociationIDs
+# cat=apiservice/enable/103; type=string; label=LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:extmng.rootAssociationIDs
 rootAssociationIDs = 1

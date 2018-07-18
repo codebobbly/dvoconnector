@@ -32,7 +32,7 @@ class GenericApiService implements \TYPO3\CMS\Core\SingletonInterface
 
     public function __construct()
     {
-        $this->cacheManager = GeneralUtility::makeInstance(CacheManager::class)->getCache('cache_Dvoconnector_api');
+        $this->cacheManager = GeneralUtility::makeInstance(CacheManager::class)->getCache('cache_dvoconnector_api');
     }
 
     /**

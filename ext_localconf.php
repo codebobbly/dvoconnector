@@ -18,7 +18,7 @@ $boot = function () {
         []
     );
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:Dvoconnector/Configuration/TSconfig/ContentElementWizard.txt">');
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:dvoconnector/Configuration/TSconfig/ContentElementWizard.txt">');
 
     if (TYPO3_MODE === 'BE') {
         /** @var \TYPO3\CMS\Core\Imaging\IconRegistry $iconRegistry */
@@ -26,29 +26,29 @@ $boot = function () {
         $iconRegistry->registerIcon(
             'ext-Dvoconnector-wizard-icon',
             \TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider::class,
-            ['source' => 'EXT:Dvoconnector/Resources/Public/Icons/ce_wiz.gif']
+            ['source' => 'EXT:dvoconnector/Resources/Public/Icons/ce_wiz.gif']
         );
     }
 
     /* ===========================================================================
         Custom cache, done with the caching framework
     =========================================================================== */
-    if (!is_array($GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['cache_Dvoconnector_api'])) {
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['cache_Dvoconnector_api'] = [];
+    if (!is_array($GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['cache_dvoconnector_api'])) {
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['cache_dvoconnector_api'] = [];
     }
     // Define string frontend as default frontend, this must be set with TYPO3 4.5 and below
     // and overrides the default variable frontend of 4.6
-    if (!isset($GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['cache_Dvoconnector_api']['frontend'])) {
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['cache_Dvoconnector_api']['frontend'] = \TYPO3\CMS\Core\Cache\Frontend\StringFrontend::class;
+    if (!isset($GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['cache_dvoconnector_api']['frontend'])) {
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['cache_dvoconnector_api']['frontend'] = \TYPO3\CMS\Core\Cache\Frontend\StringFrontend::class;
     }
 
-    if (!is_array($GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['cache_Dvoconnector_images'])) {
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['cache_Dvoconnector_images'] = [];
+    if (!is_array($GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['cache_dvoconnector_images'])) {
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['cache_dvoconnector_images'] = [];
     }
     // Define string frontend as default frontend, this must be set with TYPO3 4.5 and below
     // and overrides the default variable frontend of 4.6
-    if (!isset($GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['cache_Dvoconnector_images']['frontend'])) {
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['cache_Dvoconnector_images']['frontend'] = \TYPO3\CMS\Core\Cache\Frontend\StringFrontend::class;
+    if (!isset($GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['cache_dvoconnector_images']['frontend'])) {
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['cache_dvoconnector_images']['frontend'] = \TYPO3\CMS\Core\Cache\Frontend\StringFrontend::class;
     }
 };
 

@@ -1,12 +1,12 @@
 mod.wizards.newContentElement.wizardItems.plugins {
 	elements {
-		Dvoconnector {
-			iconIdentifier = ext-Dvoconnector-wizard-icon
-			title = LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:pi1_title
-			description = LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:pi1_plus_wiz_description
+		dvoconnector {
+			iconIdentifier = ext-dvoconnector-wizard-icon
+			title = LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:pi1_title
+			description = LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:pi1_plus_wiz_description
 			tt_content_defValues {
 				CType = list
-				list_type = Dvoconnector_pi1
+				list_type = dvoconnector_pi1
 			}
 		}
 	}

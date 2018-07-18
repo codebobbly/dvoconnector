@@ -1,12 +1,12 @@
-plugin.tx_Dvoconnector {
+plugin.tx_dvoconnector {
 	view {
 
-		# cat=plugin.tx_Dvoconnector/file; type=string; label=Path to template root (FE)
-		templateRootPath = EXT:Dvoconnector/Resources/Private/Templates/
-		# cat=plugin.tx_Dvoconnector/file; type=string; label=Path to template partials (FE)
-		partialRootPath = EXT:Dvoconnector/Resources/Private/Partials/
-		# cat=plugin.tx_Dvoconnector/file; type=string; label=Path to template layouts (FE)
-		layoutRootPath = EXT:Dvoconnector/Resources/Private/Layouts/
+		# cat=plugin.tx_dvoconnector/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:dvoconnector/Resources/Private/Templates/
+		# cat=plugin.tx_dvoconnector/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:dvoconnector/Resources/Private/Partials/
+		# cat=plugin.tx_dvoconnector/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:dvoconnector/Resources/Private/Layouts/
 
 	}
 

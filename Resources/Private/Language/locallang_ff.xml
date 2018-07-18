@@ -4,7 +4,7 @@
         <description>language labels for Calendarize-Dvoconnector</description>
         <type>module</type>
         <csh_table></csh_table>
-        <fileId>EXT:Dvoconnector/Resources/Private/Language/locallang_ff.xml</fileId>
+        <fileId>EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml</fileId>
 		<labelContext type="array">
         </labelContext>
     </meta>

@@ -3,8 +3,8 @@
 $EM_CONF[$_EXTKEY] = [
     'title' => 'DVO Connector',
     'description' => 'DVO Connector',
-    'author' => 'Rainer Guttroff',
-    'author_email' => 'typo3-Dvoconnector@as.rguttroff.de',
+    'author' => 'codebobbly',
+    'author_email' => 'codebobbly@gmail.com',
     'category' => 'misc',
     'shy' => '',
     'conflicts' => '',

@@ -24,5 +24,33 @@
     "psr-4": {
       "RGU\\Dvoconnector\\": "Classes"
     }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "RGU\\Dvoconnector\\Tests\\": "Tests"
+    }
+  },
+  "replace": {
+    "dvoconnector": "self.version",
+    "typo3-ter/dvoconnector": "self.version"
+  },
+  "config": {
+    "vendor-dir": ".Build/vendor",
+    "bin-dir": ".Build/bin"
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "mkdir -p .Build/Web/typo3conf/ext/",
+      "[ -L .Build/Web/typo3conf/ext/dvoconnector ] || ln -snvf ../../../../. .Build/Web/typo3conf/ext/dvoconnector"
+    ]
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    },
+    "typo3/cms": {
+      "cms-package-dir": "{$vendor-dir}/typo3/cms",
+      "web-dir": ".Build/Web"
+    }
   }
 }

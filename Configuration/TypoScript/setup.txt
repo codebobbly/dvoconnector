@@ -1,29 +1,29 @@
 # ==============================================
-# FE-Plugin configuration for EXT:Dvoconnector
+# FE-Plugin configuration for EXT:dvoconnector
 # ==============================================
-plugin.tx_Dvoconnector {
+plugin.tx_dvoconnector {
 
 	mvc.callDefaultActionIfActionCantBeResolved = 1
 
 	view {
 		templateRootPaths {
-			0 = EXT:Dvoconnector/Resources/Private/Templates/
-			1 = {$plugin.tx_Dvoconnector.view.templateRootPath}
+			0 = EXT:dvoconnector/Resources/Private/Templates/
+			1 = {$plugin.tx_dvoconnector.view.templateRootPath}
 		}
 
 		partialRootPaths {
-			0 = EXT:Dvoconnector/Resources/Private/Partials/
-			1 = {$plugin.tx_Dvoconnector.view.partialRootPath}
+			0 = EXT:dvoconnector/Resources/Private/Partials/
+			1 = {$plugin.tx_dvoconnector.view.partialRootPath}
 		}
 
 		layoutRootPaths {
-			0 = EXT:Dvoconnector/Resources/Private/Layouts/
-			1 = {$plugin.tx_Dvoconnector.view.layoutRootPath}
+			0 = EXT:dvoconnector/Resources/Private/Layouts/
+			1 = {$plugin.tx_dvoconnector.view.layoutRootPath}
 		}
 
 		widget {
 	    TYPO3\CMS\Fluid\ViewHelpers\Widget\PaginateViewHelper {
-        templateRootPath = {$plugin.tx_Dvoconnector.view.templateRootPath}
+        templateRootPath = {$plugin.tx_dvoconnector.view.templateRootPath}
 	    }
 		}
 
@@ -39,11 +39,11 @@ plugin.tx_Dvoconnector {
 }
 
 # ==============================================
-# BE-module configuration for EXT:Dvoconnector
+# BE-module configuration for EXT:dvoconnector
 # ==============================================
-module.tx_Dvoconnector < plugin.tx_Dvoconnector
+module.tx_dvoconnector < plugin.tx_dvoconnector
 
-[globalVar = GP:tx_Dvoconnector_pi1|aID > 0]
+[globalVar = GP:tx_dvoconnector_pi1|aID > 0]
 	page {
 		10 {
 			variables {
@@ -61,7 +61,7 @@ module.tx_Dvoconnector < plugin.tx_Dvoconnector
 	}
 [global]
 
-[globalVar = GP:tx_Dvoconnector_pi1|eID > 0]
+[globalVar = GP:tx_dvoconnector_pi1|eID > 0]
 	page {
 		10 {
 			variables {
@@ -79,7 +79,7 @@ module.tx_Dvoconnector < plugin.tx_Dvoconnector
 	}
 [global]
 
-[globalVar = GP:tx_Dvoconnector_pi1|anID > 0]
+[globalVar = GP:tx_dvoconnector_pi1|anID > 0]
 	page {
 		10 {
 			variables {
@@ -97,7 +97,7 @@ module.tx_Dvoconnector < plugin.tx_Dvoconnector
 	}
 [global]
 
-[globalVar = GP:tx_Dvoconnector_pi1|fID > 0]
+[globalVar = GP:tx_dvoconnector_pi1|fID > 0]
 	page {
 		10 {
 			variables {

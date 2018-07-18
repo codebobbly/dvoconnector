@@ -3,81 +3,81 @@
 		<General>
 			<ROOT>
 				<TCEforms>
-					<sheetTitle>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.general.tabTitle</sheetTitle>
+					<sheetTitle>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.general.tabTitle</sheetTitle>
 				</TCEforms>
 				<type>array</type>
 				<el>
 					<!-- View -->
 					<switchableControllerActions>
 						<TCEforms>
-							<label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.general.mode</label>
+							<label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.general.mode</label>
 							<onChange>reload</onChange>
 							<config>
 								<type>select</type>
 								<renderType>selectSingle</renderType>
 								<items>
 									<numIndex index="1">
-										<numIndex index="0">LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.general.mode.association</numIndex>
+										<numIndex index="0">LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.general.mode.association</numIndex>
 										<numIndex index="1">--div--</numIndex>
 									</numIndex>
 									<numIndex index="2">
-										<numIndex index="0">LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.general.mode.dynamicAssociations</numIndex>
+										<numIndex index="0">LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.general.mode.dynamicAssociations</numIndex>
 										<numIndex index="1">Association->listAssociations;Association->listSubAssociations;Association->detailAssociation;Association->detailFunctionary;Association->detailAnnouncement;Association->detailEvent;Association->filterAssociations;Association->listAnnouncements;Association->filterAnnouncements;Association->listEvents;Association->filterEvents;Association->listFunctionaries;Association->filterFunctionaries</numIndex>
 									</numIndex>
 									<numIndex index="3">
-										<numIndex index="0">LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.general.mode.singleAssociation</numIndex>
+										<numIndex index="0">LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.general.mode.singleAssociation</numIndex>
 										<numIndex index="1">AssociationStatic->singleAssociation</numIndex>
 									</numIndex>
 									<numIndex index="4">
-										<numIndex index="0">LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.general.mode.listAssociations</numIndex>
+										<numIndex index="0">LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.general.mode.listAssociations</numIndex>
 										<numIndex index="1">AssociationStatic->listAssociations</numIndex>
 									</numIndex>
 									<numIndex index="5">
-										<numIndex index="0">LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.general.mode.announcement</numIndex>
+										<numIndex index="0">LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.general.mode.announcement</numIndex>
 										<numIndex index="1">--div--</numIndex>
 									</numIndex>
 									<numIndex index="6">
-										<numIndex index="0">LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.general.mode.dynamicAnnouncements</numIndex>
+										<numIndex index="0">LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.general.mode.dynamicAnnouncements</numIndex>
 										<numIndex index="1">Announcement->listAnnouncements;Announcement->detailAnnouncement;Announcement->filterAnnouncements</numIndex>
 									</numIndex>
 									<numIndex index="7">
-										<numIndex index="0">LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.general.mode.singleAnnouncement</numIndex>
+										<numIndex index="0">LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.general.mode.singleAnnouncement</numIndex>
 										<numIndex index="1">AnnouncementStatic->singleAnnouncement</numIndex>
 									</numIndex>
 									<numIndex index="8">
-										<numIndex index="0">LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.general.mode.listAnnouncements</numIndex>
+										<numIndex index="0">LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.general.mode.listAnnouncements</numIndex>
 										<numIndex index="1">AnnouncementStatic->listAnnouncements</numIndex>
 									</numIndex>
 									<numIndex index="9">
-										<numIndex index="0">LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.general.mode.event</numIndex>
+										<numIndex index="0">LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.general.mode.event</numIndex>
 										<numIndex index="1">--div--</numIndex>
 									</numIndex>
 									<numIndex index="10">
-										<numIndex index="0">LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.general.mode.dynamicEvents</numIndex>
+										<numIndex index="0">LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.general.mode.dynamicEvents</numIndex>
 										<numIndex index="1">Event->listEvents;Event->detailEvent;Event->filterEvents</numIndex>
 									</numIndex>
 									<numIndex index="11">
-										<numIndex index="0">LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.general.mode.singleEvent</numIndex>
+										<numIndex index="0">LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.general.mode.singleEvent</numIndex>
 										<numIndex index="1">EventStatic->singleEvent</numIndex>
 									</numIndex>
 									<numIndex index="12">
-										<numIndex index="0">LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.general.mode.listEvents</numIndex>
+										<numIndex index="0">LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.general.mode.listEvents</numIndex>
 										<numIndex index="1">EventStatic->listEvents</numIndex>
 									</numIndex>
 									<numIndex index="13">
-										<numIndex index="0">LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.general.mode.functionary</numIndex>
+										<numIndex index="0">LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.general.mode.functionary</numIndex>
 										<numIndex index="1">--div--</numIndex>
 									</numIndex>
 									<numIndex index="14">
-										<numIndex index="0">LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.general.mode.dynamicFunctionaries</numIndex>
+										<numIndex index="0">LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.general.mode.dynamicFunctionaries</numIndex>
 										<numIndex index="1">Functionary->listFunctionaries;Functionary->detailFunctionary;Functionary->filterFunctionaries</numIndex>
 									</numIndex>
 									<numIndex index="15">
-										<numIndex index="0">LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.general.mode.singleFunctionary</numIndex>
+										<numIndex index="0">LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.general.mode.singleFunctionary</numIndex>
 										<numIndex index="1">FunctionaryStatic->singleFunctionary</numIndex>
 									</numIndex>
 									<numIndex index="16">
-										<numIndex index="0">LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.general.mode.listFunctionaries</numIndex>
+										<numIndex index="0">LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.general.mode.listFunctionaries</numIndex>
 										<numIndex index="1">FunctionaryStatic->listFunctionaries</numIndex>
 									</numIndex>
 								</items>
@@ -87,7 +87,7 @@
 
 					<settings.associationID>
               <TCEforms>
-                  <label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.associationID</label>
+                  <label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.associationID</label>
 									<onChange>reload</onChange>
                   <config>
                       <type>select</type>
@@ -103,7 +103,7 @@
 
 					<settings.eventID>
               <TCEforms>
-                  <label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.associationID</label>
+                  <label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.associationID</label>
                   <displayCond>
 										<and>
 											<numIndex index="0">FIELD:switchableControllerActions:IN:EventStatic->singleEvent</numIndex>
@@ -124,7 +124,7 @@
 
 					<settings.announcementID>
               <TCEforms>
-                  <label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.associationID</label>
+                  <label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.associationID</label>
 									<displayCond>
 										<and>
 											<numIndex index="0">FIELD:switchableControllerActions:IN:AnnouncementStatic->singleAnnouncement</numIndex>
@@ -145,7 +145,7 @@
 
 					<settings.functionaryID>
               <TCEforms>
-                  <label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.associationID</label>
+                  <label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.associationID</label>
 									<displayCond>
 										<and>
 											<numIndex index="0">FIELD:switchableControllerActions:IN:FunctionaryStatic->singleFunctionary</numIndex>
@@ -171,14 +171,14 @@
 		<Pagination>
 				<ROOT>
 						<TCEforms>
-								<sheetTitle>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.pagination.tabTitle</sheetTitle>
+								<sheetTitle>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.pagination.tabTitle</sheetTitle>
 								<displayCond>FIELD:General.switchableControllerActions:!IN:FunctionaryStatic->singleFunctionary,AnnouncementStatic->singleAnnouncement,EventStatic->singleEvent,AssociationStatic->singleAssociation</displayCond>
 						</TCEforms>
 						<type>array</type>
 						<el>
 								<settings.pagination.itemsPerPage>
 										<TCEforms>
-												<label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.pagination.itemsPerPage</label>
+												<label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.pagination.itemsPerPage</label>
 												<config>
 														<type>input</type>
 														<eval>trim,int</eval>
@@ -190,7 +190,7 @@
 
 								<settings.pagination.insertAbove>
 										<TCEforms>
-												<label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.pagination.insertAbove</label>
+												<label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.pagination.insertAbove</label>
 												<config>
 														<type>check</type>
 												</config>
@@ -199,7 +199,7 @@
 
 								<settings.pagination.insertBelow>
 										<TCEforms>
-												<label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.pagination.insertBelow</label>
+												<label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.pagination.insertBelow</label>
 												<config>
 														<type>check</type>
 												</config>
@@ -208,7 +208,7 @@
 
 								<settings.pagination.maximumNumberOfLinks>
 										<TCEforms>
-												<label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.pagination.maximumNumberOfLinks</label>
+												<label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.pagination.maximumNumberOfLinks</label>
 												<config>
 														<type>input</type>
 														<eval>trim,int</eval>
@@ -225,14 +225,14 @@
 		<FilterAssociations>
 				<ROOT>
 						<TCEforms>
-								<sheetTitle>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterAssociations.tabTitle</sheetTitle>
+								<sheetTitle>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterAssociations.tabTitle</sheetTitle>
 								<displayCond>FIELD:General.switchableControllerActions:IN:Association->listAssociations;Association->listSubAssociations;Association->detailAssociation;Association->detailFunctionary;Association->detailAnnouncement;Association->detailEvent;Association->filterAssociations;Association->listAnnouncements;Association->filterAnnouncements;Association->listEvents;Association->filterEvents;Association->listFunctionaries;Association->filterFunctionaries</displayCond>
 						</TCEforms>
 						<type>array</type>
 						<el>
 								<settings.filterAssociations.allowedProperty.name>
 									<TCEforms>
-											<label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterAssociations.allowedProperty.name</label>
+											<label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterAssociations.allowedProperty.name</label>
 											<config>
 													<type>check</type>
 											</config>
@@ -241,7 +241,7 @@
 
 								<settings.filterAssociations.allowedProperty.categoryid>
 									<TCEforms>
-											<label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterAssociations.allowedProperty.categoryid</label>
+											<label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterAssociations.allowedProperty.categoryid</label>
 											<config>
 													<type>check</type>
 											</config>
@@ -250,7 +250,7 @@
 
 								<settings.filterAssociations.allowedProperty.repertoireid>
 									<TCEforms>
-											<label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterAssociations.allowedProperty.repertoireid</label>
+											<label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterAssociations.allowedProperty.repertoireid</label>
 											<config>
 													<type>check</type>
 											</config>
@@ -259,7 +259,7 @@
 
 								<settings.filterAssociations.allowedProperty.location>
 									<TCEforms>
-											<label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterAssociations.allowedProperty.location</label>
+											<label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterAssociations.allowedProperty.location</label>
 											<config>
 													<type>check</type>
 											</config>
@@ -273,7 +273,7 @@
 		<FilterAnnouncements>
 				<ROOT>
 						<TCEforms>
-								<sheetTitle>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterAnnouncements.tabTitle</sheetTitle>
+								<sheetTitle>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterAnnouncements.tabTitle</sheetTitle>
 								<displayCond>FIELD:General.switchableControllerActions:IN:Association->listAssociations;Association->listSubAssociations;Association->detailAssociation;Association->detailFunctionary;Association->detailAnnouncement;Association->detailEvent;Association->filterAssociations;Association->listAnnouncements;Association->filterAnnouncements;Association->listEvents;Association->filterEvents;Association->listFunctionaries;Association->filterFunctionaries,Announcement->listAnnouncements;Announcement->detailAnnouncement;Announcement->filterAnnouncements,AnnouncementStatic->listAnnouncements</displayCond>
 						</TCEforms>
 						<type>array</type>
@@ -281,7 +281,7 @@
 								<settings.filterAnnouncements.allowedProperty.text>
 									<TCEforms>
 											<displayCond>FIELD:General.switchableControllerActions:!IN:AnnouncementStatic->listAnnouncements</displayCond>
-											<label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterAnnouncements.allowedProperty.text</label>
+											<label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterAnnouncements.allowedProperty.text</label>
 											<config>
 													<type>check</type>
 											</config>
@@ -291,7 +291,7 @@
 								<settings.filterAnnouncements.allowedProperty.startDate>
 									<TCEforms>
 											<displayCond>FIELD:General.switchableControllerActions:!IN:AnnouncementStatic->listAnnouncements</displayCond>
-											<label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterAnnouncements.allowedProperty.startDate</label>
+											<label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterAnnouncements.allowedProperty.startDate</label>
 											<config>
 													<type>check</type>
 											</config>
@@ -301,7 +301,7 @@
 								<settings.filterAnnouncements.allowedProperty.endDate>
 									<TCEforms>
 											<displayCond>FIELD:General.switchableControllerActions:!IN:AnnouncementStatic->listAnnouncements</displayCond>
-											<label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterAnnouncements.allowedProperty.endDate</label>
+											<label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterAnnouncements.allowedProperty.endDate</label>
 											<config>
 													<type>check</type>
 											</config>
@@ -311,7 +311,7 @@
 								<settings.filterAnnouncements.allowedProperty.zipStart>
 									<TCEforms>
 											<displayCond>FIELD:General.switchableControllerActions:!IN:AnnouncementStatic->listAnnouncements</displayCond>
-											<label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterAnnouncements.allowedProperty.zipStart</label>
+											<label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterAnnouncements.allowedProperty.zipStart</label>
 											<config>
 													<type>check</type>
 											</config>
@@ -321,7 +321,7 @@
 								<settings.filterAnnouncements.allowedProperty.zipEnd>
 									<TCEforms>
 											<displayCond>FIELD:General.switchableControllerActions:!IN:AnnouncementStatic->listAnnouncements</displayCond>
-											<label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterAnnouncements.allowedProperty.zipEnd</label>
+											<label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterAnnouncements.allowedProperty.zipEnd</label>
 											<config>
 													<type>check</type>
 											</config>
@@ -331,7 +331,7 @@
 								<settings.filterAnnouncements.allowedProperty.location>
 									<TCEforms>
 											<displayCond>FIELD:General.switchableControllerActions:!IN:AnnouncementStatic->listAnnouncements</displayCond>
-											<label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterAnnouncements.allowedProperty.location</label>
+											<label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterAnnouncements.allowedProperty.location</label>
 											<config>
 													<type>check</type>
 											</config>
@@ -341,7 +341,7 @@
 								<settings.filterAnnouncements.allowedProperty.childs>
 									<TCEforms>
 											<displayCond>FIELD:General.switchableControllerActions:!IN:AnnouncementStatic->listAnnouncements</displayCond>
-											<label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterAnnouncements.allowedProperty.childs</label>
+											<label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterAnnouncements.allowedProperty.childs</label>
 											<config>
 													<type>check</type>
 											</config>
@@ -350,7 +350,7 @@
 
 								<settings.filterAnnouncements.defaultValue.startDate>
 									<TCEforms>
-											<label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterAnnouncements.defaultValue.startDate</label>
+											<label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterAnnouncements.defaultValue.startDate</label>
 											<config>
 													<type>check</type>
 											</config>
@@ -359,21 +359,21 @@
 
 								<settings.filterAnnouncements.defaultValue.childs>
 									<TCEforms>
-											<label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterAnnouncements.defaultValue.childs</label>
+											<label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterAnnouncements.defaultValue.childs</label>
 											<config>
 													<type>radio</type>
 													<default>2</default>
 													<items>
 														<numIndex index="0">
-															<numIndex index="0">LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterAnnouncements.defaultValue.childs.current_and_sub</numIndex>
+															<numIndex index="0">LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterAnnouncements.defaultValue.childs.current_and_sub</numIndex>
 															<numIndex index="1">2</numIndex>
 														</numIndex>
 														<numIndex index="1">
-															<numIndex index="0">LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterAnnouncements.defaultValue.childs.current</numIndex>
+															<numIndex index="0">LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterAnnouncements.defaultValue.childs.current</numIndex>
 															<numIndex index="1">0</numIndex>
 														</numIndex>
 														<numIndex index="2">
-															<numIndex index="0">LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterAnnouncements.defaultValue.childs.sub</numIndex>
+															<numIndex index="0">LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterAnnouncements.defaultValue.childs.sub</numIndex>
 															<numIndex index="1">1</numIndex>
 														</numIndex>
 													</items>
@@ -388,7 +388,7 @@
 		<FilterEvents>
 				<ROOT>
 						<TCEforms>
-								<sheetTitle>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterEvents.tabTitle</sheetTitle>
+								<sheetTitle>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterEvents.tabTitle</sheetTitle>
 								<displayCond>FIELD:General.switchableControllerActions:IN:Association->listAssociations;Association->listSubAssociations;Association->detailAssociation;Association->detailFunctionary;Association->detailAnnouncement;Association->detailEvent;Association->filterAssociations;Association->listAnnouncements;Association->filterAnnouncements;Association->listEvents;Association->filterEvents;Association->listFunctionaries;Association->filterFunctionaries,Event->listEvents;Event->detailEvent;Event->filterEvents,EventStatic->listEvents</displayCond>
 						</TCEforms>
 						<type>array</type>
@@ -396,7 +396,7 @@
 								<settings.filterEvents.allowedProperty.text>
 									<TCEforms>
 											<displayCond>FIELD:General.switchableControllerActions:!IN:EventStatic->listEvents</displayCond>
-											<label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterEvents.allowedProperty.text</label>
+											<label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterEvents.allowedProperty.text</label>
 											<config>
 													<type>check</type>
 											</config>
@@ -406,7 +406,7 @@
 								<settings.filterEvents.allowedProperty.startDate>
 									<TCEforms>
 											<displayCond>FIELD:General.switchableControllerActions:!IN:EventStatic->listEvents</displayCond>
-											<label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterEvents.allowedProperty.startDate</label>
+											<label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterEvents.allowedProperty.startDate</label>
 											<config>
 													<type>check</type>
 											</config>
@@ -416,7 +416,7 @@
 								<settings.filterEvents.allowedProperty.endDate>
 									<TCEforms>
 											<displayCond>FIELD:General.switchableControllerActions:!IN:EventStatic->listEvents</displayCond>
-											<label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterEvents.allowedProperty.endDate</label>
+											<label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterEvents.allowedProperty.endDate</label>
 											<config>
 													<type>check</type>
 											</config>
@@ -426,7 +426,7 @@
 								<settings.filterEvents.allowedProperty.zipStart>
 									<TCEforms>
 											<displayCond>FIELD:General.switchableControllerActions:!IN:EventStatic->listEvents</displayCond>
-											<label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterEvents.allowedProperty.zipStart</label>
+											<label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterEvents.allowedProperty.zipStart</label>
 											<config>
 													<type>check</type>
 											</config>
@@ -436,7 +436,7 @@
 								<settings.filterEvents.allowedProperty.zipEnd>
 									<TCEforms>
 											<displayCond>FIELD:General.switchableControllerActions:!IN:EventStatic->listEvents</displayCond>
-											<label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterEvents.allowedProperty.zipEnd</label>
+											<label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterEvents.allowedProperty.zipEnd</label>
 											<config>
 													<type>check</type>
 											</config>
@@ -446,7 +446,7 @@
 								<settings.filterEvents.allowedProperty.location>
 									<TCEforms>
 											<displayCond>FIELD:General.switchableControllerActions:!IN:EventStatic->listEvents</displayCond>
-											<label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterEvents.allowedProperty.location</label>
+											<label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterEvents.allowedProperty.location</label>
 											<config>
 													<type>check</type>
 											</config>
@@ -456,7 +456,7 @@
 								<settings.filterEvents.allowedProperty.eventtypeid>
 									<TCEforms>
 											<displayCond>FIELD:General.switchableControllerActions:!IN:EventStatic->listEvents</displayCond>
-											<label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterEvents.allowedProperty.eventtypeid</label>
+											<label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterEvents.allowedProperty.eventtypeid</label>
 											<config>
 													<type>check</type>
 											</config>
@@ -466,7 +466,7 @@
 								<settings.filterEvents.allowedProperty.childs>
 									<TCEforms>
 											<displayCond>FIELD:General.switchableControllerActions:!IN:EventStatic->listEvents</displayCond>
-											<label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterEvents.allowedProperty.childs</label>
+											<label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterEvents.allowedProperty.childs</label>
 											<config>
 													<type>check</type>
 											</config>
@@ -476,7 +476,7 @@
 								<settings.filterEvents.allowedProperty.private_events>
 									<TCEforms>
 											<displayCond>FIELD:General.switchableControllerActions:!IN:EventStatic->listEvents</displayCond>
-											<label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterEvents.allowedProperty.private_events</label>
+											<label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterEvents.allowedProperty.private_events</label>
 											<config>
 													<type>check</type>
 											</config>
@@ -485,7 +485,7 @@
 
 								<settings.filterEvents.defaultValue.startDate>
 									<TCEforms>
-											<label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterEvents.defaultValue.startDate</label>
+											<label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterEvents.defaultValue.startDate</label>
 											<config>
 													<type>check</type>
 											</config>
@@ -494,21 +494,21 @@
 
 								<settings.filterEvents.defaultValue.childs>
 									<TCEforms>
-											<label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterEvents.defaultValue.childs</label>
+											<label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterEvents.defaultValue.childs</label>
 											<config>
 													<type>radio</type>
 													<default>2</default>
 													<items>
 														<numIndex index="0">
-															<numIndex index="0">LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterEvents.defaultValue.childs.current_and_sub</numIndex>
+															<numIndex index="0">LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterEvents.defaultValue.childs.current_and_sub</numIndex>
 															<numIndex index="1">2</numIndex>
 														</numIndex>
 														<numIndex index="1">
-															<numIndex index="0">LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterEvents.defaultValue.childs.current</numIndex>
+															<numIndex index="0">LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterEvents.defaultValue.childs.current</numIndex>
 															<numIndex index="1">0</numIndex>
 														</numIndex>
 														<numIndex index="2">
-															<numIndex index="0">LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterEvents.defaultValue.childs.sub</numIndex>
+															<numIndex index="0">LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterEvents.defaultValue.childs.sub</numIndex>
 															<numIndex index="1">1</numIndex>
 														</numIndex>
 													</items>
@@ -518,21 +518,21 @@
 
 								<settings.filterEvents.defaultValue.private_events>
 									<TCEforms>
-											<label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterEvents.defaultValue.private_events</label>
+											<label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterEvents.defaultValue.private_events</label>
 											<config>
 													<type>radio</type>
 													<default></default>
 													<items>
 														<numIndex index="0">
-															<numIndex index="0">LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterEvents.defaultValue.private_events.private_and_public</numIndex>
+															<numIndex index="0">LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterEvents.defaultValue.private_events.private_and_public</numIndex>
 															<numIndex index="1"></numIndex>
 														</numIndex>
 														<numIndex index="1">
-															<numIndex index="0">LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterEvents.defaultValue.private_events.private</numIndex>
+															<numIndex index="0">LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterEvents.defaultValue.private_events.private</numIndex>
 															<numIndex index="1">1</numIndex>
 														</numIndex>
 														<numIndex index="2">
-															<numIndex index="0">LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterEvents.defaultValue.private_events.public</numIndex>
+															<numIndex index="0">LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterEvents.defaultValue.private_events.public</numIndex>
 															<numIndex index="1">0</numIndex>
 														</numIndex>
 													</items>
@@ -547,14 +547,14 @@
 		<FilterFunctionaries>
 				<ROOT>
 						<TCEforms>
-								<sheetTitle>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterFunctionaries.tabTitle</sheetTitle>
+								<sheetTitle>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterFunctionaries.tabTitle</sheetTitle>
 								<displayCond>FIELD:General.switchableControllerActions:IN:Association->listAssociations;Association->listSubAssociations;Association->detailAssociation;Association->detailFunctionary;Association->detailAnnouncement;Association->detailEvent;Association->filterAssociations;Association->listAnnouncements;Association->filterAnnouncements;Association->listEvents;Association->filterEvents;Association->listFunctionaries;Association->filterFunctionaries</displayCond>
 						</TCEforms>
 						<type>array</type>
 						<el>
 								<settings.filterFunctionaries.allowedProperty.role>
 									<TCEforms>
-											<label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterFunctionaries.allowedProperty.role</label>
+											<label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterFunctionaries.allowedProperty.role</label>
 											<config>
 													<type>check</type>
 											</config>
@@ -563,7 +563,7 @@
 
 								<settings.filterFunctionaries.defaultValue.role>
 									<TCEforms>
-											<label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterFunctionaries.defaultValue.role</label>
+											<label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.filterFunctionaries.defaultValue.role</label>
 											<config>
 												<type>input</type>
 												<size>80</size>
@@ -578,14 +578,14 @@
 		<template>
 			<ROOT>
 				<TCEforms>
-					<sheetTitle>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.template.tabTitle</sheetTitle>
+					<sheetTitle>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.template.tabTitle</sheetTitle>
 				</TCEforms>
 				<type>array</type>
 				<el>
 
 					<settings.template.layout>
 						<TCEforms>
-							<label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.template.layout</label>
+							<label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.template.layout</label>
 							<config>
 								<type>select</type>
 								<itemsProcFunc>RGU\Dvoconnector\Service\PluginConfigurationService->user_templateLayout</itemsProcFunc>
@@ -607,14 +607,14 @@
 		<additional>
 			<ROOT>
 				<TCEforms>
-					<sheetTitle>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.additional.tabTitle</sheetTitle>
+					<sheetTitle>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.additional.tabTitle</sheetTitle>
 				</TCEforms>
 				<type>array</type>
 				<el>
 
 					<settings.additional.detailPid>
 						<TCEforms>
-							<label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.additional.detailPid</label>
+							<label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.additional.detailPid</label>
 							<config>
 								<type>group</type>
 								<internal_type>db</internal_type>
@@ -628,7 +628,7 @@
 
 					<settings.additional.listPid>
 						<TCEforms>
-							<label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.additional.listPid</label>
+							<label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.additional.listPid</label>
 							<config>
 								<type>group</type>
 								<internal_type>db</internal_type>
@@ -642,7 +642,7 @@
 
 					<settings.additional.linkdvo>
 						<TCEforms>
-							<label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.additional.linkdvo</label>
+							<label>LLL:EXT:dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.additional.linkdvo</label>
 							<config>
 								<type>input</type>
 								<size>80</size>
