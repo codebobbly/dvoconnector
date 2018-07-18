@@ -95,11 +95,7 @@
                       <minitems>1</minitems>
                       <maxitems>1</maxitems>
                       <size>10</size>
-<<<<<<< HEAD
                       <itemsProcFunc>RGU\Dvoconnector\Service\PluginConfigurationService->addConfigAssociation</itemsProcFunc>
-=======
-                      <itemsProcFunc>RG\Rgdvoconnector\Service\PluginConfigurationService->addConfigAssociation</itemsProcFunc>
->>>>>>> parent of 8432775... Change Namespace
                       <enableMultiSelectFilterTextfield>true</enableMultiSelectFilterTextfield>
                   </config>
               </TCEforms>
@@ -120,11 +116,7 @@
                       <minitems>1</minitems>
                       <maxitems>1</maxitems>
                       <size>5</size>
-<<<<<<< HEAD
                       <itemsProcFunc>RGU\Dvoconnector\Service\PluginConfigurationService->addConfigEvent</itemsProcFunc>
-=======
-                      <itemsProcFunc>RG\Rgdvoconnector\Service\PluginConfigurationService->addConfigEvent</itemsProcFunc>
->>>>>>> parent of 8432775... Change Namespace
                       <enableMultiSelectFilterTextfield>true</enableMultiSelectFilterTextfield>
                   </config>
               </TCEforms>
@@ -145,11 +137,7 @@
                       <minitems>1</minitems>
                       <maxitems>1</maxitems>
                       <size>5</size>
-<<<<<<< HEAD
                       <itemsProcFunc>RGU\Dvoconnector\Service\PluginConfigurationService->addConfigAnnouncement</itemsProcFunc>
-=======
-                      <itemsProcFunc>RG\Rgdvoconnector\Service\PluginConfigurationService->addConfigAnnouncement</itemsProcFunc>
->>>>>>> parent of 8432775... Change Namespace
                       <enableMultiSelectFilterTextfield>true</enableMultiSelectFilterTextfield>
                   </config>
               </TCEforms>
@@ -170,11 +158,7 @@
                       <minitems>1</minitems>
                       <maxitems>1</maxitems>
                       <size>5</size>
-<<<<<<< HEAD
                       <itemsProcFunc>RGU\Dvoconnector\Service\PluginConfigurationService->addConfigFunctionary</itemsProcFunc>
-=======
-                      <itemsProcFunc>RG\Rgdvoconnector\Service\PluginConfigurationService->addConfigFunctionary</itemsProcFunc>
->>>>>>> parent of 8432775... Change Namespace
                       <enableMultiSelectFilterTextfield>true</enableMultiSelectFilterTextfield>
                   </config>
               </TCEforms>
@@ -604,11 +588,7 @@
 							<label>LLL:EXT:Dvoconnector/Resources/Private/Language/locallang_be.xlf:flexforms.settings.template.layout</label>
 							<config>
 								<type>select</type>
-<<<<<<< HEAD
 								<itemsProcFunc>RGU\Dvoconnector\Service\PluginConfigurationService->user_templateLayout</itemsProcFunc>
-=======
-								<itemsProcFunc>RG\Rgdvoconnector\Service\PluginConfigurationService->user_templateLayout</itemsProcFunc>
->>>>>>> parent of 8432775... Change Namespace
 								<renderType>selectSingle</renderType>
 								<items>
 									<numIndex index="0" type="array">

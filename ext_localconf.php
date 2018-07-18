@@ -4,7 +4,7 @@ defined('TYPO3_MODE') or die();
 $boot = function () {
 
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-		'RG.Dvoconnector',
+		'RGU.Dvoconnector',
 		'Pi1',
 		array(
 			'Association' => 'index,detailEvent,detailAnnouncement,detailFunctionary,detailAssociation,filterEvents,listEvents,filterAnnouncements,listAnnouncements,filterFunctionaries,listFunctionaries,filterAssociations,listAssociations,listSubAssociations',

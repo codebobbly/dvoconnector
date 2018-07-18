@@ -1,16 +1,9 @@
 <?php
 
-<<<<<<< HEAD
 namespace RGU\Dvoconnector\Service\Url;
 
 use RGU\Dvoconnector\Domain\Filter\AssociationsFilter;
 use RGU\Dvoconnector\Domain\Association;
-=======
-namespace RG\Rgdvoconnector\Service\Url;
-
-use RG\Rgdvoconnector\Domain\Filter\AssociationsFilter;
-use RG\Rgdvoconnector\Domain\Association;
->>>>>>> parent of 8432775... Change Namespace
 
 /**
  * RealUrl.

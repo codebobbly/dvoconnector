@@ -1,10 +1,6 @@
 <?php
 
-<<<<<<< HEAD
 namespace RGU\Dvoconnector\Service;
-=======
-namespace RG\Rgdvoconnector\Service;
->>>>>>> parent of 8432775... Change Namespace
 
 use TYPO3\CMS\Core\Cache\CacheManager;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -45,22 +41,14 @@ class GenericApiService implements \TYPO3\CMS\Core\SingletonInterface {
 	* @return string
 	*/
   public function getBaseApiUrl() {
-<<<<<<< HEAD
 		return \RGU\Dvoconnector\Utility\EmConfiguration::getSettings()->getApiUrl();
-=======
-		return \RG\Rgdvoconnector\Utility\EmConfiguration::getSettings()->getApiUrl();
->>>>>>> parent of 8432775... Change Namespace
 	}
 
 	/**
 	* Queries XML data from server or cache
 	*
 	* @param string API URL
-<<<<<<< HEAD
 	* @param \RGU\Dvoconnector\Service\ApiServiceFilter $apiServiceFilter
-=======
-	* @param \RG\Rgdvoconnector\Service\ApiServiceFilter $apiServiceFilter
->>>>>>> parent of 8432775... Change Namespace
 	*
 	* @return object \SimpleXMLElement
 	*/
@@ -83,11 +71,7 @@ class GenericApiService implements \TYPO3\CMS\Core\SingletonInterface {
 
       // additional headers
       $headers = array(
-<<<<<<< HEAD
           'User-Agent: ' . \RGU\Dvoconnector\Utility\EmConfiguration::getSettings()->getHttpUserAgent(),
-=======
-          'User-Agent: ' . \RG\Rgdvoconnector\Utility\EmConfiguration::getSettings()->getHttpUserAgent(),
->>>>>>> parent of 8432775... Change Namespace
       );
       if (!$useCache) {
           $headers[] = 'Cache-Control: no-cache';
@@ -112,11 +96,7 @@ class GenericApiService implements \TYPO3\CMS\Core\SingletonInterface {
         $maxAge = preg_replace('/.*Cache-Control: .*max-age=(\d+).*/sm', '${1}', $header);
 
         // cache response
-<<<<<<< HEAD
         $this->writeCache(md5($url), $body, ($maxAge == '') ? \RGU\Dvoconnector\Utility\EmConfiguration::getSettings()->getCachetime() : (int)$maxAge);
-=======
-        $this->writeCache(md5($url), $body, ($maxAge == '') ? \RG\Rgdvoconnector\Utility\EmConfiguration::getSettings()->getCachetime() : (int)$maxAge);
->>>>>>> parent of 8432775... Change Namespace
 
       }
 		}	elseif($useCache && $this->cacheManager->has(md5($url)) == true) {

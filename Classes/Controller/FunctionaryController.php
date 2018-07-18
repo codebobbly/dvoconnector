@@ -1,9 +1,5 @@
 <?php
-<<<<<<< HEAD
 namespace RGU\Dvoconnector\Controller;
-=======
-namespace RG\Rgdvoconnector\Controller;
->>>>>>> parent of 8432775... Change Namespace
 
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 

@@ -1,9 +1,5 @@
 <?php
-<<<<<<< HEAD
 namespace RGU\Dvoconnector\Property\TypeConverter;
-=======
-namespace RG\Rgdvoconnector\Property\TypeConverter;
->>>>>>> parent of 8432775... Change Namespace
 
 class ObjectConverter extends \TYPO3\CMS\Extbase\Property\TypeConverter\ObjectConverter {
 
@@ -32,11 +28,7 @@ class ObjectConverter extends \TYPO3\CMS\Extbase\Property\TypeConverter\ObjectCo
   public function convertFrom($source, $targetType, array $convertedChildProperties = [], \TYPO3\CMS\Extbase\Property\PropertyMappingConfigurationInterface $configuration = null) {
 
     // Get Object from Configuration
-<<<<<<< HEAD
     $this->rgobject = $configuration->getConfigurationValue(\RGU\Dvoconnector\Property\TypeConverter\ObjectConverter::class, self::CONFIGURATION_OBJECT);
-=======
-    $this->rgobject = $configuration->getConfigurationValue(\RG\Rgdvoconnector\Property\TypeConverter\ObjectConverter::class, self::CONFIGURATION_OBJECT);
->>>>>>> parent of 8432775... Change Namespace
 
     $result = parent::convertFrom($source, $targetType, $convertedChildProperties, $configuration);
 

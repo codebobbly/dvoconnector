@@ -1,10 +1,6 @@
 <?php
 
-<<<<<<< HEAD
 namespace RGU\Dvoconnector\Service;
-=======
-namespace RG\Rgdvoconnector\Service;
->>>>>>> parent of 8432775... Change Namespace
 
 use TYPO3\CMS\Core\Cache\CacheManager;
 use TYPO3\CMS\Core\Utility\GeneralUtility;

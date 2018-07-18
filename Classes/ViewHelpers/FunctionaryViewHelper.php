@@ -1,18 +1,10 @@
 <?php
 
-<<<<<<< HEAD
 namespace RGU\Dvoconnector\ViewHelpers;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use RGU\Dvoconnector\Domain\Filter\AssociationFilter;
 use RGU\Dvoconnector\Domain\Filter\FunctionaryFilter;
-=======
-namespace RG\Rgdvoconnector\ViewHelpers;
-
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use RG\Rgdvoconnector\Domain\Filter\AssociationFilter;
-use RG\Rgdvoconnector\Domain\Filter\FunctionaryFilter;
->>>>>>> parent of 8432775... Change Namespace
 
 class FunctionaryViewHelper extends AbstractDvoContextApiViewHelper {
 
@@ -38,11 +30,7 @@ class FunctionaryViewHelper extends AbstractDvoContextApiViewHelper {
 
   /**
    * functionaryRepository
-<<<<<<< HEAD
    * @var \RGU\Dvoconnector\Domain\Repository\FunctionaryRepository
-=======
-   * @var \RG\Rgdvoconnector\Domain\Repository\FunctionaryRepository
->>>>>>> parent of 8432775... Change Namespace
    * @inject
    */
   protected $functionaryRepository;

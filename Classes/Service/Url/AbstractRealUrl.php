@@ -1,10 +1,6 @@
 <?php
 
-<<<<<<< HEAD
 namespace RGU\Dvoconnector\Service\Url;
-=======
-namespace RG\Rgdvoconnector\Service\Url;
->>>>>>> parent of 8432775... Change Namespace
 
 use DmitryDulepov\Realurl\Configuration\ConfigurationReader;
 use DmitryDulepov\Realurl\Utility;
@@ -30,11 +26,7 @@ class AbstractRealUrl implements SingletonInterface {
 
   /**
    * associationRepository
-<<<<<<< HEAD
    * @var RGU\Dvoconnector\Domain\Repository\AssociationRepository
-=======
-   * @var RG\Rgdvoconnector\Domain\Repository\AssociationRepository
->>>>>>> parent of 8432775... Change Namespace
    * @inject
   */
   protected $associationRepository;
@@ -42,11 +34,7 @@ class AbstractRealUrl implements SingletonInterface {
   public function __construct() {
 
     $this->objectManager = GeneralUtility::makeInstance(ObjectManager::class);
-<<<<<<< HEAD
     $this->associationRepository = $this->objectManager->get(\RGU\Dvoconnector\Domain\Repository\AssociationRepository::class);
-=======
-    $this->associationRepository = $this->objectManager->get(\RG\Rgdvoconnector\Domain\Repository\AssociationRepository::class);
->>>>>>> parent of 8432775... Change Namespace
 
   }
 

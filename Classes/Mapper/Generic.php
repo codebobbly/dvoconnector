@@ -1,10 +1,6 @@
 <?php
 
-<<<<<<< HEAD
 namespace RGU\Dvoconnector\Mapper;
-=======
-namespace RG\Rgdvoconnector\Mapper;
->>>>>>> parent of 8432775... Change Namespace
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use \TYPO3\CMS\Extbase\DomainObject\AbstractEntity;

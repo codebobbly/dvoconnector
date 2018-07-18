@@ -1,16 +1,9 @@
 <?php
 
-<<<<<<< HEAD
 namespace RGU\Dvoconnector\Mapper;
 
 use \RGU\Dvoconnector\Mapper\Generic;
 use \RGU\Dvoconnector\Domain\Model\Association;
-=======
-namespace RG\Rgdvoconnector\Mapper;
-
-use \RG\Rgdvoconnector\Mapper\Generic;
-use \RG\Rgdvoconnector\Domain\Model\Association;
->>>>>>> parent of 8432775... Change Namespace
 
 class Event extends Generic {
 

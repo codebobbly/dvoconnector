@@ -1,18 +1,10 @@
 <?php
 
-<<<<<<< HEAD
 namespace RGU\Dvoconnector\ViewHelpers;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use RGU\Dvoconnector\Domain\Filter\AssociationFilter;
 use RGU\Dvoconnector\Domain\Filter\AnnouncementFilter;
-=======
-namespace RG\Rgdvoconnector\ViewHelpers;
-
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use RG\Rgdvoconnector\Domain\Filter\AssociationFilter;
-use RG\Rgdvoconnector\Domain\Filter\AnnouncementFilter;
->>>>>>> parent of 8432775... Change Namespace
 
 class AnnouncementViewHelper extends AbstractDvoContextApiViewHelper {
 
@@ -38,11 +30,7 @@ class AnnouncementViewHelper extends AbstractDvoContextApiViewHelper {
 
   /**
    * announcementRepository
-<<<<<<< HEAD
    * @var \RGU\Dvoconnector\Domain\Repository\AnnouncementRepository
-=======
-   * @var \RG\Rgdvoconnector\Domain\Repository\AnnouncementRepository
->>>>>>> parent of 8432775... Change Namespace
    * @inject
    */
   protected $announcementRepository;

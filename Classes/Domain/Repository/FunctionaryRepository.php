@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
 namespace RGU\Dvoconnector\Domain\Repository;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -13,21 +12,6 @@ class FunctionaryRepository extends \RGU\Dvoconnector\Domain\Repository\GenericR
 	/**
 	 * $associationsApiService
 	 * @var \RGU\Dvoconnector\Service\AssociationsApiService
-=======
-namespace RG\Rgdvoconnector\Domain\Repository;
-
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use \RG\Rgdvoconnector\Domain\Model\Association;
-use \RG\Rgdvoconnector\Domain\Model\Functionary;
-use \RG\Rgdvoconnector\Domain\Model\Functionaries;
-use \RG\Rgdvoconnector\Service\AssociationsApiService;
-
-class FunctionaryRepository extends \RG\Rgdvoconnector\Domain\Repository\GenericRepository {
-
-	/**
-	 * $associationsApiService
-	 * @var \RG\Rgdvoconnector\Service\AssociationsApiService
->>>>>>> parent of 8432775... Change Namespace
 	 * @inject
  	*/
 	protected $associationsApiService;
@@ -59,11 +43,7 @@ class FunctionaryRepository extends \RG\Rgdvoconnector\Domain\Repository\Generic
 
 		$functionary = new Functionary();
 
-<<<<<<< HEAD
 		$mapper = new \RGU\Dvoconnector\Mapper\Functionary($xmlQuery);
-=======
-		$mapper = new \RG\Rgdvoconnector\Mapper\Functionary($xmlQuery);
->>>>>>> parent of 8432775... Change Namespace
 		$mapper->mapToAbstractEntity($functionary);
 
 		return $this->completeEntity($functionary);
@@ -73,15 +53,9 @@ class FunctionaryRepository extends \RG\Rgdvoconnector\Domain\Repository\Generic
 	/**
 	 * return a functionary
 	 *
-<<<<<<< HEAD
 	 * @param \RGU\Dvoconnector\Domain\Model\Association $association
 	 * @param string functionary id $eid
 	 * @param \RGU\Dvoconnector\Domain\Filter\FunctionaryFilter $functionaryFilter
-=======
-	 * @param \RG\Rgdvoconnector\Domain\Model\Association $association
-	 * @param string functionary id $eid
-	 * @param \RG\Rgdvoconnector\Domain\Filter\FunctionaryFilter $functionaryFilter
->>>>>>> parent of 8432775... Change Namespace
 	 *
 	 * @return Functionary
  	*/
@@ -91,11 +65,7 @@ class FunctionaryRepository extends \RG\Rgdvoconnector\Domain\Repository\Generic
 
 		$functionary = new Functionary();
 
-<<<<<<< HEAD
 		$mapper = new \RGU\Dvoconnector\Mapper\Functionary($xmlQuery);
-=======
-		$mapper = new \RG\Rgdvoconnector\Mapper\Functionary($xmlQuery);
->>>>>>> parent of 8432775... Change Namespace
 		$mapper->mapToAbstractEntity($functionary);
 
 		return $this->completeEntity($functionary);
@@ -105,13 +75,8 @@ class FunctionaryRepository extends \RG\Rgdvoconnector\Domain\Repository\Generic
 	/**
 	 * return all functionarys
 	 *
-<<<<<<< HEAD
 	 * @param \RGU\Dvoconnector\Domain\Model\Association $association
 	 * @param \RGU\Dvoconnector\Domain\Filter\FunctionariesFilter $functionariesFilter
-=======
-	 * @param \RG\Rgdvoconnector\Domain\Model\Association $association
-	 * @param \RG\Rgdvoconnector\Domain\Filter\FunctionariesFilter $functionariesFilter
->>>>>>> parent of 8432775... Change Namespace
 	 *
 	 * @return Functionaries
  	*/
@@ -121,11 +86,7 @@ class FunctionaryRepository extends \RG\Rgdvoconnector\Domain\Repository\Generic
 
 		$functionaries = new Functionaries();
 
-<<<<<<< HEAD
 		$mapper = new \RGU\Dvoconnector\Mapper\Functionaries($xmlQuery);
-=======
-		$mapper = new \RG\Rgdvoconnector\Mapper\Functionaries($xmlQuery);
->>>>>>> parent of 8432775... Change Namespace
 		$mapper->mapToAbstractEntity($functionaries);
 
 		return $this->completeEntity($functionaries);
@@ -135,11 +96,7 @@ class FunctionaryRepository extends \RG\Rgdvoconnector\Domain\Repository\Generic
 	/**
 	 * return all functionarys
 	 *
-<<<<<<< HEAD
 	 * @param \RGU\Dvoconnector\Domain\Filter\FunctionariesFilter $functionariesFilter
-=======
-	 * @param \RG\Rgdvoconnector\Domain\Filter\FunctionariesFilter $functionariesFilter
->>>>>>> parent of 8432775... Change Namespace
 	 *
 	 * @return Functionaries
  	*/
@@ -151,11 +108,7 @@ class FunctionaryRepository extends \RG\Rgdvoconnector\Domain\Repository\Generic
 
 		foreach ($arrayWithFunctionaries as $xmlQuery) {
 
-<<<<<<< HEAD
 				$mapper = new \RGU\Dvoconnector\Mapper\Functionaries($xmlQuery);
-=======
-				$mapper = new \RG\Rgdvoconnector\Mapper\Functionaries($xmlQuery);
->>>>>>> parent of 8432775... Change Namespace
 				$mapper->mapToAbstractEntity($functionaries);
 
 		}

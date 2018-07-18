@@ -1,10 +1,6 @@
 <?php
 
-<<<<<<< HEAD
 namespace RGU\Dvoconnector\Service;
-=======
-namespace RG\Rgdvoconnector\Service;
->>>>>>> parent of 8432775... Change Namespace
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\SingletonInterface;
@@ -105,11 +101,7 @@ class ImageService implements SingletonInterface
           $currentFile = $storage->getFile($cacheFile);
           if($currentFile->getSha1() == sha1($imageContent)) {
 
-<<<<<<< HEAD
             $this->cacheManager->set(md5($cacheFile), $currentFile->getSha1(), [], \RGU\Dvoconnector\Utility\EmConfiguration::getSettings()->getCachetime());
-=======
-            $this->cacheManager->set(md5($cacheFile), $currentFile->getSha1(), [], \RG\Rgdvoconnector\Utility\EmConfiguration::getSettings()->getCachetime());
->>>>>>> parent of 8432775... Change Namespace
             return $currentFile;
 
           }
@@ -145,11 +137,7 @@ class ImageService implements SingletonInterface
      */
     protected function supports($file)
     {
-<<<<<<< HEAD
         return parse_url($file, PHP_URL_HOST) == parse_url(\RGU\Dvoconnector\Utility\EmConfiguration::getSettings()->getApiUrl(), PHP_URL_HOST) ? true : false;
-=======
-        return parse_url($file, PHP_URL_HOST) == parse_url(\RG\Rgdvoconnector\Utility\EmConfiguration::getSettings()->getApiUrl(), PHP_URL_HOST) ? true : false;
->>>>>>> parent of 8432775... Change Namespace
     }
 
     /**

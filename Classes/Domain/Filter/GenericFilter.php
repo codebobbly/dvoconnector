@@ -1,14 +1,8 @@
 <?php
 
-<<<<<<< HEAD
 namespace RGU\Dvoconnector\Domain\Filter;
 
 class GenericFilter implements \RGU\Dvoconnector\Service\ApiServiceFilter  {
-=======
-namespace RG\Rgdvoconnector\Domain\Filter;
-
-class GenericFilter implements \RG\Rgdvoconnector\Service\ApiServiceFilter  {
->>>>>>> parent of 8432775... Change Namespace
 
 	/**
 	 * returns the array of parameters

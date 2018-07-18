@@ -1,18 +1,10 @@
 <?php
 
-<<<<<<< HEAD
 namespace RGU\Dvoconnector\ViewHelpers;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use RGU\Dvoconnector\Domain\Filter\AssociationFilter;
 use RGU\Dvoconnector\Domain\Filter\EventFilter;
-=======
-namespace RG\Rgdvoconnector\ViewHelpers;
-
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use RG\Rgdvoconnector\Domain\Filter\AssociationFilter;
-use RG\Rgdvoconnector\Domain\Filter\EventFilter;
->>>>>>> parent of 8432775... Change Namespace
 
 class AssociationViewHelper extends AbstractDvoContextApiViewHelper {
 

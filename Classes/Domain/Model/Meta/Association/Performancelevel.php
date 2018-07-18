@@ -1,9 +1,5 @@
 <?php
-<<<<<<< HEAD
 namespace RGU\Dvoconnector\Domain\Model\Meta\Association;
-=======
-namespace RG\Rgdvoconnector\Domain\Model\Meta\Association;
->>>>>>> parent of 8432775... Change Namespace
 /** copyright notice **/
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 

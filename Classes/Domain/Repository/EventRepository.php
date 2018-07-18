@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
 namespace RGU\Dvoconnector\Domain\Repository;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -13,32 +12,13 @@ class EventRepository extends \RGU\Dvoconnector\Domain\Repository\GenericReposit
 	/**
 	 * associationRepository
 	 * @var RGU\Dvoconnector\Domain\Repository\AssociationRepository
-=======
-namespace RG\Rgdvoconnector\Domain\Repository;
-
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use \RG\Rgdvoconnector\Domain\Model\Association;
-use \RG\Rgdvoconnector\Domain\Model\Event;
-use \RG\Rgdvoconnector\Domain\Model\Events;
-use \RG\Rgdvoconnector\Service\AssociationsApiService;
-
-class EventRepository extends \RG\Rgdvoconnector\Domain\Repository\GenericRepository {
-
-	/**
-	 * associationRepository
-	 * @var RG\Rgdvoconnector\Domain\Repository\AssociationRepository
->>>>>>> parent of 8432775... Change Namespace
 	 * @inject
      */
 	protected $associationRepository;
 
 	/**
 	 * $associationsApiService
-<<<<<<< HEAD
 	 * @var \RGU\Dvoconnector\Service\AssociationsApiService
-=======
-	 * @var \RG\Rgdvoconnector\Service\AssociationsApiService
->>>>>>> parent of 8432775... Change Namespace
 	 * @inject
  	*/
 	protected $associationsApiService;
@@ -70,11 +50,7 @@ class EventRepository extends \RG\Rgdvoconnector\Domain\Repository\GenericReposi
 
 		$event = new Event();
 
-<<<<<<< HEAD
 		$mapper = new \RGU\Dvoconnector\Mapper\Event($xmlQuery);
-=======
-		$mapper = new \RG\Rgdvoconnector\Mapper\Event($xmlQuery);
->>>>>>> parent of 8432775... Change Namespace
 		$mapper->mapToAbstractEntity($event);
 
 		return $this->completeEntity($event);
@@ -84,15 +60,9 @@ class EventRepository extends \RG\Rgdvoconnector\Domain\Repository\GenericReposi
 	/**
 	 * return a event
 	 *
-<<<<<<< HEAD
 	 * @param \RGU\Dvoconnector\Domain\Model\Association $association
 	 * @param string event id $eid
 	 * @param \RGU\Dvoconnector\Domain\Filter\EventFilter $eventFilter
-=======
-	 * @param \RG\Rgdvoconnector\Domain\Model\Association $association
-	 * @param string event id $eid
-	 * @param \RG\Rgdvoconnector\Domain\Filter\EventFilter $eventFilter
->>>>>>> parent of 8432775... Change Namespace
 	 *
 	 * @return Event
  	*/
@@ -102,11 +72,7 @@ class EventRepository extends \RG\Rgdvoconnector\Domain\Repository\GenericReposi
 
 		$event = new Event();
 
-<<<<<<< HEAD
 		$mapper = new \RGU\Dvoconnector\Mapper\Event($xmlQuery);
-=======
-		$mapper = new \RG\Rgdvoconnector\Mapper\Event($xmlQuery);
->>>>>>> parent of 8432775... Change Namespace
 		$mapper->mapToAbstractEntity($event);
 
 		return $this->completeEntity($event);
@@ -116,13 +82,8 @@ class EventRepository extends \RG\Rgdvoconnector\Domain\Repository\GenericReposi
 	/**
 	 * return all events
 	 *
-<<<<<<< HEAD
 	 * @param \RGU\Dvoconnector\Domain\Model\Association $association
 	 * @param \RGU\Dvoconnector\Domain\Filter\EventsFilter $eventsFilter
-=======
-	 * @param \RG\Rgdvoconnector\Domain\Model\Association $association
-	 * @param \RG\Rgdvoconnector\Domain\Filter\EventsFilter $eventsFilter
->>>>>>> parent of 8432775... Change Namespace
 	 *
 	 * @return Events
  	*/
@@ -132,11 +93,7 @@ class EventRepository extends \RG\Rgdvoconnector\Domain\Repository\GenericReposi
 
 		$events = new Events();
 
-<<<<<<< HEAD
 		$mapper = new \RGU\Dvoconnector\Mapper\Events($xmlQuery);
-=======
-		$mapper = new \RG\Rgdvoconnector\Mapper\Events($xmlQuery);
->>>>>>> parent of 8432775... Change Namespace
 		$mapper->mapToAbstractEntity($events);
 
 		return $this->completeEntity($events);
@@ -146,11 +103,7 @@ class EventRepository extends \RG\Rgdvoconnector\Domain\Repository\GenericReposi
 	/**
 	 * return all events
 	 *
-<<<<<<< HEAD
 	 * @param \RGU\Dvoconnector\Domain\Filter\EventsFilter $eventsFilter
-=======
-	 * @param \RG\Rgdvoconnector\Domain\Filter\EventsFilter $eventsFilter
->>>>>>> parent of 8432775... Change Namespace
 	 *
 	 * @return Events
  	*/
@@ -162,11 +115,7 @@ class EventRepository extends \RG\Rgdvoconnector\Domain\Repository\GenericReposi
 
 		foreach ($arrayWithEvents as $xmlQuery) {
 
-<<<<<<< HEAD
 				$mapper = new \RGU\Dvoconnector\Mapper\Events($xmlQuery);
-=======
-				$mapper = new \RG\Rgdvoconnector\Mapper\Events($xmlQuery);
->>>>>>> parent of 8432775... Change Namespace
 				$mapper->mapToAbstractEntity($events);
 
 		}

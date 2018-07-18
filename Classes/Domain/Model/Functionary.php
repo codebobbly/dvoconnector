@@ -1,9 +1,5 @@
 <?php
-<<<<<<< HEAD
 namespace RGU\Dvoconnector\Domain\Model;
-=======
-namespace RG\Rgdvoconnector\Domain\Model;
->>>>>>> parent of 8432775... Change Namespace
 /** copyright notice **/
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
@@ -17,11 +13,7 @@ class Functionary extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
 	 * Association
-<<<<<<< HEAD
 	 * @var \RGU\Dvoconnector\Domain\Domain\Model\Association
-=======
-	 * @var \RG\Rgdvoconnector\Domain\Domain\Model\Association
->>>>>>> parent of 8432775... Change Namespace
 	 */
 	protected $association;
 
@@ -44,11 +36,7 @@ class Functionary extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $lastName;
 
 	/**
-<<<<<<< HEAD
      * @var \RGU\Dvoconnector\Domain\Domain\Model\Address
-=======
-     * @var \RG\Rgdvoconnector\Domain\Domain\Model\Address
->>>>>>> parent of 8432775... Change Namespace
      */
     protected $address;
 
@@ -124,11 +112,7 @@ class Functionary extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * sets the association attribute
 	 *
-<<<<<<< HEAD
 	 * @param \RGU\Dvoconnector\Domain\Domain\Model\Association $association
-=======
-	 * @param \RG\Rgdvoconnector\Domain\Domain\Model\Association $association
->>>>>>> parent of 8432775... Change Namespace
 	 * @return void
 	 */
 	public function setAssociation($association) {
@@ -138,11 +122,7 @@ class Functionary extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * returns the association attribute
 	 *
-<<<<<<< HEAD
 	 * @return \RGU\Dvoconnector\Domain\Domain\Model\Association
-=======
-	 * @return \RG\Rgdvoconnector\Domain\Domain\Model\Association
->>>>>>> parent of 8432775... Change Namespace
 	 */
 	public function getAssociation() {
 		return $this->association;
@@ -208,11 +188,7 @@ class Functionary extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * sets the address attribute
 	 *
-<<<<<<< HEAD
 	 * @param \RGU\Dvoconnector\Domain\Domain\Model\Address $lastName
-=======
-	 * @param \RG\Rgdvoconnector\Domain\Domain\Model\Address $lastName
->>>>>>> parent of 8432775... Change Namespace
 	 * @return void
 	 */
 	public function setAddress($address) {
@@ -222,11 +198,7 @@ class Functionary extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * returns the address attribute
 	 *
-<<<<<<< HEAD
 	 * @return \RGU\Dvoconnector\Domain\Domain\Model\Address
-=======
-	 * @return \RG\Rgdvoconnector\Domain\Domain\Model\Address
->>>>>>> parent of 8432775... Change Namespace
 	 */
 	public function getAddress() {
 		return $this->address;
@@ -391,11 +363,7 @@ class Functionary extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function getPhotoSourceFile() {
 		$objectManager = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Object\ObjectManager::class);
-<<<<<<< HEAD
 		return $objectManager->get(\RGU\Dvoconnector\Service\ImageService::class)->getCachedFile($this->getPhotoSource());
-=======
-		return $objectManager->get(\RG\Rgdvoconnector\Service\ImageService::class)->getCachedFile($this->getPhotoSource());
->>>>>>> parent of 8432775... Change Namespace
 	}
 
 }

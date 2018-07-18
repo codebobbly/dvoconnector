@@ -1,9 +1,5 @@
 <?php
-<<<<<<< HEAD
 namespace RGU\Dvoconnector\Domain\Model;
-=======
-namespace RG\Rgdvoconnector\Domain\Model;
->>>>>>> parent of 8432775... Change Namespace
 /** copyright notice **/
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
@@ -34,11 +30,7 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $description;
 
 	/**
-<<<<<<< HEAD
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RGU\Dvoconnector\Domain\Model\Association>
-=======
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RG\Rgdvoconnector\Domain\Model\Association>
->>>>>>> parent of 8432775... Change Namespace
      */
     protected $parents;
 
@@ -67,47 +59,27 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $website;
 
 	/**
-<<<<<<< HEAD
      * @var \RGU\Dvoconnector\Domain\Model\Address
-=======
-     * @var \RG\Rgdvoconnector\Domain\Model\Address
->>>>>>> parent of 8432775... Change Namespace
      */
     protected $address;
 
 	/**
-<<<<<<< HEAD
      * @var \RGU\Dvoconnector\Domain\Model\Meta\Association\Category
-=======
-     * @var \RG\Rgdvoconnector\Domain\Model\Meta\Association\Category
->>>>>>> parent of 8432775... Change Namespace
      */
     protected $category;
 
 	/**
-<<<<<<< HEAD
      * @var \RGU\Dvoconnector\Domain\Model\Meta\Association\Performancelevel
-=======
-     * @var \RG\Rgdvoconnector\Domain\Model\Meta\Association\Performancelevel
->>>>>>> parent of 8432775... Change Namespace
      */
     protected $performancelevel;
 
 	/**
-<<<<<<< HEAD
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RGU\Dvoconnector\Domain\Model\Meta\Association\Repertoire>
-=======
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RG\Rgdvoconnector\Domain\Model\Meta\Association\Repertoire>
->>>>>>> parent of 8432775... Change Namespace
      */
 	protected $repertoires;
 
 	/**
-<<<<<<< HEAD
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RGU\Dvoconnector\Domain\Model\Functionary>
-=======
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RG\Rgdvoconnector\Domain\Model\Functionary>
->>>>>>> parent of 8432775... Change Namespace
      */
 	protected $functionaries;
 
@@ -118,11 +90,7 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $repertoire_extra;
 
 	/**
-<<<<<<< HEAD
      * @var \RGU\Dvoconnector\Domain\Model\ContactPerson
-=======
-     * @var \RG\Rgdvoconnector\Domain\Model\ContactPerson
->>>>>>> parent of 8432775... Change Namespace
      */
 	protected $contactperson;
 
@@ -239,11 +207,7 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * returns the parents attribute
 	 *
-<<<<<<< HEAD
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RGU\Dvoconnector\Domain\Model\Association>
-=======
-	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RG\Rgdvoconnector\Domain\Model\Association>
->>>>>>> parent of 8432775... Change Namespace
 	 */
 	public function getParents() {
 		return $this->parents;
@@ -347,11 +311,7 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * sets the address attribute
 	 *
-<<<<<<< HEAD
 	 * @param \RGU\Dvoconnector\Domain\Model\Address $address
-=======
-	 * @param \RG\Rgdvoconnector\Domain\Model\Address $address
->>>>>>> parent of 8432775... Change Namespace
 	 * @return void
 	 */
 	public function setAddress($address) {
@@ -361,11 +321,7 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * returns the address attribute
 	 *
-<<<<<<< HEAD
 	 * @return \RGU\Dvoconnector\Domain\Model\Address
-=======
-	 * @return \RG\Rgdvoconnector\Domain\Model\Address
->>>>>>> parent of 8432775... Change Namespace
 	 */
 	public function getAddress() {
 		return $this->address;
@@ -374,11 +330,7 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * sets the category attribute
 	 *
-<<<<<<< HEAD
 	 * @param \RGU\Dvoconnector\Domain\Model\Meta\Association\Category $category
-=======
-	 * @param \RG\Rgdvoconnector\Domain\Model\Meta\Association\Category $category
->>>>>>> parent of 8432775... Change Namespace
 	 * @return void
 	 */
 	public function setCategory($category) {
@@ -388,11 +340,7 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * returns the category attribute
 	 *
-<<<<<<< HEAD
 	 * @return \RGU\Dvoconnector\Domain\Model\Meta\Association\Category
-=======
-	 * @return \RG\Rgdvoconnector\Domain\Model\Meta\Association\Category
->>>>>>> parent of 8432775... Change Namespace
 	 */
 	public function getCategory() {
 		return $this->category;
@@ -401,11 +349,7 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * sets the performancelevel attribute
 	 *
-<<<<<<< HEAD
 	 * @param \RGU\Dvoconnector\Domain\Model\Meta\Association\Performancelevel $performancelevel
-=======
-	 * @param \RG\Rgdvoconnector\Domain\Model\Meta\Association\Performancelevel $performancelevel
->>>>>>> parent of 8432775... Change Namespace
 	 * @return void
 	 */
 	public function setPerformancelevel($performancelevel) {
@@ -415,11 +359,7 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * returns the performancelevel attribute
 	 *
-<<<<<<< HEAD
 	 * @return \RGU\Dvoconnector\Domain\Model\Meta\Association\Performancelevel
-=======
-	 * @return \RG\Rgdvoconnector\Domain\Model\Meta\Association\Performancelevel
->>>>>>> parent of 8432775... Change Namespace
 	 */
 	public function getPerformancelevel() {
 		return $this->performancelevel;
@@ -428,11 +368,7 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
     /**
      * Adds a repertoire to this association.
      *
-<<<<<<< HEAD
      * @param \RGU\Dvoconnector\Domain\Model\Meta\Association\Repertoire $repertoire
-=======
-     * @param \RG\Rgdvoconnector\Domain\Model\Meta\Association\Repertoire $repertoire
->>>>>>> parent of 8432775... Change Namespace
      * @return void
      */
     public function addRepertoire($repertoire)
@@ -443,11 +379,7 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
      /**
      * Removes a repertoire from this association.
      *
-<<<<<<< HEAD
      * @param \RGU\Dvoconnector\Domain\Model\Meta\Association\Repertoire $repertoire
-=======
-     * @param \RG\Rgdvoconnector\Domain\Model\Meta\Association\Repertoire $repertoire
->>>>>>> parent of 8432775... Change Namespace
      * @return void
      */
     public function removeRepertoire($repertoire)
@@ -458,11 +390,7 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * returns the repertoires attribute
 	 *
-<<<<<<< HEAD
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RGU\Dvoconnector\Domain\Model\Repertoire>
-=======
-	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RG\Rgdvoconnector\Domain\Model\Repertoire>
->>>>>>> parent of 8432775... Change Namespace
 	 */
 	public function getRepertoires() {
 		return $this->repertoires;
@@ -490,11 +418,7 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * sets the contactperson attribute
 	 *
-<<<<<<< HEAD
 	 * @param \RGU\Dvoconnector\Domain\Model\ContactPerson $contactperson
-=======
-	 * @param \RG\Rgdvoconnector\Domain\Model\ContactPerson $contactperson
->>>>>>> parent of 8432775... Change Namespace
 	 * @return void
 	 */
 	public function setContactPerson($contactperson) {
@@ -504,11 +428,7 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * returns the contactperson attribute
 	 *
-<<<<<<< HEAD
 	 * @return \RGU\Dvoconnector\Domain\Model\ContactPerson
-=======
-	 * @return \RG\Rgdvoconnector\Domain\Model\ContactPerson
->>>>>>> parent of 8432775... Change Namespace
 	 */
 	public function getContactPerson() {
 		return $this->contactperson;
@@ -555,11 +475,7 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
    * Adds a functionary to this association.
    *
-<<<<<<< HEAD
    * @param \RGU\Dvoconnector\Domain\Model\Meta\Association\Functionary $functionary
-=======
-   * @param \RG\Rgdvoconnector\Domain\Model\Meta\Association\Functionary $functionary
->>>>>>> parent of 8432775... Change Namespace
    * @return void
    */
   public function addFunctionary($functionary)
@@ -570,11 +486,7 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
    /**
    * Removes a functionary from this association.
    *
-<<<<<<< HEAD
    * @param \RGU\Dvoconnector\Domain\Model\Meta\Association\Functionary $functionary
-=======
-   * @param \RG\Rgdvoconnector\Domain\Model\Meta\Association\Functionary $functionary
->>>>>>> parent of 8432775... Change Namespace
    * @return void
    */
   public function removeFunctionary($functionary)
@@ -585,11 +497,7 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * returns the functionaries attribute
 	 *
-<<<<<<< HEAD
 	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RGU\Dvoconnector\Domain\Model\Functionary>
-=======
-	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RG\Rgdvoconnector\Domain\Model\Functionary>
->>>>>>> parent of 8432775... Change Namespace
 	 */
 	public function getFunctionaries() {
 		return $this->functionaries;
@@ -640,11 +548,7 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function getUrlPhotoFile() {
 		$objectManager = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Object\ObjectManager::class);
-<<<<<<< HEAD
 		return $objectManager->get(\RGU\Dvoconnector\Service\ImageService::class)->getCachedFile($this->getUrlPhoto());
-=======
-		return $objectManager->get(\RG\Rgdvoconnector\Service\ImageService::class)->getCachedFile($this->getUrlPhoto());
->>>>>>> parent of 8432775... Change Namespace
 	}
 
 	/**
@@ -654,11 +558,7 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function getUrlEmblemFile() {
 		$objectManager = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Object\ObjectManager::class);
-<<<<<<< HEAD
 		return $objectManager->get(\RGU\Dvoconnector\Service\ImageService::class)->getCachedFile($this->getUrlEmblem());
-=======
-		return $objectManager->get(\RG\Rgdvoconnector\Service\ImageService::class)->getCachedFile($this->getUrlEmblem());
->>>>>>> parent of 8432775... Change Namespace
 	}
 
 }

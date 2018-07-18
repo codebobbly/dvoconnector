@@ -1,6 +1,5 @@
 <?php
 
-<<<<<<< HEAD
 namespace RGU\Dvoconnector\Service;
 
 use TYPO3\CMS\Core\Cache\CacheManager;
@@ -8,15 +7,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 use RGU\Dvoconnector\Service\GenericApiService;
 use RGU\Dvoconnector\Service\GenericFilterContext;
 use RGU\Dvoconnector\Service\ContextException;
-=======
-namespace RG\Rgdvoconnector\Service;
-
-use TYPO3\CMS\Core\Cache\CacheManager;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use RG\Rgdvoconnector\Service\GenericApiService;
-use RG\Rgdvoconnector\Service\GenericFilterContext;
-use RG\Rgdvoconnector\Service\ContextException;
->>>>>>> parent of 8432775... Change Namespace
 
 class AssociationsApiService extends GenericApiService {
 
@@ -31,11 +21,7 @@ class AssociationsApiService extends GenericApiService {
 	*/
 	public function getRootAssociationIDs() {
 
-<<<<<<< HEAD
     return \RGU\Dvoconnector\Utility\EmConfiguration::getSettings()->getRootAssociationIDs();
-=======
-    return \RG\Rgdvoconnector\Utility\EmConfiguration::getSettings()->getRootAssociationIDs();
->>>>>>> parent of 8432775... Change Namespace
 
 	}
 
@@ -43,11 +29,7 @@ class AssociationsApiService extends GenericApiService {
 	* return a association
 	*
 	* @param string association id
-<<<<<<< HEAD
 	* @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
-=======
-	* @param \RG\Rgdvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
->>>>>>> parent of 8432775... Change Namespace
 	*
 	* @return \SimpleXMLElement XML data
 	*/
@@ -70,11 +52,7 @@ class AssociationsApiService extends GenericApiService {
 	/**
 	 * return the root associations
 	 *
-<<<<<<< HEAD
 	 * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
-=======
-	 * @param \RG\Rgdvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
->>>>>>> parent of 8432775... Change Namespace
 	 *
 	 * @return array XML data
  	*/
@@ -105,11 +83,7 @@ class AssociationsApiService extends GenericApiService {
 	/**
 	 * return a list of child associations from the root association
 	 *
-<<<<<<< HEAD
 	 * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
-=======
-	 * @param \RG\Rgdvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
->>>>>>> parent of 8432775... Change Namespace
 	 *
 	 * @return array XML data
  	*/
@@ -141,11 +115,7 @@ class AssociationsApiService extends GenericApiService {
    * return a list of child associations from a association
    *
 	 * @param string association id
-<<<<<<< HEAD
 	 * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
-=======
-	 * @param \RG\Rgdvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
->>>>>>> parent of 8432775... Change Namespace
 	 *
    * @return \SimpleXMLElement XML data
    */
@@ -169,11 +139,7 @@ class AssociationsApiService extends GenericApiService {
    * return a list of events from a association
    *
 	 * @param string association id
-<<<<<<< HEAD
 	 * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
-=======
-	 * @param \RG\Rgdvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
->>>>>>> parent of 8432775... Change Namespace
 	 *
    * @return \SimpleXMLElement XML data
    */
@@ -196,11 +162,7 @@ class AssociationsApiService extends GenericApiService {
 	/**
    * return a list of events from the root associations
    *
-<<<<<<< HEAD
 	 * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
-=======
-	 * @param \RG\Rgdvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
->>>>>>> parent of 8432775... Change Namespace
 	 *
    * @return \SimpleXMLElement XML data
    */
@@ -232,11 +194,7 @@ class AssociationsApiService extends GenericApiService {
    * return a event
    *
 	 * @param string event id
-<<<<<<< HEAD
 	 * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
-=======
-	 * @param \RG\Rgdvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
->>>>>>> parent of 8432775... Change Namespace
 	 *
    * @return \SimpleXMLElement XML data
    */
@@ -270,11 +228,7 @@ class AssociationsApiService extends GenericApiService {
    *
 	 * @param string association id
 	 * @param string event id
-<<<<<<< HEAD
 	 * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
-=======
-	 * @param \RG\Rgdvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
->>>>>>> parent of 8432775... Change Namespace
 	 *
    * @return \SimpleXMLElement XML data
    */
@@ -297,11 +251,7 @@ class AssociationsApiService extends GenericApiService {
 	/**
    * return a list of announcements from the root associations
    *
-<<<<<<< HEAD
 	 * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
-=======
-	 * @param \RG\Rgdvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
->>>>>>> parent of 8432775... Change Namespace
 	 *
    * @return array XML data
    */
@@ -333,11 +283,7 @@ class AssociationsApiService extends GenericApiService {
    * return a list of announcements from a association
    *
 	 * @param string association id
-<<<<<<< HEAD
 	 * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
-=======
-	 * @param \RG\Rgdvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
->>>>>>> parent of 8432775... Change Namespace
 	 *
    * @return \SimpleXMLElement XML data
    */
@@ -362,11 +308,7 @@ class AssociationsApiService extends GenericApiService {
    *
 	 * @param string association id
 	 * @param string announcement id
-<<<<<<< HEAD
 	 * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
-=======
-	 * @param \RG\Rgdvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
->>>>>>> parent of 8432775... Change Namespace
 	 *
    * @return \SimpleXMLElement XML data
    */
@@ -390,11 +332,7 @@ class AssociationsApiService extends GenericApiService {
    * return a announcement
    *
 	 * @param string announcement id
-<<<<<<< HEAD
 	 * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
-=======
-	 * @param \RG\Rgdvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
->>>>>>> parent of 8432775... Change Namespace
 	 *
    * @return \SimpleXMLElement XML data
    */
@@ -427,11 +365,7 @@ class AssociationsApiService extends GenericApiService {
    * return a list of functionaries from a association
    *
 	 * @param string association id
-<<<<<<< HEAD
 	 * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
-=======
-	 * @param \RG\Rgdvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
->>>>>>> parent of 8432775... Change Namespace
 	 *
    * @return \SimpleXMLElement XML data
    */
@@ -469,11 +403,7 @@ class AssociationsApiService extends GenericApiService {
 	/**
    * return a list of functionaries from the root associations
    *
-<<<<<<< HEAD
 	 * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
-=======
-	 * @param \RG\Rgdvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
->>>>>>> parent of 8432775... Change Namespace
 	 *
    * @return \SimpleXMLElement XML data
    */
@@ -504,11 +434,7 @@ class AssociationsApiService extends GenericApiService {
    *
 	 * @param string association id
 	 * @param string functionary id
-<<<<<<< HEAD
 	 * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
-=======
-	 * @param \RG\Rgdvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
->>>>>>> parent of 8432775... Change Namespace
 	 *
    * @return \SimpleXMLElement XML data
    */
@@ -532,11 +458,7 @@ class AssociationsApiService extends GenericApiService {
    * return a functionary
    *
 	 * @param string functionary id
-<<<<<<< HEAD
 	 * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
-=======
-	 * @param \RG\Rgdvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
->>>>>>> parent of 8432775... Change Namespace
 	 *
    * @return \SimpleXMLElement XML data
    */
@@ -568,26 +490,15 @@ class AssociationsApiService extends GenericApiService {
 	/**
    * check that the filter has a inside association value
    *
-<<<<<<< HEAD
 	 * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
 	 * @param string $aID association ID
 	 *
 	 * @return \RGU\Dvoconnector\Service\ApiServiceFilterContext
-=======
-	 * @param \RG\Rgdvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
-	 * @param string $aID association ID
-	 *
-	 * @return \RG\Rgdvoconnector\Service\ApiServiceFilterContext
->>>>>>> parent of 8432775... Change Namespace
    */
 	protected function checkApiServiceFilterContext($apiServiceFilterContext = null, $aID = null) {
 
 		if(is_null($apiServiceFilterContext)) {
-<<<<<<< HEAD
 			$resultApiServiceFilterContext = new \RGU\Dvoconnector\Domain\Filter\GenericFilterContext();
-=======
-			$resultApiServiceFilterContext = new \RG\Rgdvoconnector\Domain\Filter\GenericFilterContext();
->>>>>>> parent of 8432775... Change Namespace
 		} else {
 			$resultApiServiceFilterContext = clone $apiServiceFilterContext;
 		}
