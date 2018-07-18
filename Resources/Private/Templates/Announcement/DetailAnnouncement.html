@@ -1,0 +1,11 @@
+{namespace rgdvo=RG\Rgdvoconnector\ViewHelpers}
+
+<rgdvo:Announcement associationID="{associationID}" announcementID="{announcementID}" as="announcement" insideAssociationID="{settings.associationID}">
+
+  <rgdvo:titleTag>{announcement.title}</rgdvo:titleTag>
+
+  <f:render partial="Announcement" arguments="{detailPid: settings.additional.detailPid, announcement: announcement}"/>
+  <f:link.action pageUid="{settings.additional.listPid}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span> Zurück</f:link.action>
+  <f:link.external uri="{settings.additional.linkdvo}" class="btn btn-default pull-right" target="_blank"><span class="glyphicon glyphicon-edit"></span> ändern</f:link.external>
+
+</rgdvo:Announcement>

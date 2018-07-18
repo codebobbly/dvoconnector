@@ -1,0 +1,75 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+
+<f:if condition="{configuration.insertAbove}">
+	<f:render section="paginator" arguments="{pagination: pagination,configuration:configuration}" />
+</f:if>
+
+<f:renderChildren arguments="{contentArguments}" />
+
+<f:if condition="{configuration.insertBelow}">
+	<f:render section="paginator" arguments="{pagination: pagination,configuration:configuration}" />
+</f:if>
+
+<f:section name="paginator">
+	<f:if condition="{pagination.numberOfPages} > 1">
+		<nav>
+			<ul class="pagination">
+				<f:if condition="{pagination.previousPage}">
+					<f:then>
+						<li>
+							<a href="<f:widget.uri arguments="{currentPage: pagination.previousPage}" />" aria-label="Previous">
+								<span aria-hidden="true">&laquo;</span>
+							</a>
+						</li>
+					</f:then>
+					<f:else>
+						<li class="disabled">
+							<a href="#" aria-label="Previous">
+								<span aria-hidden="true">&laquo;</span>
+							</a>
+						</li>
+					</f:else>
+				</f:if>
+				<f:if condition="{pagination.lessPages}">
+					<li class="disabled">....</li>
+				</f:if>
+				<f:for each="{pagination.pages}" as="page">
+					<f:if condition="{page.isCurrent}">
+						<f:then>
+							<li class="active">
+								<a href="#">{page.number} <span class="sr-only">(current)</span></a>
+							</li>
+						</f:then>
+						<f:else>
+							<li>
+								<a href="<f:widget.uri arguments="{currentPage: page.number}" />">{page.number} <span class="sr-only">(current)</span></a>
+							</li>
+						</f:else>
+					</f:if>
+				</f:for>
+				<f:if condition="{pagination.morePages}">
+					<li class="disabled">....</li>
+				</f:if>
+				<f:if condition="{pagination.nextPage}">
+					<f:then>
+						<li>
+							<a href="<f:widget.uri arguments="{currentPage: pagination.nextPage}" />" aria-label="Next">
+								<span aria-hidden="true">&raquo;</span>
+							</a>
+						</li>
+					</f:then>
+					<f:else>
+						<li class="disabled">
+							<a href="#" aria-label="Next">
+								<span aria-hidden="true">&raquo;</span>
+							</a>
+						</li>
+					</f:else>
+				</f:if>
+			</ul>
+		</nav>
+	</f:if>
+</f:section>
+</html>

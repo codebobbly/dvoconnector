@@ -1,0 +1,11 @@
+{namespace rgdvo=RG\Rgdvoconnector\ViewHelpers}
+
+<rgdvo:Event associationID="{associationID}" eventID="{eventID}" as="event" insideAssociationID="{settings.associationID}">
+
+  <rgdvo:titleTag>{event.title}</rgdvo:titleTag>
+
+  <f:render partial="Event" arguments="{detailPid: settings.additional.detailPid, event: event}"/>
+  <f:link.action pageUid="{settings.additional.listPid}" arguments="{aID: event.association.id}" class="btn btn-default" action="listEvents"><span class="glyphicon glyphicon-arrow-left"></span> Zurück</f:link.action>
+  <f:link.external uri="{settings.additional.linkdvo}veranstaltung/bearbeiten/{event.id}" class="btn btn-default pull-right" target="_blank"><span class="glyphicon glyphicon-edit"></span> ändern</f:link.external>
+
+</rgdvo:Event>

@@ -1,0 +1,11 @@
+{namespace rgdvo=RG\Rgdvoconnector\ViewHelpers}
+
+<rgdvo:Functionary associationID="{associationID}" functionaryID="{functionaryID}" as="functionary" insideAssociationID="{settings.associationID}">
+
+  <rgdvo:titleTag>{functionary.role} - {functionary.lastName} {functionary.firstName}</rgdvo:titleTag>
+
+  <f:render partial="Functionary" arguments="{detailPid: settings.additional.detailPid, functionary: functionary}"/>
+  <f:link.action pageUid="{settings.additional.listPid}" arguments="{aID: functionary.association.id}" class="btn btn-default" action="listFunctionaries"><span class="glyphicon glyphicon-arrow-left"></span> Zurück</f:link.action>
+  <f:link.external uri="{settings.additional.linkdvo}funktionaer/bearbeiten/{functionary.id}" class="btn btn-default pull-right" target="_blank"><span class="glyphicon glyphicon-edit"></span> ändern</f:link.external>
+
+</rgdvo:Functionary>

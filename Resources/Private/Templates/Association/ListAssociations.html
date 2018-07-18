@@ -1,0 +1,12 @@
+{namespace rgdvo=RG\Rgdvoconnector\ViewHelpers}
+
+<rgdvo:Association associationID="{associationID}" as="association" insideAssociationID="{settings.associationID}">
+
+  <rgdvo:Associations associationID="{association.id}" as="associations" types="{filter.types}" name="{filter.name}" categoryid="{filter.categoryid}" repertoireid="{filter.repertoireid}" location="{filter.location}" insideAssociationID="{settings.associationID}">
+
+    <f:render partial="FilterAssociations" arguments="{view: view, filter: filter, userFilter: userFilter, allowedProperty: settings.filterAssociations.allowedProperty}"/>
+    <f:render partial="ListAssociations" arguments="{associations: associations, pagination: settings.pagination, detailPid: settings.additional.detailPid}"/>
+
+  </rgdvo:Associations>
+
+</rgdvo:Association>

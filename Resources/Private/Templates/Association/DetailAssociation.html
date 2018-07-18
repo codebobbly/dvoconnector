@@ -1,0 +1,12 @@
+{namespace rgdvo=RG\Rgdvoconnector\ViewHelpers}
+
+<rgdvo:Association associationID="{associationID}" as="association" insideAssociationID="{settings.associationID}">
+
+  <rgdvo:titleTag>{association.name}</rgdvo:titleTag>
+
+  <f:render partial="Association" arguments="{detailPid: settings.additional.detailPid, association: association}"/>
+
+  <f:link.action pageUid="{settings.additional.listPid}" class="btn btn-default"><span class="glyphicon glyphicon-arrow-left"></span> Zurück</f:link.action>
+  <f:link.external uri="{settings.additional.linkdvo}vereinsdaten/bearbeiten/{association.id}" class="btn btn-default pull-right" target="_blank"><span class="glyphicon glyphicon-edit"></span> ändern</f:link.external>
+
+</rgdvo:Association>

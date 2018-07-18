@@ -1,0 +1,9 @@
+{namespace rgdvo=RG\Rgdvoconnector\ViewHelpers}
+
+<rgdvo:Functionary associationID="{associationID}" functionaryID="{functionaryID}" as="functionary" insideAssociationID="{settings.associationID}">
+
+  <rgdvo:titleTag>{functionary.role} - {functionary.lastName} {functionary.firstName}</rgdvo:titleTag>
+
+  <f:render partial="Functionary" arguments="{detailPid: settings.additional.detailPid, functionary: functionary}"/>
+
+</rgdvo:Functionary>

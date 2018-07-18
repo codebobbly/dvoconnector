@@ -1,0 +1,16 @@
+{namespace rgdvo=RG\Rgdvoconnector\ViewHelpers}
+
+<f:if condition="{allowedProperty.role}">
+
+  <form action="{f:uri.action(action: 'filterFunctionaries', arguments: '{aID: associationID}')}" method="post">
+    <f:if condition="{allowedProperty.role}">
+      <div class="form-group">
+        <label for="role"><f:translate key="LLL:EXT:rgdvoconnector/Resources/Private/Language/locallang_ff.xml:functionaries.filter.role.label" /></label>
+        <input name="tx_rgdvoconnector_pi1[filter][role]" value="{userFilter.role}" class="form-control" id="role" aria-describedby="roleHelp" placeholder="<f:translate key="LLL:EXT:rgdvoconnector/Resources/Private/Language/locallang_ff.xml:functionaries.filter.role.placeholder" />">
+        <small id="roleHelp" class="form-text text-muted"><f:translate key="LLL:EXT:rgdvoconnector/Resources/Private/Language/locallang_ff.xml:functionaries.filter.role.describedby" /></small>
+      </div>
+    </f:if>
+    <button type="submit" class="btn btn-primary"><f:translate key="LLL:EXT:rgdvoconnector/Resources/Private/Language/locallang_ff.xml:functionaries.filter.submit" /></button>
+  </form>
+
+</f:if>

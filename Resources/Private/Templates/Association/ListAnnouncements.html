@@ -1,0 +1,44 @@
+{namespace rgdvo=RG\Rgdvoconnector\ViewHelpers}
+
+<rgdvo:Association associationID="{associationID}" as="association" insideAssociationID="{settings.associationID}">
+
+  <rgdvo:titleTag>Meldungen - {association.name}</rgdvo:titleTag>
+
+  <h3>{association.name} - Meldungen</h3>
+
+  <hr>
+
+  <rgdvo:Announcements associationID="{associationID}" as="announcements" childs="{filter.childs}" text="{filter.text}" startDate="{filter.startDate}" endDate="{filter.endDate}" zipStart="{filter.zipStart}" zipEnd="{filter.zipEnd}" location="{filter.location}" insideAssociationID="{settings.associationID}">
+
+    <div class="well">
+      <f:render partial="FilterAnnouncements" arguments="{associationID: associationID, filter: filter, userFilter: userFilter, allowedProperty: settings.filterAnnouncements.allowedProperty}"/>
+    </div>
+
+    <f:widget.paginate objects="{announcements.announcements}" as="paginatedAnnouncements" configuration="{itemsPerPage: settings.pagination.itemsPerPage, insertAbove: settings.pagination.insertAbove, insertBelow: settings.pagination.insertBelow, maximumNumberOfLinks: settings.pagination.maximumNumberOfLinks}">
+      <table class="table table-striped">
+          <thead>
+              <tr>
+                  <th>Titel</th>
+                  <th>Erstelldatum</th>
+              </tr>
+          </thead>
+          <tbody>
+            <f:for each="{paginatedAnnouncements}" as="announcement" iteration="iterator">
+              <tr>
+                  <td><f:link.action pageUid="{settings.additional.detailPid}" action="detailAnnouncement" arguments="{aID: announcement.association.id, anID: announcement.id}">{announcement.title}</f:link.action></td>
+                  <td><f:format.date format="d.m.Y">{announcement.createdDate}</f:format.date></td>
+              </tr>
+            </f:for>
+          </tbody>
+      </table>
+    </f:widget.paginate>
+
+    <hr>
+
+    <f:render partial="AssociationLinks" arguments="{association: association, listPid: settings.additional.listPid, light: 1}"/>
+
+    <f:link.action pageUid="{settings.additional.detailPid}" class="btn btn-default" arguments="{aID: associationID}" action="detailAssociation"><span class="glyphicon glyphicon-arrow-left"></span> Zurück</f:link.action>
+
+  </rgdvo:Announcements>
+
+</rgdvo:Association>

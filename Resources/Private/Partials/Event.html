@@ -1,0 +1,40 @@
+<h1>{event.title} ({event.type.name})</h1>
+<p>
+<f:if condition="{event.endDate}">
+  <f:then>
+    Vom <f:format.date format="d.m.Y H:i">{event.startDate}</f:format.date> bis <f:format.date format="d.m.Y H:i">{event.endDate}</f:format.date>
+  </f:then>
+  <f:else>
+    Um <f:format.date format="d.m.Y H:i">{event.startDate}</f:format.date>
+  </f:else>
+</f:if>
+<f:if condition="{event.entrancefee}">| Eintrittspreis: {event.entrancefee}</f:if> <f:if condition="{event.bookingoffice}">| Verkaufsstellen: {event.bookingoffice}</f:if></p>
+<hr>
+
+<p><f:format.html>{event.description}</f:format.html></p>
+<p></p>
+<hr>
+
+<f:if condition="{event.eventlocation} || {event.address.street} || {event.address.location} || {event.address.zipcode}">
+
+  <iframe class="googlemap" width="100%" height="350" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=<f:format.urlencode>{event.address.street} {event.address.location} {event.address.zipcode}</f:format.urlencode>&amp;key=AIzaSyB82ai_imUWE0j2u9konAB-sCphotiRDaI" allowfullscreen=""></iframe>
+
+</f:if>
+<hr>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Infos</div>
+  <div class="panel-body">
+
+    <ul class="list-unstyled">
+      <li><span class="glyphicon glyphicon-user"></span>&nbsp;<f:link.action pageUid="{detailPid}" action="detailAssociation" arguments="{aID: event.association.id}">{event.association.name}</f:link.action></li>
+      <f:if condition="{event.email}">
+        <li><span class="glyphicon glyphicon-envelope"></span>&nbsp;<f:link.email email="{event.email}" /></li>
+      </f:if>
+      <f:if condition="{event.url}">
+        <li><span class="glyphicon glyphicon-link"></span>&nbsp;<f:link.external uri="{event.url}" target="_blank">{event.url}</f:link.external></li>
+      </f:if>
+    </ul>
+
+  </div>
+</div>

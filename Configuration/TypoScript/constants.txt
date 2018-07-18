@@ -1,0 +1,15 @@
+plugin.tx_rgdvoconnector {
+	view {
+
+		# cat=plugin.tx_rgdvoconnector/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:rgdvoconnector/Resources/Private/Templates/
+		# cat=plugin.tx_rgdvoconnector/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:rgdvoconnector/Resources/Private/Partials/
+		# cat=plugin.tx_rgdvoconnector/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:rgdvoconnector/Resources/Private/Layouts/
+
+	}
+
+	settings {
+	}
+}

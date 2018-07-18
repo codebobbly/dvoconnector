@@ -1,0 +1,17 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Weiteres</div>
+  <div class="panel-body">
+
+    <ul class="list-unstyled">
+      <f:if condition="{associations.associations -> f:count()} > 0">
+        <li><f:link.action pageUid="{listPid}" action="listAssociations" arguments="{aID: association.id}"><span class="glyphicon glyphicon-th-list"></span> Vereinigungen des {association.name}</f:link.action></li>
+      </f:if>
+      <li><f:link.action pageUid="{listPid}" action="listEvents" arguments="{aID: association.id}"><span class="glyphicon glyphicon-calendar"></span> Unsere Veranstaltungen</f:link.action></li>
+      <li><f:link.action pageUid="{listPid}" action="listAnnouncements" arguments="{aID: association.id}"><span class="glyphicon glyphicon-comment"></span> Unsere Meldungen</f:link.action></li>
+      <f:if condition="{association.functionaries -> f:count()} > 0">
+        <li><f:link.action pageUid="{listPid}" action="listFunctionaries" arguments="{aID: association.id}"><span class="glyphicon glyphicon-user"></span> Unsere Funktionäre</f:link.action></li>
+      </f:if>
+    </ul>
+
+  </div>
+</div>

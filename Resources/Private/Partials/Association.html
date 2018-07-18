@@ -1,0 +1,79 @@
+<center>
+  <f:if condition="{association.urlEmblemFile}">
+    <f:then>
+      <p>
+        <f:image image="{association.urlEmblemFile}" maxWidth="650" maxHeight="250" alt="{association.name}"/>
+      </p>
+    </f:then>
+    <f:else>
+      <h3 class="media-heading">{association.name}</h3>
+	  <br>
+      <f:if condition="{association.urlPhotoFile}">
+        <p><f:image image="{association.urlPhotoFile}" maxWidth="835"  alt="{association.name}"/></p>
+      </f:if>
+    </f:else>
+  </f:if>
+  <p>
+    <f:if condition="{association.address.location}">
+      <span class="label label-warning">{association.address.location}</span>&thinsp;
+    </f:if>
+    <f:if condition="{association.membershipCount}">
+      <span class="label label-primary">{association.membershipCount} Mitglieder</span>&thinsp;
+    </f:if>
+    <f:if condition="{association.category}">
+      <span class="label label-info">{association.category.name}</span>&thinsp;
+    </f:if>
+    <f:if condition="{association.performancelevel.name}">
+      <span class="label label-info">{association.performancelevel.name}</span>&thinsp;
+    </f:if>
+    <f:for each="{association.repertoires}" as="repertoire" iteration="iterator">
+      <span class="label label-success">{repertoire.name}</span>&thinsp;
+   </f:for>
+    <f:if condition="{association.repertoireExtra}">
+      <span class="label label-success">{association.repertoireExtra}</span>&thinsp;
+    </f:if>
+  </p>
+</center>
+<hr>
+
+<f:if condition="{association.description}">
+
+  <p><f:format.html>{association.description}</f:format.html></p>
+  <hr>
+
+</f:if>
+
+<div class="row">
+  <div class="col-sm-6 col-xs-12">
+
+    <f:if condition="{association.address.street} || {association.address.location} || {association.address.zipcode}">
+      <f:render partial="Address" arguments="{address: association.address, name: association.name}"/>
+    </f:if>
+
+	   <hr class="visible-xs-block">
+
+  </div>
+  <div class="col-sm-6 col-xs-12">
+
+    <f:if condition="{association.contactPerson.name} || {association.telephone} || {association.email} || {association.website}">
+      <f:render partial="Address" arguments="{name: association.contactPerson.name, telephone: association.telephone, email: association.email, url: association.website}"/>
+    </f:if>
+
+  </div>
+</div>
+
+
+<f:if condition="{light} != true">
+
+  <hr>
+
+  <f:render partial="AssociationLinks" arguments="{association: association, listPid: settings.additional.listPid}"/>
+
+  <hr>
+
+  <f:if condition="{association.urlPhotoFile} && {association.urlEmblemFile}">
+    <p><f:image image="{association.urlPhotoFile}" maxWidth="835" class="img-thumbnail"/></p>
+    <hr>
+  </f:if>
+
+</f:if>

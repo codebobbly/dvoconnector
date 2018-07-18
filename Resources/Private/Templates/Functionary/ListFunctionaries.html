@@ -1,0 +1,24 @@
+{namespace rgdvo=RG\Rgdvoconnector\ViewHelpers}
+
+<rgdvo:Functionaries associationID="{associationID}" as="functionaries" insideAssociationID="{settings.associationID}">
+
+  <f:widget.paginate objects="{functionaries.functionaries}" as="paginatedFunctionaries" configuration="{itemsPerPage: settings.pagination.itemsPerPage, insertAbove: settings.pagination.insertAbove, insertBelow: settings.pagination.insertBelow, maximumNumberOfLinks: settings.pagination.maximumNumberOfLinks}">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Funktion</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+          <f:for each="{paginatedFunctionaries}" as="functionary" iteration="iterator">
+            <tr>
+                <td>{functionary.role}</td>
+                <td><f:link.action pageUid="{settings.additional.detailPid}" action="detailFunctionary" arguments="{fID: functionary.id}">{functionary.firstName} {functionary.lastName}</f:link.action></td>
+            </tr>
+          </f:for>
+        </tbody>
+    </table>
+  </f:widget.paginate>
+
+</rgdvo:Functionaries>

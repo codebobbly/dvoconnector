@@ -1,0 +1,25 @@
+{namespace rgdvo=RG\Rgdvoconnector\ViewHelpers}
+
+<rgdvo:Association associationID="{associationID}" as="association" insideAssociationID="{settings.associationID}">
+
+  <h3>{association.name} - Vereinigungen</h3>
+
+  <hr>
+
+  <rgdvo:Associations associationID="{association.id}" as="associations" types="{filter.types}" name="{filter.name}" categoryid="{filter.categoryid}" repertoireid="{filter.repertoireid}" location="{filter.location}" insideAssociationID="{settings.associationID}">
+
+    <div class="well">
+      <f:render partial="FilterAssociations" arguments="{associationID: associationID, filter: filter, userFilter: userFilter, allowedProperty: settings.filterAssociations.allowedProperty}"/>
+    </div>
+
+    <f:render partial="ListAssociations" arguments="{associations: associations, pagination: settings.pagination, detailPid: settings.additional.detailPid}"/>
+
+  </rgdvo:Associations>
+
+  <hr>
+
+  <f:render partial="AssociationLinks" arguments="{association: association, listPid: settings.additional.listPid, light: 1}"/>
+
+  <f:link.action pageUid="{settings.additional.detailPid}" class="btn btn-default" arguments="{aID: associationID}" action="detailAssociation"><span class="glyphicon glyphicon-arrow-left"></span> Zurück</f:link.action>
+
+</rgdvo:Association>

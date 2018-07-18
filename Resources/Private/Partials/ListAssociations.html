@@ -1,0 +1,16 @@
+<f:widget.paginate objects="{associations.associations}" as="paginatedAssociations" configuration="{itemsPerPage: pagination.itemsPerPage, insertAbove: pagination.insertAbove, insertBelow: pagination.insertBelow, maximumNumberOfLinks: pagination.maximumNumberOfLinks}">
+  <table class="table table-striped">
+      <thead>
+          <tr>
+              <th>Name</th>
+          </tr>
+      </thead>
+      <tbody>
+        <f:for each="{paginatedAssociations}" as="association" iteration="iterator">
+          <tr>
+              <td><f:link.action pageUid="{detailPid}" action="detailAssociation" arguments="{aID: association.id}">{association.name}</f:link.action></td>
+          </tr>
+        </f:for>
+      </tbody>
+  </table>
+</f:widget.paginate>

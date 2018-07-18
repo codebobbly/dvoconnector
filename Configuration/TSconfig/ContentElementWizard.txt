@@ -1,0 +1,13 @@
+mod.wizards.newContentElement.wizardItems.plugins {
+	elements {
+		rgdvoconnector {
+			iconIdentifier = ext-rgdvoconnector-wizard-icon
+			title = LLL:EXT:rgdvoconnector/Resources/Private/Language/locallang_be.xlf:pi1_title
+			description = LLL:EXT:rgdvoconnector/Resources/Private/Language/locallang_be.xlf:pi1_plus_wiz_description
+			tt_content_defValues {
+				CType = list
+				list_type = rgdvoconnector_pi1
+			}
+		}
+	}
+}

@@ -1,0 +1,116 @@
+# ==============================================
+# FE-Plugin configuration for EXT:rgdvoconnector
+# ==============================================
+plugin.tx_rgdvoconnector {
+
+	mvc.callDefaultActionIfActionCantBeResolved = 1
+
+	view {
+		templateRootPaths {
+			0 = EXT:rgdvoconnector/Resources/Private/Templates/
+			1 = {$plugin.tx_rgdvoconnector.view.templateRootPath}
+		}
+
+		partialRootPaths {
+			0 = EXT:rgdvoconnector/Resources/Private/Partials/
+			1 = {$plugin.tx_rgdvoconnector.view.partialRootPath}
+		}
+
+		layoutRootPaths {
+			0 = EXT:rgdvoconnector/Resources/Private/Layouts/
+			1 = {$plugin.tx_rgdvoconnector.view.layoutRootPath}
+		}
+
+		widget {
+	    TYPO3\CMS\Fluid\ViewHelpers\Widget\PaginateViewHelper {
+        templateRootPath = {$plugin.tx_rgdvoconnector.view.templateRootPath}
+	    }
+		}
+
+	}
+
+	settings {
+		ApiService {
+			apiUrl =
+			defaultCachetime =
+			rootAssociation =
+		}
+	}
+}
+
+# ==============================================
+# BE-module configuration for EXT:rgdvoconnector
+# ==============================================
+module.tx_rgdvoconnector < plugin.tx_rgdvoconnector
+
+[globalVar = GP:tx_rgdvoconnector_pi1|aID > 0]
+	page {
+		10 {
+			variables {
+				breadcrumbExtendedValue = USER
+				breadcrumbExtendedValue {
+					userFunc = RG\Rgdvoconnector\Hooks\TyposcriptUserFuncs->getBreadcrumbAssociation
+				}
+			}
+			settings {
+				breadcrumb {
+					extended = 1
+				}
+			}
+		}
+	}
+[global]
+
+[globalVar = GP:tx_rgdvoconnector_pi1|eID > 0]
+	page {
+		10 {
+			variables {
+				breadcrumbExtendedValue = USER
+				breadcrumbExtendedValue {
+					userFunc = RG\Rgdvoconnector\Hooks\TyposcriptUserFuncs->getBreadcrumbEvent
+				}
+			}
+			settings {
+				breadcrumb {
+					extended = 1
+				}
+			}
+		}
+	}
+[global]
+
+[globalVar = GP:tx_rgdvoconnector_pi1|anID > 0]
+	page {
+		10 {
+			variables {
+				breadcrumbExtendedValue = USER
+				breadcrumbExtendedValue {
+					userFunc = RG\Rgdvoconnector\Hooks\TyposcriptUserFuncs->getBreadcrumbAnnouncement
+				}
+			}
+			settings {
+				breadcrumb {
+					extended = 1
+				}
+			}
+		}
+	}
+[global]
+
+[globalVar = GP:tx_rgdvoconnector_pi1|fID > 0]
+	page {
+		10 {
+			variables {
+				breadcrumbExtendedValue = USER
+				breadcrumbExtendedValue {
+					userFunc = RG\Rgdvoconnector\Hooks\TyposcriptUserFuncs->getBreadcrumbFunctionary
+				}
+			}
+			settings {
+				breadcrumb {
+					extended = 1
+				}
+			}
+		}
+	}
+[global]

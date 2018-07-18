@@ -1,0 +1,9 @@
+{namespace rgdvo=RG\Rgdvoconnector\ViewHelpers}
+
+<rgdvo:Event associationID="{associationID}" eventID="{eventID}" as="event" insideAssociationID="{settings.associationID}">
+
+  <rgdvo:titleTag>{event.title}</rgdvo:titleTag>
+
+  <f:render partial="Event" arguments="{detailPid: settings.additional.detailPid, event: event}"/>
+
+</rgdvo:Event>

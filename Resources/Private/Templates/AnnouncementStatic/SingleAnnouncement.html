@@ -1,0 +1,8 @@
+{namespace rgdvo=RG\Rgdvoconnector\ViewHelpers}
+
+<rgdvo:Announcement associationID="{associationID}" announcementID="{announcementID}" as="announcement" insideAssociationID="{settings.associationID}">
+
+  <rgdvo:titleTag>{announcement.title}</rgdvo:titleTag>
+  <f:render partial="Announcement" arguments="{detailPid: settings.additional.detailPid, announcement: announcement}"/>
+
+</rgdvo:Announcement>

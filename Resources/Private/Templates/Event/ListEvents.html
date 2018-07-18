@@ -1,0 +1,26 @@
+{namespace rgdvo=RG\Rgdvoconnector\ViewHelpers}
+
+<rgdvo:Events associationID="{associationID}" as="events" childs="{filter.childs}" text="{filter.text}" startDate="{filter.startDate}" endDate="{filter.endDate}" zipStart="{filter.zipStart}" zipEnd="{filter.zipEnd}" location="{filter.location}" eventTypeID="{filter.eventTypeID}" privateEvents="{filter.privateEvents}" insideAssociationID="{settings.associationID}">
+
+  <f:widget.paginate objects="{events.events}" as="paginatedEvents" configuration="{itemsPerPage: settings.pagination.itemsPerPage, insertAbove: settings.pagination.insertAbove, insertBelow: settings.pagination.insertBelow, maximumNumberOfLinks: settings.pagination.maximumNumberOfLinks}">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Titel</th>
+                <th>Startdatum</th>
+                <th>Endedatum</th>
+            </tr>
+        </thead>
+        <tbody>
+          <f:for each="{paginatedEvents}" as="event" iteration="iterator">
+            <tr>
+                <td><f:link.action pageUid="{settings.additional.detailPid}" action="detailEvent" arguments="{eID: event.id}">{event.title}</f:link.action></td>
+                <td><f:format.date format="d.m.Y H:i">{event.startDate}</f:format.date></td>
+                <td><f:format.date format="d.m.Y H:i">{event.endDate}</f:format.date></td>
+            </tr>
+          </f:for>
+        </tbody>
+    </table>
+  </f:widget.paginate>
+
+</rgdvo:Events>

@@ -1,0 +1,21 @@
+<address>
+  <strong>{name}</strong><br>
+  <f:if condition="{address.street}">
+   {address.street}<br>
+  </f:if>
+  <f:if condition="{address.location} || {address.zipcode}">
+  {address.zipcode}, {address.location}<br>
+  </f:if>
+  <f:if condition="{telephone}">
+    <abbr title="Telefon"><span class="glyphicon glyphicon-phone-alt"></span></abbr>&nbsp;{telephone}<br>
+  </f:if>
+  <f:if condition="{telephonemobile}">
+    <abbr title="Handy"><span class="glyphicon glyphicon-phone"></span></abbr>&nbsp;{telephonemobile}<br>
+  </f:if>
+  <f:if condition="{email}">
+    <abbr title="E-Mail"><span class="glyphicon glyphicon-envelope"></span></abbr>&nbsp;<f:link.email email="{email}" /><br>
+  </f:if>
+  <f:if condition="{url}">
+    <abbr title="Website"><span class="glyphicon glyphicon-link"></span></abbr>&nbsp;<f:link.external uri="{url}" target="_blank">{url}</f:link.external><br>
+  </f:if>
+</address>

@@ -1,0 +1,32 @@
+<h1>{announcement.title}</h1>
+<p> Erstellt am <f:format.date format="d.m.Y H:i">{announcement.createdDate}</f:format.date></p>
+<hr>
+<p>
+  <f:if condition="{announcement.imageSourceFile}">
+    <div class="pull-right" style="max-width: 380px;">
+      <div class="col-xs-12">
+        <f:link.external uri="{announcement.imageSource}" target="_blank"><f:image image="{announcement.imageSourceFile}" class="img-thumbnail" maxWidth="380" alt="{announcement.imageTitle}"/></f:link.external>
+        <f:if condition="{announcement.imageTitle}">
+          <br><small>{announcement.imageTitle}</small>
+        </f:if>
+      </div>
+    </div>
+  </f:if>
+  <f:format.html>{announcement.text}</f:format.html>
+</p>
+
+<hr>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Infos</div>
+  <div class="panel-body">
+
+    <ul class="list-unstyled">
+      <li><span class="glyphicon glyphicon-user"></span>&nbsp;<f:link.action pageUid="{detailPid}" action="detailAssociation" arguments="{aID: announcement.association.id}">{announcement.association.name}</f:link.action></li>
+      <f:if condition="{announcement.url}">
+        <li><span class="glyphicon glyphicon-link"></span>&nbsp;<f:link.external uri="{announcement.url}" target="_blank">{announcement.url}</f:link.external></li>
+      </f:if>
+    </ul>
+
+  </div>
+</div>

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="de" datatype="plaintext" original="messages" date="2014-06-02T11:47:18Z" product-name="rgdvoconnector">
+		<header/>
+		<body>
+			<trans-unit id="pi1_title" xml:space="preserve">
+				<source>DVO Connector</source>
+			</trans-unit>
+			<trans-unit id="pi1_plus_wiz_description" xml:space="preserve">
+				<source>DVO Connector</source>
+			</trans-unit>
+			<trans-unit id="extmng.apiUrl" xml:space="preserve">
+				<source>API URL für DVO</source>
+			</trans-unit>
+			<trans-unit id="extmng.httpUserAgent" xml:space="preserve">
+				<source>HTTP User-Agent</source>
+			</trans-unit>
+			<trans-unit id="extmng.cachetime" xml:space="preserve">
+				<source>Zeit, wie lange Anfragen im Zwischenspeicher verbleiben (kann durch die API und den HTTP Kopf überschrieben werden)</source>
+			</trans-unit>
+			<trans-unit id="extmng.rootAssociationIDs" xml:space="preserve">
+				<source>IDs der Root Vereinigung (kommagetrennt)</source>
+			</trans-unit>
+			<trans-unit id="flexforms.general.tabTitle" xml:space="preserve">
+				<source>Allgemein</source>
+			</trans-unit>
+			<trans-unit id="flexforms.general.mode" xml:space="preserve">
+				<source>Anzeigemodus</source>
+			</trans-unit>
+			<trans-unit id="flexforms.general.mode.association" xml:space="preserve">
+				<source>Vereinigung</source>
+			</trans-unit>
+			<trans-unit id="flexforms.general.mode.dynamicAssociations" xml:space="preserve">
+				<source>Vereinigungen anzeigen</source>
+			</trans-unit>
+			<trans-unit id="flexforms.general.mode.listAssociations" xml:space="preserve">
+				<source>Liste mit Vereinigungen</source>
+			</trans-unit>
+			<trans-unit id="flexforms.general.mode.singleAssociation" xml:space="preserve">
+				<source>Eine Vereinigung anzeigen</source>
+			</trans-unit>
+			<trans-unit id="flexforms.general.mode.announcement" xml:space="preserve">
+				<source>Meldung</source>
+			</trans-unit>
+			<trans-unit id="flexforms.general.mode.dynamicAnnouncements" xml:space="preserve">
+				<source>Meldungen anzeigen</source>
+			</trans-unit>
+			<trans-unit id="flexforms.general.mode.listAnnouncements" xml:space="preserve">
+				<source>Liste mit Meldungen</source>
+			</trans-unit>
+			<trans-unit id="flexforms.general.mode.singleAnnouncement" xml:space="preserve">
+				<source>Eine Meldung anzeigen</source>
+			</trans-unit>
+			<trans-unit id="flexforms.general.mode.event" xml:space="preserve">
+				<source>Veranstaltung</source>
+			</trans-unit>
+			<trans-unit id="flexforms.general.mode.dynamicEvents" xml:space="preserve">
+				<source>Veranstaltungen anzeigen</source>
+			</trans-unit>
+			<trans-unit id="flexforms.general.mode.listEvents" xml:space="preserve">
+				<source>Liste mit Veranstaltungen</source>
+			</trans-unit>
+			<trans-unit id="flexforms.general.mode.singleEvent" xml:space="preserve">
+				<source>Eine Veranstaltung anzeigen</source>
+			</trans-unit>
+			<trans-unit id="flexforms.general.mode.functionary" xml:space="preserve">
+				<source>Funktionäre</source>
+			</trans-unit>
+			<trans-unit id="flexforms.general.mode.dynamicFunctionaries" xml:space="preserve">
+				<source>Funktionäre anzeigen</source>
+			</trans-unit>
+			<trans-unit id="flexforms.general.mode.listFunctionaries" xml:space="preserve">
+				<source>Liste mit Funktionäre</source>
+			</trans-unit>
+			<trans-unit id="flexforms.general.mode.singleFunctionary" xml:space="preserve">
+				<source>Einen Funktionär anzeigen</source>
+			</trans-unit>
+			<trans-unit id="flexforms.general.mode.associationID" xml:space="preserve">
+				<source>Vereinigung für Anzeige</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.pagination.tabTitle" xml:space="preserve">
+				<source>Pagination</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.pagination.itemsPerPage" xml:space="preserve">
+				<source>Legt die maximale Anzahl der Einträge pro Seite fest</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.pagination.insertAbove" xml:space="preserve">
+				<source>Pagination oberhalb anzeigen</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.pagination.insertBelow" xml:space="preserve">
+				<source>Pagination unterhalb anzeigen</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.pagination.maximumNumberOfLinks" xml:space="preserve">
+				<source>Legt die maximale Anzahl an Links fest, die angezeigt werden</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterAssociations.tabTitle" xml:space="preserve">
+				<source>Filter Vereinigung</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterAssociations.allowedProperty.name" xml:space="preserve">
+				<source>Filter mit dem Name aktivieren</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterAssociations.allowedProperty.categoryid" xml:space="preserve">
+				<source>Filter mit der Vereinigungskategorie aktivieren</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterAssociations.allowedProperty.repertoireid" xml:space="preserve">
+				<source>Filter mit dem Repertoire aktivieren</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterAssociations.allowedProperty.location" xml:space="preserve">
+				<source>Filter mit dem Ort oder PLZ aktivieren</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterAnnouncements.tabTitle" xml:space="preserve">
+				<source>Filter Meldungen</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterAnnouncements.allowedProperty.text" xml:space="preserve">
+				<source>Filter mit Meldungstext aktivieren</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterAnnouncements.allowedProperty.startDate" xml:space="preserve">
+				<source>Filter mit Erstellungsdatum (frührestes Datum) aktivieren</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterAnnouncements.allowedProperty.endDate" xml:space="preserve">
+				<source>Filter mit Erstellungsdatum (spätestes Datum) aktivieren</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterAnnouncements.allowedProperty.zipStart" xml:space="preserve">
+				<source>Filter mit PLZ (unteres Ende) aktivieren</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterAnnouncements.allowedProperty.zipEnd" xml:space="preserve">
+				<source>Filter mit PLZ (oberes Ende) aktivieren</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterAnnouncements.allowedProperty.location" xml:space="preserve">
+				<source>Filter mit Ort oder PLZ aktivieren</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterAnnouncements.allowedProperty.childs" xml:space="preserve">
+				<source>Einstellung der rekursiven Suche aktivieren</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterAnnouncements.defaultValue.childs" xml:space="preserve">
+				<source>Standardwert rekursive Suche von Meldungen</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterAnnouncements.defaultValue.childs.current_and_sub" xml:space="preserve">
+				<source>sowohl Meldungen der Vereinigung als auch untergeordneter</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterAnnouncements.defaultValue.childs.current" xml:space="preserve">
+				<source>nur Meldungen genau dieser Vereinigung</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterAnnouncements.defaultValue.childs.sub" xml:space="preserve">
+				<source>nur Meldungen unterhalb dieser Vereinigung</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterAnnouncements.defaultValue.startDate" xml:space="preserve">
+				<source>standardmäßig nur neue Meldungen anzeigen</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterEvents.tabTitle" xml:space="preserve">
+				<source>Filter Veranstaltung</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterEvents.allowedProperty.text" xml:space="preserve">
+				<source>Filter mit Veranstaltungstext aktivieren</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterEvents.allowedProperty.startDate" xml:space="preserve">
+				<source>Filter nach Startdatum aktivieren</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterEvents.allowedProperty.endDate" xml:space="preserve">
+				<source>Filter nach Endedatum aktivieren</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterEvents.allowedProperty.zipStart" xml:space="preserve">
+				<source>Filter mit PLZ (unteres Ende) aktivieren</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterEvents.allowedProperty.zipEnd" xml:space="preserve">
+				<source>Filter mit PLZ (oberes Ende) aktivieren</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterEvents.allowedProperty.location" xml:space="preserve">
+				<source>Filter mit Ort oder PLZ aktivieren</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterEvents.allowedProperty.eventtypeid" xml:space="preserve">
+				<source>Filter mit Veranstaltungstyp aktivieren</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterEvents.allowedProperty.childs" xml:space="preserve">
+				<source>Einstellung der rekursiven Suche aktivieren</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterEvents.allowedProperty.private_events" xml:space="preserve">
+				<source>Einstellung für privat/öffentliche Veranstaltungen aktivieren</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterEvents.defaultValue.childs" xml:space="preserve">
+				<source>Standardwert rekursive Suche von Veranstaltungen</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterEvents.defaultValue.childs.current_and_sub" xml:space="preserve">
+				<source>sowohl Veranstaltungen der Vereinigung als auch untergeordneter</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterEvents.defaultValue.childs.current" xml:space="preserve">
+				<source>nur Veranstaltungen genau dieser Vereinigung</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterEvents.defaultValue.childs.sub" xml:space="preserve">
+				<source>nur Veranstaltungen unterhalb dieser Vereinigung</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterEvents.defaultValue.private_events" xml:space="preserve">
+				<source>Standardwert für private/öffentliche Veranstaltungen</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterEvents.defaultValue.private_events.private_and_public" xml:space="preserve">
+				<source>private Veranstaltungen und öffentliche Veranstaltungen</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterEvents.defaultValue.private_events.private" xml:space="preserve">
+				<source>nur private Veranstaltungen</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterEvents.defaultValue.private_events.public" xml:space="preserve">
+				<source>nur öffentliche Veranstaltungen</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterEvents.defaultValue.startDate" xml:space="preserve">
+				<source>standardmäßig nur neue Veranstaltungen anzeigen</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.template.tabTitle" xml:space="preserve">
+				<source>Template</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.template.layout" xml:space="preserve">
+				<source>Benutzerlayout</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.additional.tabTitle" xml:space="preserve">
+				<source>Weiteres</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.additional.detailPid" xml:space="preserve">
+				<source>Seite für die Detailanzeige</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.additional.listPid" xml:space="preserve">
+				<source>Seite für die Listanzeige</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.additional.linkdvo" xml:space="preserve">
+				<source>Link zur DVO Webseite</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterFunctionaries.tabTitle" xml:space="preserve">
+				<source>Filter Funktionäre</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterFunctionaries.allowedProperty.role" xml:space="preserve">
+				<source>Filter nach Rollen aktivieren</source>
+			</trans-unit>
+			<trans-unit id="flexforms.settings.filterFunctionaries.defaultValue.role" xml:space="preserve">
+				<source>Standardwert für Filter Rolle</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

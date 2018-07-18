@@ -1,0 +1,29 @@
+{namespace rgdvo=RG\Rgdvoconnector\ViewHelpers}
+
+<rgdvo:Association associationID="{associationID}" as="association" insideAssociationID="{settings.associationID}">
+
+  <rgdvo:titleTag>Funktionäre - {association.name}</rgdvo:titleTag>
+
+  <h3>{association.name} - Funktionäre</h3>
+
+  <hr>
+
+  <rgdvo:Functionaries associationID="{associationID}" as="functionaries" fRole="{filter.role}" insideAssociationID="{settings.associationID}">
+
+    <div class="well">
+      <f:render partial="FilterFunctionaries" arguments="{associationID: associationID, view: view, filter: filter, userFilter: userFilter, allowedProperty: settings.filterFunctionaries.allowedProperty}"/>
+    </div>
+
+    <f:widget.paginate objects="{functionaries.functionaries}" as="paginatedFunctionaries" configuration="{itemsPerPage: settings.pagination.itemsPerPage, insertAbove: settings.pagination.insertAbove, insertBelow: settings.pagination.insertBelow, maximumNumberOfLinks: settings.pagination.maximumNumberOfLinks}">
+      <f:render partial="ListFunctionaries" arguments="{functionaries: paginatedFunctionaries, detailPid: settings.additional.detailPid, insideAssociationID: settings.associationID}"/>
+    </f:widget.paginate>
+
+  </rgdvo:Functionaries>
+
+  <hr>
+
+  <f:render partial="AssociationLinks" arguments="{association: association, listPid: settings.additional.listPid, light: 1}"/>
+
+  <f:link.action pageUid="{settings.additional.detailPid}" class="btn btn-default" arguments="{aID: associationID}" action="detailAssociation"><span class="glyphicon glyphicon-arrow-left"></span> Zurück</f:link.action>
+
+</rgdvo:Association>

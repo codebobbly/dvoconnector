@@ -1,0 +1,52 @@
+<center>
+  <h3 class="media-heading">{functionary.firstName} {functionary.lastName}</h3>
+  <br>
+  <f:if condition="{functionary.photoSourceFile}">
+    <p><f:image image="{functionary.photoSourceFile}" maxWidth="835" class="img-thumbnail"/></p>
+  </f:if>
+  <p>
+    <f:if condition="{functionary.role}">
+      <span class="label label-warning">{functionary.role}</span>&thinsp;
+    </f:if>
+    <f:if condition="{functionary.address.location}">
+      <span class="label label-info">{functionary.address.location}</span>&thinsp;
+    </f:if>
+    <f:if condition="{functionary.association.category}">
+      <span class="label label-info">{functionary.association.category.name}</span>&thinsp;
+    </f:if>
+    <f:if condition="{functionary.association.name}">
+      <span class="label label-success">{functionary.association.name}</span>&thinsp;
+    </f:if>
+  </p>
+</center>
+<hr>
+
+<f:if condition="{functionary.portrait}">
+
+  <blockquote>
+    <p>{functionary.portrait}</p>
+    <footer>Portrait von <cite title="{functionary.firstName} {functionary.lastName}">{functionary.firstName} {functionary.lastName}</cite></footer>
+  </blockquote>
+  <hr>
+
+</f:if>
+
+<f:if condition="{functionary.telephone} || {functionary.telephonemobile} || {functionary.email} || {functionary.url} || {functionary.address.street} || {functionary.address.location} || {functionary.address.zipcode}">
+
+  <f:render partial="Address" arguments="{address: functionary.address, name: '{functionary.firstName} {functionary.lastName}', telephone: functionary.telephone, telephonemobile: functionary.telephonemobile, email: functionary.email, url: functionary.url}"/>
+  <hr>
+
+</f:if>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Weiteres</div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+
+      <ul class="list-unstyled">
+        <li><f:link.action pageUid="{detailPid}" action="detailAssociation" arguments="{aID: functionary.association.id}">{functionary.association.name}</f:link.action></li>
+      </ul>
+
+    </dl>
+  </div>
+</div>

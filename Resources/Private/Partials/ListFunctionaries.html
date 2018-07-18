@@ -1,0 +1,63 @@
+{namespace rgdvo=RG\Rgdvoconnector\ViewHelpers}
+
+<div class="row">
+  <f:for each="{functionaries}" as="functionaryLight" iteration="iterator">
+
+    <rgdvo:Functionary associationID="{functionaryLight.association.id}" functionaryID="{functionaryLight.id}" as="functionary" insideAssociationID="{insideAssociationID}">
+
+      <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+
+        <div class="thumbnail">
+          <f:link.action pageUid="{settings.additional.detailPid}" action="detailFunctionary" arguments="{aID: functionary.association.id, fID: functionary.id}">
+            <f:if condition="{functionary.photoSourceFile}">
+              <f:then>
+                <f:image image="{functionary.photoSourceFile}" width="170c" height="170c" />
+              </f:then>
+              <f:else>
+                <img ref="placeholder"alt="{functionary.firstName} {functionary.lastName}" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22170%22%20height%3D%22170%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20170%20170%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23d1648af91348%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A25pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22d1648af91348%22%3E%3Crect%20width%3D%22170%22%20height%3D%22170%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2265%22%20y%3D%2292%22%3E%3A-%29%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
+              </f:else>
+            </f:if>
+          </f:link.action>
+          <div class="caption">
+            <h5>{functionary.firstName} {functionary.lastName}<br>
+              <small>{functionary.role}</small>
+            </h5>
+            <f:if condition="{functionary.portrait}">
+              <p>{functionary.portrait}</p>
+            </f:if>
+            <p>
+
+              <div class="btn-group" role="group">
+                <f:if condition="{functionary.email}">
+                  <f:link.email email="{functionary.email}" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-envelope"></i></f:link.email>
+                </f:if>
+                <f:if condition="{functionary.url}">
+                  <f:link.external uri="{functionary.url}" class="btn btn-default btn-xs" target="_blank"><i class="glyphicon glyphicon-link"></i></f:link.external>
+                </f:if>
+              </div>
+
+              <f:link.action pageUid="{settings.additional.detailPid}" action="detailFunctionary" class="btn btn-default pull-right btn-xs" arguments="{aID: functionary.association.id, fID: functionary.id}"><span class="glyphicon glyphicon-info-sign"></span></f:link.action>
+
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+
+    </rgdvo:Functionary>
+
+    <f:if condition="({iterator.cycle} % 4) == 0">
+      <div class="clearfix visible-md-block visible-lg-block"></div>
+    </f:if>
+
+    <f:if condition="({iterator.cycle} % 3) == 0">
+      <div class="clearfix visible-sm-block"></div>
+    </f:if>
+
+    <f:if condition="({iterator.cycle} % 2) == 0">
+      <div class="clearfix visible-xs-block"></div>
+    </f:if>
+
+  </f:for>
+</div>
