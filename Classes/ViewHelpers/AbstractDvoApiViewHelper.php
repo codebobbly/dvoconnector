@@ -1,6 +1,6 @@
 <?php
 
-namespace RGU\Rgdvoconnector\ViewHelpers;
+namespace RGU\Dvoconnector\ViewHelpers;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 

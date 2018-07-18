@@ -1,6 +1,6 @@
 <?php
 
-namespace RGU\Rgdvoconnector\ViewHelpers;
+namespace RGU\Dvoconnector\ViewHelpers;
 
 class EventTypesViewHelper extends AbstractDvoApiViewHelper {
 
@@ -11,7 +11,7 @@ class EventTypesViewHelper extends AbstractDvoApiViewHelper {
 
   /**
    * metaRepository
-   * @var RGU\Rgdvoconnector\Domain\Repository\MetaRepository
+   * @var RGU\Dvoconnector\Domain\Repository\MetaRepository
    * @inject
   */
   protected $metaRepository;

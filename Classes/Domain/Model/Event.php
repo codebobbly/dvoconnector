@@ -1,5 +1,5 @@
 <?php
-namespace RGU\Rgdvoconnector\Domain\Model;
+namespace RGU\Dvoconnector\Domain\Model;
 /** copyright notice **/
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
@@ -13,7 +13,7 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
 	 * Association
-	 * @var \RGU\Rgdvoconnector\Domain\Model\Association
+	 * @var \RGU\Dvoconnector\Domain\Model\Association
 	 */
 	protected $association;
 
@@ -31,7 +31,7 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
 	 * Type
-	 * @var \RGU\Rgdvoconnector\Domain\Model\Meta\Event\Type
+	 * @var \RGU\Dvoconnector\Domain\Model\Meta\Event\Type
 	 */
 	protected $type;
 
@@ -48,7 +48,7 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $title;
 
 	/**
-     * @var \RGU\Rgdvoconnector\Domain\Model\Address
+     * @var \RGU\Dvoconnector\Domain\Model\Address
      */
     protected $address;
 
@@ -95,7 +95,7 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $email;
 
 	public function __construct() {
-		$this->$address = new \RGU\Rgdvoconnector\Domain\Model\Address();
+		$this->$address = new \RGU\Dvoconnector\Domain\Model\Address();
 	}
 
 	/**
@@ -120,7 +120,7 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * sets the association attribute
 	 *
-	 * @param \RGU\Rgdvoconnector\Domain\Model\Association $association
+	 * @param \RGU\Dvoconnector\Domain\Model\Association $association
 	 * @return void
 	 */
 	public function setAssociation($association) {
@@ -130,7 +130,7 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * returns the association attribute
 	 *
-	 * @return \RGU\Rgdvoconnector\Domain\Model\Association
+	 * @return \RGU\Dvoconnector\Domain\Model\Association
 	 */
 	public function getAssociation() {
 		return $this->association;
@@ -177,7 +177,7 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * sets the type attribute
 	 *
-	 * @param \RGU\Rgdvoconnector\Domain\Model\Meta\Event\Type $type
+	 * @param \RGU\Dvoconnector\Domain\Model\Meta\Event\Type $type
 	 * @return void
 	 */
 	public function setType($type) {
@@ -187,7 +187,7 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * returns the type attribute
 	 *
-	 * @return \RGU\Rgdvoconnector\Domain\Model\Meta\Event\Type
+	 * @return \RGU\Dvoconnector\Domain\Model\Meta\Event\Type
 	 */
 	public function getType() {
 		return $this->type;
@@ -215,7 +215,7 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * sets the address attribute
 	 *
-	 * @param \RGU\Rgdvoconnector\Domain\Model\Address $address
+	 * @param \RGU\Dvoconnector\Domain\Model\Address $address
 	 * @return void
 	 */
 	public function setAddress($address) {
@@ -225,7 +225,7 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * returns the address attribute
 	 *
-	 * @return \RGU\Rgdvoconnector\Domain\Model\Address
+	 * @return \RGU\Dvoconnector\Domain\Model\Address
 	 */
 	public function getAddress() {
 		return $this->address;

@@ -1,6 +1,6 @@
 <?php
 
-namespace RGU\Rgdvoconnector\Utility;
+namespace RGU\Dvoconnector\Utility;
 
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\SingletonInterface;
@@ -23,10 +23,10 @@ class TemplateLayout implements SingletonInterface
         $templateLayouts = [];
 
         // Check if the layouts are extended by ext_tables
-        if (isset($GLOBALS['TYPO3_CONF_VARS']['EXT']['rgdvoconnector']['templateLayouts'])
-            && is_array($GLOBALS['TYPO3_CONF_VARS']['EXT']['rgdvoconnector']['templateLayouts'])
+        if (isset($GLOBALS['TYPO3_CONF_VARS']['EXT']['Dvoconnector']['templateLayouts'])
+            && is_array($GLOBALS['TYPO3_CONF_VARS']['EXT']['Dvoconnector']['templateLayouts'])
         ) {
-            $templateLayouts = $GLOBALS['TYPO3_CONF_VARS']['EXT']['rgdvoconnector']['templateLayouts'];
+            $templateLayouts = $GLOBALS['TYPO3_CONF_VARS']['EXT']['Dvoconnector']['templateLayouts'];
         }
 
         // Add TsConfig values
@@ -52,8 +52,8 @@ class TemplateLayout implements SingletonInterface
     {
         $templateLayouts = [];
         $pagesTsConfig = BackendUtility::getPagesTSconfig($pageUid);
-        if (isset($pagesTsConfig['tx_rgdvoconnector.']['templateLayouts.']) && is_array($pagesTsConfig['tx_rgdvoconnector.']['templateLayouts.'])) {
-            $templateLayouts = $pagesTsConfig['tx_rgdvoconnector.']['templateLayouts.'];
+        if (isset($pagesTsConfig['tx_Dvoconnector.']['templateLayouts.']) && is_array($pagesTsConfig['tx_Dvoconnector.']['templateLayouts.'])) {
+            $templateLayouts = $pagesTsConfig['tx_Dvoconnector.']['templateLayouts.'];
         }
         return $templateLayouts;
     }

@@ -1,10 +1,10 @@
 <?php
 
-namespace RGU\Rgdvoconnector\ViewHelpers;
+namespace RGU\Dvoconnector\ViewHelpers;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use RGU\Rgdvoconnector\Domain\Filter\AssociationFilter;
-use RGU\Rgdvoconnector\Domain\Filter\EventFilter;
+use RGU\Dvoconnector\Domain\Filter\AssociationFilter;
+use RGU\Dvoconnector\Domain\Filter\EventFilter;
 
 class EventViewHelper extends AbstractDvoContextApiViewHelper {
 
@@ -30,7 +30,7 @@ class EventViewHelper extends AbstractDvoContextApiViewHelper {
 
   /**
    * eventRepository
-   * @var \RGU\Rgdvoconnector\Domain\Repository\EventRepository
+   * @var \RGU\Dvoconnector\Domain\Repository\EventRepository
    * @inject
    */
   protected $eventRepository;

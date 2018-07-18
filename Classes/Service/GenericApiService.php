@@ -1,6 +1,6 @@
 <?php
 
-namespace RGU\Rgdvoconnector\Service;
+namespace RGU\Dvoconnector\Service;
 
 use TYPO3\CMS\Core\Cache\CacheManager;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -31,7 +31,7 @@ class GenericApiService implements \TYPO3\CMS\Core\SingletonInterface {
 
   public function __construct() {
 
-		$this->cacheManager = GeneralUtility::makeInstance(CacheManager::class)->getCache('cache_rgdvoconnector_api');
+		$this->cacheManager = GeneralUtility::makeInstance(CacheManager::class)->getCache('cache_Dvoconnector_api');
 
 	}
 
@@ -41,14 +41,14 @@ class GenericApiService implements \TYPO3\CMS\Core\SingletonInterface {
 	* @return string
 	*/
   public function getBaseApiUrl() {
-		return \RGU\Rgdvoconnector\Utility\EmConfiguration::getSettings()->getApiUrl();
+		return \RGU\Dvoconnector\Utility\EmConfiguration::getSettings()->getApiUrl();
 	}
 
 	/**
 	* Queries XML data from server or cache
 	*
 	* @param string API URL
-	* @param \RGU\Rgdvoconnector\Service\ApiServiceFilter $apiServiceFilter
+	* @param \RGU\Dvoconnector\Service\ApiServiceFilter $apiServiceFilter
 	*
 	* @return object \SimpleXMLElement
 	*/
@@ -71,7 +71,7 @@ class GenericApiService implements \TYPO3\CMS\Core\SingletonInterface {
 
       // additional headers
       $headers = array(
-          'User-Agent: ' . \RGU\Rgdvoconnector\Utility\EmConfiguration::getSettings()->getHttpUserAgent(),
+          'User-Agent: ' . \RGU\Dvoconnector\Utility\EmConfiguration::getSettings()->getHttpUserAgent(),
       );
       if (!$useCache) {
           $headers[] = 'Cache-Control: no-cache';
@@ -96,7 +96,7 @@ class GenericApiService implements \TYPO3\CMS\Core\SingletonInterface {
         $maxAge = preg_replace('/.*Cache-Control: .*max-age=(\d+).*/sm', '${1}', $header);
 
         // cache response
-        $this->writeCache(md5($url), $body, ($maxAge == '') ? \RGU\Rgdvoconnector\Utility\EmConfiguration::getSettings()->getCachetime() : (int)$maxAge);
+        $this->writeCache(md5($url), $body, ($maxAge == '') ? \RGU\Dvoconnector\Utility\EmConfiguration::getSettings()->getCachetime() : (int)$maxAge);
 
       }
 		}	elseif($useCache && $this->cacheManager->has(md5($url)) == true) {

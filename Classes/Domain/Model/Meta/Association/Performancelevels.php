@@ -1,12 +1,12 @@
 <?php
-namespace RGU\Rgdvoconnector\Domain\Model\Meta\Association;
+namespace RGU\Dvoconnector\Domain\Model\Meta\Association;
 /** copyright notice **/
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 class Performancelevels extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
-   * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RGU\Rgdvoconnector\Domain\Model\Meta\Association\Performancelevel>
+   * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RGU\Dvoconnector\Domain\Model\Meta\Association\Performancelevel>
    */
   protected $performancelevels;
 
@@ -17,7 +17,7 @@ class Performancelevels extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Adds a Performancelevel
 	 *
-	 * @param \RGU\Rgdvoconnector\Domain\Model\Meta\Association\Performancelevel $Performancelevel
+	 * @param \RGU\Dvoconnector\Domain\Model\Meta\Association\Performancelevel $Performancelevel
 	 * @return void
 	 */
 	public function addPerformancelevel($Performancelevel)
@@ -28,7 +28,7 @@ class Performancelevels extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 /**
 	 * Removes a Performancelevel
 	 *
-	 * @param \RGU\Rgdvoconnector\Domain\Model\Meta\Association\Performancelevel $Performancelevel
+	 * @param \RGU\Dvoconnector\Domain\Model\Meta\Association\Performancelevel $Performancelevel
 	 * @return void
 	 */
 	public function removePerformancelevel($Performancelevel)
@@ -39,7 +39,7 @@ class Performancelevels extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * returns the Performancelevels
 	 *
-	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RGU\Rgdvoconnector\Domain\Model\Meta\Association\Performancelevel>
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RGU\Dvoconnector\Domain\Model\Meta\Association\Performancelevel>
 	 */
 	public function getPerformancelevels() {
 		return $this->performancelevels;

@@ -1,10 +1,10 @@
 <?php
 
-namespace RGU\Rgdvoconnector\ViewHelpers;
+namespace RGU\Dvoconnector\ViewHelpers;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use RGU\Rgdvoconnector\Domain\Filter\AssociationFilter;
-use RGU\Rgdvoconnector\Domain\Filter\AnnouncementsFilter;
+use RGU\Dvoconnector\Domain\Filter\AssociationFilter;
+use RGU\Dvoconnector\Domain\Filter\AnnouncementsFilter;
 
 use TYPO3\CMS\Extbase\Property\PropertyMapper;
 
@@ -72,7 +72,7 @@ class AnnouncementsViewHelper extends AbstractDvoContextApiViewHelper {
 
   /**
    * announcementRepository
-   * @var \RGU\Rgdvoconnector\Domain\Repository\AnnouncementRepository
+   * @var \RGU\Dvoconnector\Domain\Repository\AnnouncementRepository
    * @inject
    */
   protected $announcementRepository;

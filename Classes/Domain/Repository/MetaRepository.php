@@ -1,22 +1,22 @@
 <?php
-namespace RGU\Rgdvoconnector\Domain\Repository;
+namespace RGU\Dvoconnector\Domain\Repository;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use \RGU\Rgdvoconnector\Domain\Model\Meta\Association\Categories;
-use \RGU\Rgdvoconnector\Domain\Model\Meta\Association\Category;
-use \RGU\Rgdvoconnector\Domain\Model\Meta\Association\Performancelevel;
-use \RGU\Rgdvoconnector\Domain\Model\Meta\Association\Performancelevels;
-use \RGU\Rgdvoconnector\Domain\Model\Meta\Association\Repertoire;
-use \RGU\Rgdvoconnector\Domain\Model\Meta\Association\Repertoires;
-use \RGU\Rgdvoconnector\Domain\Model\Meta\Event\Type;
-use \RGU\Rgdvoconnector\Domain\Model\Meta\Event\Types;
-use \RGU\Rgdvoconnector\Service\metaApiService;
+use \RGU\Dvoconnector\Domain\Model\Meta\Association\Categories;
+use \RGU\Dvoconnector\Domain\Model\Meta\Association\Category;
+use \RGU\Dvoconnector\Domain\Model\Meta\Association\Performancelevel;
+use \RGU\Dvoconnector\Domain\Model\Meta\Association\Performancelevels;
+use \RGU\Dvoconnector\Domain\Model\Meta\Association\Repertoire;
+use \RGU\Dvoconnector\Domain\Model\Meta\Association\Repertoires;
+use \RGU\Dvoconnector\Domain\Model\Meta\Event\Type;
+use \RGU\Dvoconnector\Domain\Model\Meta\Event\Types;
+use \RGU\Dvoconnector\Service\metaApiService;
 
 class MetaRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
 	/**
 	 * $metaApiService
-	 * @var \RGU\Rgdvoconnector\Service\MetaApiService
+	 * @var \RGU\Dvoconnector\Service\MetaApiService
 	 * @inject
  	*/
 	protected $metaApiService;
@@ -59,7 +59,7 @@ class MetaRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
 		$categories = new Categories();
 
-		$mapper = new \RGU\Rgdvoconnector\Mapper\AssociationCategories($xmlQuery);
+		$mapper = new \RGU\Dvoconnector\Mapper\AssociationCategories($xmlQuery);
 		$mapper->mapToAbstractEntity($categories);
 
 		return $categories;
@@ -104,7 +104,7 @@ class MetaRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
 		$repertoires = new Repertoires();
 
-		$mapper = new \RGU\Rgdvoconnector\Mapper\AssociationRepertoires($xmlQuery);
+		$mapper = new \RGU\Dvoconnector\Mapper\AssociationRepertoires($xmlQuery);
 		$mapper->mapToAbstractEntity($repertoires);
 
 		return $repertoires;
@@ -149,7 +149,7 @@ class MetaRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
 		$performancelevels = new Performancelevels();
 
-		$mapper = new \RGU\Rgdvoconnector\Mapper\AssociationPerformancelevels($xmlQuery);
+		$mapper = new \RGU\Dvoconnector\Mapper\AssociationPerformancelevels($xmlQuery);
 		$mapper->mapToAbstractEntity($performancelevels);
 
 		return $performancelevels;
@@ -194,7 +194,7 @@ class MetaRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
 		$types = new Types();
 
-		$mapper = new \RGU\Rgdvoconnector\Mapper\EventTypes($xmlQuery);
+		$mapper = new \RGU\Dvoconnector\Mapper\EventTypes($xmlQuery);
 		$mapper->mapToAbstractEntity($types);
 
 		return $types;

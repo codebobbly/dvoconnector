@@ -1,6 +1,6 @@
 <?php
 
-namespace RGU\Rgdvoconnector\Service\Url;
+namespace RGU\Dvoconnector\Service\Url;
 
 use DmitryDulepov\Realurl\Configuration\ConfigurationReader;
 use DmitryDulepov\Realurl\Utility;
@@ -26,7 +26,7 @@ class AbstractRealUrl implements SingletonInterface {
 
   /**
    * associationRepository
-   * @var RGU\Rgdvoconnector\Domain\Repository\AssociationRepository
+   * @var RGU\Dvoconnector\Domain\Repository\AssociationRepository
    * @inject
   */
   protected $associationRepository;
@@ -34,7 +34,7 @@ class AbstractRealUrl implements SingletonInterface {
   public function __construct() {
 
     $this->objectManager = GeneralUtility::makeInstance(ObjectManager::class);
-    $this->associationRepository = $this->objectManager->get(\RGU\Rgdvoconnector\Domain\Repository\AssociationRepository::class);
+    $this->associationRepository = $this->objectManager->get(\RGU\Dvoconnector\Domain\Repository\AssociationRepository::class);
 
   }
 

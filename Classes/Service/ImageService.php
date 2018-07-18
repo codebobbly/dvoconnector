@@ -1,6 +1,6 @@
 <?php
 
-namespace RGU\Rgdvoconnector\Service;
+namespace RGU\Dvoconnector\Service;
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\SingletonInterface;
@@ -15,7 +15,7 @@ use TYPO3\CMS\Core\Cache\CacheManager;
 class ImageService implements SingletonInterface
 {
 
-    const UPLOAD_DIRECTORY = 'rgdvoconnector';
+    const UPLOAD_DIRECTORY = 'Dvoconnector';
     const IMAGES_DIRECTORY = 'images';
     const TYPO3TEMP_DIRECTORY = 'typo3temp/assets';
 
@@ -37,7 +37,7 @@ class ImageService implements SingletonInterface
       $this->objectManager = GeneralUtility::makeInstance(ObjectManager::class);
       $this->resourceFactory = $this->objectManager->get(ResourceFactory::class);
 
-      $this->cacheManager = GeneralUtility::makeInstance(CacheManager::class)->getCache('cache_rgdvoconnector_images');
+      $this->cacheManager = GeneralUtility::makeInstance(CacheManager::class)->getCache('cache_Dvoconnector_images');
 
     }
 
@@ -85,7 +85,7 @@ class ImageService implements SingletonInterface
         $imageContent = GeneralUtility::getUrl(
             $fileString,
             0,
-            ['User-Agent: rgdvoconnector/1.0']
+            ['User-Agent: Dvoconnector/1.0']
         );
 
         if (!$imageContent) {
@@ -101,7 +101,7 @@ class ImageService implements SingletonInterface
           $currentFile = $storage->getFile($cacheFile);
           if($currentFile->getSha1() == sha1($imageContent)) {
 
-            $this->cacheManager->set(md5($cacheFile), $currentFile->getSha1(), [], \RGU\Rgdvoconnector\Utility\EmConfiguration::getSettings()->getCachetime());
+            $this->cacheManager->set(md5($cacheFile), $currentFile->getSha1(), [], \RGU\Dvoconnector\Utility\EmConfiguration::getSettings()->getCachetime());
             return $currentFile;
 
           }
@@ -137,7 +137,7 @@ class ImageService implements SingletonInterface
      */
     protected function supports($file)
     {
-        return parse_url($file, PHP_URL_HOST) == parse_url(\RGU\Rgdvoconnector\Utility\EmConfiguration::getSettings()->getApiUrl(), PHP_URL_HOST) ? true : false;
+        return parse_url($file, PHP_URL_HOST) == parse_url(\RGU\Dvoconnector\Utility\EmConfiguration::getSettings()->getApiUrl(), PHP_URL_HOST) ? true : false;
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace RGU\Rgdvoconnector\Service;
+namespace RGU\Dvoconnector\Service;
 
 use TYPO3\CMS\Core\Cache\CacheManager;
 use TYPO3\CMS\Core\Utility\GeneralUtility;

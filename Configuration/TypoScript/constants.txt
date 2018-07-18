@@ -1,12 +1,12 @@
-plugin.tx_rgdvoconnector {
+plugin.tx_Dvoconnector {
 	view {
 
-		# cat=plugin.tx_rgdvoconnector/file; type=string; label=Path to template root (FE)
-		templateRootPath = EXT:rgdvoconnector/Resources/Private/Templates/
-		# cat=plugin.tx_rgdvoconnector/file; type=string; label=Path to template partials (FE)
-		partialRootPath = EXT:rgdvoconnector/Resources/Private/Partials/
-		# cat=plugin.tx_rgdvoconnector/file; type=string; label=Path to template layouts (FE)
-		layoutRootPath = EXT:rgdvoconnector/Resources/Private/Layouts/
+		# cat=plugin.tx_Dvoconnector/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:Dvoconnector/Resources/Private/Templates/
+		# cat=plugin.tx_Dvoconnector/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:Dvoconnector/Resources/Private/Partials/
+		# cat=plugin.tx_Dvoconnector/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:Dvoconnector/Resources/Private/Layouts/
 
 	}
 

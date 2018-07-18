@@ -1,6 +1,6 @@
 <?php
 
-namespace RGU\Rgdvoconnector\Mapper;
+namespace RGU\Dvoconnector\Mapper;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use \TYPO3\CMS\Extbase\DomainObject\AbstractEntity;

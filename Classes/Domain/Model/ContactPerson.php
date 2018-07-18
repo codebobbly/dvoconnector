@@ -1,6 +1,6 @@
 <?php
 
-namespace RGU\Rgdvoconnector\Domain\Model;
+namespace RGU\Dvoconnector\Domain\Model;
 
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 

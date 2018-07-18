@@ -1,9 +1,9 @@
 <?php
 
-namespace RGU\Rgdvoconnector\Mapper;
+namespace RGU\Dvoconnector\Mapper;
 
-use \RGU\Rgdvoconnector\Mapper\Generic;
-use \RGU\Rgdvoconnector\Domain\Model\Association;
+use \RGU\Dvoconnector\Mapper\Generic;
+use \RGU\Dvoconnector\Domain\Model\Association;
 
 class Announcements extends Generic {
 

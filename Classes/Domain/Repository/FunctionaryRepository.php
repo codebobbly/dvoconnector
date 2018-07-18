@@ -1,17 +1,17 @@
 <?php
-namespace RGU\Rgdvoconnector\Domain\Repository;
+namespace RGU\Dvoconnector\Domain\Repository;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use \RGU\Rgdvoconnector\Domain\Model\Association;
-use \RGU\Rgdvoconnector\Domain\Model\Functionary;
-use \RGU\Rgdvoconnector\Domain\Model\Functionaries;
-use \RGU\Rgdvoconnector\Service\AssociationsApiService;
+use \RGU\Dvoconnector\Domain\Model\Association;
+use \RGU\Dvoconnector\Domain\Model\Functionary;
+use \RGU\Dvoconnector\Domain\Model\Functionaries;
+use \RGU\Dvoconnector\Service\AssociationsApiService;
 
-class FunctionaryRepository extends \RGU\Rgdvoconnector\Domain\Repository\GenericRepository {
+class FunctionaryRepository extends \RGU\Dvoconnector\Domain\Repository\GenericRepository {
 
 	/**
 	 * $associationsApiService
-	 * @var \RGU\Rgdvoconnector\Service\AssociationsApiService
+	 * @var \RGU\Dvoconnector\Service\AssociationsApiService
 	 * @inject
  	*/
 	protected $associationsApiService;
@@ -43,7 +43,7 @@ class FunctionaryRepository extends \RGU\Rgdvoconnector\Domain\Repository\Generi
 
 		$functionary = new Functionary();
 
-		$mapper = new \RGU\Rgdvoconnector\Mapper\Functionary($xmlQuery);
+		$mapper = new \RGU\Dvoconnector\Mapper\Functionary($xmlQuery);
 		$mapper->mapToAbstractEntity($functionary);
 
 		return $this->completeEntity($functionary);
@@ -53,9 +53,9 @@ class FunctionaryRepository extends \RGU\Rgdvoconnector\Domain\Repository\Generi
 	/**
 	 * return a functionary
 	 *
-	 * @param \RGU\Rgdvoconnector\Domain\Model\Association $association
+	 * @param \RGU\Dvoconnector\Domain\Model\Association $association
 	 * @param string functionary id $eid
-	 * @param \RGU\Rgdvoconnector\Domain\Filter\FunctionaryFilter $functionaryFilter
+	 * @param \RGU\Dvoconnector\Domain\Filter\FunctionaryFilter $functionaryFilter
 	 *
 	 * @return Functionary
  	*/
@@ -65,7 +65,7 @@ class FunctionaryRepository extends \RGU\Rgdvoconnector\Domain\Repository\Generi
 
 		$functionary = new Functionary();
 
-		$mapper = new \RGU\Rgdvoconnector\Mapper\Functionary($xmlQuery);
+		$mapper = new \RGU\Dvoconnector\Mapper\Functionary($xmlQuery);
 		$mapper->mapToAbstractEntity($functionary);
 
 		return $this->completeEntity($functionary);
@@ -75,8 +75,8 @@ class FunctionaryRepository extends \RGU\Rgdvoconnector\Domain\Repository\Generi
 	/**
 	 * return all functionarys
 	 *
-	 * @param \RGU\Rgdvoconnector\Domain\Model\Association $association
-	 * @param \RGU\Rgdvoconnector\Domain\Filter\FunctionariesFilter $functionariesFilter
+	 * @param \RGU\Dvoconnector\Domain\Model\Association $association
+	 * @param \RGU\Dvoconnector\Domain\Filter\FunctionariesFilter $functionariesFilter
 	 *
 	 * @return Functionaries
  	*/
@@ -86,7 +86,7 @@ class FunctionaryRepository extends \RGU\Rgdvoconnector\Domain\Repository\Generi
 
 		$functionaries = new Functionaries();
 
-		$mapper = new \RGU\Rgdvoconnector\Mapper\Functionaries($xmlQuery);
+		$mapper = new \RGU\Dvoconnector\Mapper\Functionaries($xmlQuery);
 		$mapper->mapToAbstractEntity($functionaries);
 
 		return $this->completeEntity($functionaries);
@@ -96,7 +96,7 @@ class FunctionaryRepository extends \RGU\Rgdvoconnector\Domain\Repository\Generi
 	/**
 	 * return all functionarys
 	 *
-	 * @param \RGU\Rgdvoconnector\Domain\Filter\FunctionariesFilter $functionariesFilter
+	 * @param \RGU\Dvoconnector\Domain\Filter\FunctionariesFilter $functionariesFilter
 	 *
 	 * @return Functionaries
  	*/
@@ -108,7 +108,7 @@ class FunctionaryRepository extends \RGU\Rgdvoconnector\Domain\Repository\Generi
 
 		foreach ($arrayWithFunctionaries as $xmlQuery) {
 
-				$mapper = new \RGU\Rgdvoconnector\Mapper\Functionaries($xmlQuery);
+				$mapper = new \RGU\Dvoconnector\Mapper\Functionaries($xmlQuery);
 				$mapper->mapToAbstractEntity($functionaries);
 
 		}

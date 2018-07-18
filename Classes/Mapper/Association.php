@@ -1,9 +1,9 @@
 <?php
 
-namespace RGU\Rgdvoconnector\Mapper;
+namespace RGU\Dvoconnector\Mapper;
 
-use RGU\Rgdvoconnector\Mapper\Generic;
-use RGU\Rgdvoconnector\Domain\Model\Meta\Association\Category;
+use RGU\Dvoconnector\Mapper\Generic;
+use RGU\Dvoconnector\Domain\Model\Meta\Association\Category;
 
 class Association extends Generic {
 

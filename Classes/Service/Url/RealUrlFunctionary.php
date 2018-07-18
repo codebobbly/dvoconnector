@@ -1,8 +1,8 @@
 <?php
 
-namespace RGU\Rgdvoconnector\Service\Url;
+namespace RGU\Dvoconnector\Service\Url;
 
-use RGU\Rgdvoconnector\Domain\Filter\FunctionariesFilter;
+use RGU\Dvoconnector\Domain\Filter\FunctionariesFilter;
 
 /**
  * RealUrl.
@@ -11,7 +11,7 @@ class RealUrlFunctionary extends AbstractRealUrl {
 
   /**
    * $functionaryRepository
-   * @var RGU\Rgdvoconnector\Domain\Repository\FunctionaryRepository
+   * @var RGU\Dvoconnector\Domain\Repository\FunctionaryRepository
    * @inject
   */
   protected $functionaryRepository;
@@ -19,7 +19,7 @@ class RealUrlFunctionary extends AbstractRealUrl {
   public function __construct() {
 
     parent::__construct();
-    $this->functionaryRepository = $this->objectManager->get(\RGU\Rgdvoconnector\Domain\Repository\FunctionaryRepository::class);
+    $this->functionaryRepository = $this->objectManager->get(\RGU\Dvoconnector\Domain\Repository\FunctionaryRepository::class);
 
   }
 

@@ -1,5 +1,5 @@
 {
-  "name": "RGU/Rgdvoconnector",
+  "name": "RGU/Dvoconnector",
   "version": "1.0.0",
   "type": "typo3-cms-extension",
   "description": "DVO Connector",
@@ -22,7 +22,7 @@
   },
   "autoload": {
     "psr-4": {
-      "RGU\\Rgdvoconnector\\": "Classes"
+      "RGU\\Dvoconnector\\": "Classes"
     }
   }
 }

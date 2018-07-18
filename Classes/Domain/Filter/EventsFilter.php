@@ -1,6 +1,6 @@
 <?php
 
-namespace RGU\Rgdvoconnector\Domain\Filter;
+namespace RGU\Dvoconnector\Domain\Filter;
 
 class EventsFilter extends GenericFilterContext  {
 

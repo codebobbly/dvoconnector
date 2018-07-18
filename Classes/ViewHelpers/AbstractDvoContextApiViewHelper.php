@@ -1,6 +1,6 @@
 <?php
 
-namespace RGU\Rgdvoconnector\ViewHelpers;
+namespace RGU\Dvoconnector\ViewHelpers;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -8,15 +8,15 @@ use TYPO3\CMS\Core\Utility\MathUtility;
 use TYPO3\CMS\Extbase\Property\PropertyMapper;
 
 
-use RGU\Rgdvoconnector\Domain\Filter\AssociationFilter;
-use RGU\Rgdvoconnector\Domain\Filter\EventFilter;
-use RGU\Rgdvoconnector\Domain\Filter\AnnouncementFilter;
-use RGU\Rgdvoconnector\Domain\Filter\FunctionaryFilter;
+use RGU\Dvoconnector\Domain\Filter\AssociationFilter;
+use RGU\Dvoconnector\Domain\Filter\EventFilter;
+use RGU\Dvoconnector\Domain\Filter\AnnouncementFilter;
+use RGU\Dvoconnector\Domain\Filter\FunctionaryFilter;
 
-use RGU\Rgdvoconnector\Domain\Filter\AssociationsFilter;
-use RGU\Rgdvoconnector\Domain\Filter\EventsFilter;
-use RGU\Rgdvoconnector\Domain\Filter\AnnouncementsFilter;
-use RGU\Rgdvoconnector\Domain\Filter\FunctionariesFilter;
+use RGU\Dvoconnector\Domain\Filter\AssociationsFilter;
+use RGU\Dvoconnector\Domain\Filter\EventsFilter;
+use RGU\Dvoconnector\Domain\Filter\AnnouncementsFilter;
+use RGU\Dvoconnector\Domain\Filter\FunctionariesFilter;
 
 class AbstractDvoContextApiViewHelper extends AbstractDvoApiViewHelper {
 
@@ -27,7 +27,7 @@ class AbstractDvoContextApiViewHelper extends AbstractDvoApiViewHelper {
 
   /**
    * associationRepository
-   * @var RGU\Rgdvoconnector\Domain\Repository\AssociationRepository
+   * @var RGU\Dvoconnector\Domain\Repository\AssociationRepository
    * @inject
   */
   protected $associationRepository;

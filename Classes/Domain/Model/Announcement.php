@@ -1,5 +1,5 @@
 <?php
-namespace RGU\Rgdvoconnector\Domain\Model;
+namespace RGU\Dvoconnector\Domain\Model;
 /** copyright notice **/
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
@@ -13,7 +13,7 @@ class Announcement extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
 	 * Association
-	 * @var \RGU\Rgdvoconnector\Domain\Domain\Model\Association
+	 * @var \RGU\Dvoconnector\Domain\Domain\Model\Association
 	 */
 	protected $association;
 
@@ -77,7 +77,7 @@ class Announcement extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * sets the association attribute
 	 *
-	 * @param \RGU\Rgdvoconnector\Domain\Domain\Model\Association $association
+	 * @param \RGU\Dvoconnector\Domain\Domain\Model\Association $association
 	 * @return void
 	 */
 	public function setAssociation($association) {
@@ -87,7 +87,7 @@ class Announcement extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * returns the association attribute
 	 *
-	 * @return \RGU\Rgdvoconnector\Domain\Domain\Model\Association
+	 * @return \RGU\Dvoconnector\Domain\Domain\Model\Association
 	 */
 	public function getAssociation() {
 		return $this->association;
@@ -214,7 +214,7 @@ class Announcement extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function getImageSourceFile() {
 		$objectManager = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Object\ObjectManager::class);
-		return $objectManager->get(\RGU\Rgdvoconnector\Service\ImageService::class)->getCachedFile($this->getImageSource());
+		return $objectManager->get(\RGU\Dvoconnector\Service\ImageService::class)->getCachedFile($this->getImageSource());
 	}
 
 }

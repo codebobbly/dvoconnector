@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <T3locallang>
     <meta type="array">
-        <description>language labels for Calendarize-Rgdvoconnector</description>
+        <description>language labels for Calendarize-Dvoconnector</description>
         <type>module</type>
         <csh_table></csh_table>
-        <fileId>EXT:rgdvoconnector/Resources/Private/Language/locallang_ff.xml</fileId>
+        <fileId>EXT:Dvoconnector/Resources/Private/Language/locallang_ff.xml</fileId>
 		<labelContext type="array">
         </labelContext>
     </meta>

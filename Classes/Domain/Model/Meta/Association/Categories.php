@@ -1,12 +1,12 @@
 <?php
-namespace RGU\Rgdvoconnector\Domain\Model\Meta\Association;
+namespace RGU\Dvoconnector\Domain\Model\Meta\Association;
 /** copyright notice **/
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 class Categories extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
-   * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RGU\Rgdvoconnector\Domain\Model\Meta\Association\Category>
+   * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RGU\Dvoconnector\Domain\Model\Meta\Association\Category>
    */
   protected $categories;
 
@@ -17,7 +17,7 @@ class Categories extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Adds a Category
 	 *
-	 * @param \RGU\Rgdvoconnector\Domain\Model\Meta\Association\Category $category
+	 * @param \RGU\Dvoconnector\Domain\Model\Meta\Association\Category $category
 	 * @return void
 	 */
 	public function addCategory($category)
@@ -28,7 +28,7 @@ class Categories extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 /**
 	 * Removes a Category
 	 *
-	 * @param \RGU\Rgdvoconnector\Domain\Model\Meta\Association\Category $category
+	 * @param \RGU\Dvoconnector\Domain\Model\Meta\Association\Category $category
 	 * @return void
 	 */
 	public function removeCategory($category)
@@ -39,7 +39,7 @@ class Categories extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * returns the Categories
 	 *
-	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RGU\Rgdvoconnector\Domain\Model\Meta\Association\Category>
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RGU\Dvoconnector\Domain\Model\Meta\Association\Category>
 	 */
 	public function getCategories() {
 		return $this->categories;

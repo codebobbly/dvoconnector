@@ -1,29 +1,29 @@
 # ==============================================
-# FE-Plugin configuration for EXT:rgdvoconnector
+# FE-Plugin configuration for EXT:Dvoconnector
 # ==============================================
-plugin.tx_rgdvoconnector {
+plugin.tx_Dvoconnector {
 
 	mvc.callDefaultActionIfActionCantBeResolved = 1
 
 	view {
 		templateRootPaths {
-			0 = EXT:rgdvoconnector/Resources/Private/Templates/
-			1 = {$plugin.tx_rgdvoconnector.view.templateRootPath}
+			0 = EXT:Dvoconnector/Resources/Private/Templates/
+			1 = {$plugin.tx_Dvoconnector.view.templateRootPath}
 		}
 
 		partialRootPaths {
-			0 = EXT:rgdvoconnector/Resources/Private/Partials/
-			1 = {$plugin.tx_rgdvoconnector.view.partialRootPath}
+			0 = EXT:Dvoconnector/Resources/Private/Partials/
+			1 = {$plugin.tx_Dvoconnector.view.partialRootPath}
 		}
 
 		layoutRootPaths {
-			0 = EXT:rgdvoconnector/Resources/Private/Layouts/
-			1 = {$plugin.tx_rgdvoconnector.view.layoutRootPath}
+			0 = EXT:Dvoconnector/Resources/Private/Layouts/
+			1 = {$plugin.tx_Dvoconnector.view.layoutRootPath}
 		}
 
 		widget {
 	    TYPO3\CMS\Fluid\ViewHelpers\Widget\PaginateViewHelper {
-        templateRootPath = {$plugin.tx_rgdvoconnector.view.templateRootPath}
+        templateRootPath = {$plugin.tx_Dvoconnector.view.templateRootPath}
 	    }
 		}
 
@@ -39,17 +39,17 @@ plugin.tx_rgdvoconnector {
 }
 
 # ==============================================
-# BE-module configuration for EXT:rgdvoconnector
+# BE-module configuration for EXT:Dvoconnector
 # ==============================================
-module.tx_rgdvoconnector < plugin.tx_rgdvoconnector
+module.tx_Dvoconnector < plugin.tx_Dvoconnector
 
-[globalVar = GP:tx_rgdvoconnector_pi1|aID > 0]
+[globalVar = GP:tx_Dvoconnector_pi1|aID > 0]
 	page {
 		10 {
 			variables {
 				breadcrumbExtendedValue = USER
 				breadcrumbExtendedValue {
-					userFunc = RGU\Rgdvoconnector\Hooks\TyposcriptUserFuncs->getBreadcrumbAssociation
+					userFunc = RGU\Dvoconnector\Hooks\TyposcriptUserFuncs->getBreadcrumbAssociation
 				}
 			}
 			settings {
@@ -61,13 +61,13 @@ module.tx_rgdvoconnector < plugin.tx_rgdvoconnector
 	}
 [global]
 
-[globalVar = GP:tx_rgdvoconnector_pi1|eID > 0]
+[globalVar = GP:tx_Dvoconnector_pi1|eID > 0]
 	page {
 		10 {
 			variables {
 				breadcrumbExtendedValue = USER
 				breadcrumbExtendedValue {
-					userFunc = RGU\Rgdvoconnector\Hooks\TyposcriptUserFuncs->getBreadcrumbEvent
+					userFunc = RGU\Dvoconnector\Hooks\TyposcriptUserFuncs->getBreadcrumbEvent
 				}
 			}
 			settings {
@@ -79,13 +79,13 @@ module.tx_rgdvoconnector < plugin.tx_rgdvoconnector
 	}
 [global]
 
-[globalVar = GP:tx_rgdvoconnector_pi1|anID > 0]
+[globalVar = GP:tx_Dvoconnector_pi1|anID > 0]
 	page {
 		10 {
 			variables {
 				breadcrumbExtendedValue = USER
 				breadcrumbExtendedValue {
-					userFunc = RGU\Rgdvoconnector\Hooks\TyposcriptUserFuncs->getBreadcrumbAnnouncement
+					userFunc = RGU\Dvoconnector\Hooks\TyposcriptUserFuncs->getBreadcrumbAnnouncement
 				}
 			}
 			settings {
@@ -97,13 +97,13 @@ module.tx_rgdvoconnector < plugin.tx_rgdvoconnector
 	}
 [global]
 
-[globalVar = GP:tx_rgdvoconnector_pi1|fID > 0]
+[globalVar = GP:tx_Dvoconnector_pi1|fID > 0]
 	page {
 		10 {
 			variables {
 				breadcrumbExtendedValue = USER
 				breadcrumbExtendedValue {
-					userFunc = RGU\Rgdvoconnector\Hooks\TyposcriptUserFuncs->getBreadcrumbFunctionary
+					userFunc = RGU\Dvoconnector\Hooks\TyposcriptUserFuncs->getBreadcrumbFunctionary
 				}
 			}
 			settings {

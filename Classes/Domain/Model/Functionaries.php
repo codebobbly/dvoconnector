@@ -1,12 +1,12 @@
 <?php
-namespace RGU\Rgdvoconnector\Domain\Model;
+namespace RGU\Dvoconnector\Domain\Model;
 /** copyright notice **/
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 class Functionaries extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
-   * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RGU\Rgdvoconnector\Domain\Model\Functionary>
+   * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RGU\Dvoconnector\Domain\Model\Functionary>
    */
   protected $functionaries;
 
@@ -17,7 +17,7 @@ class Functionaries extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Adds a Functionary
 	 *
-	 * @param \RGU\Rgdvoconnector\Domain\Domain\Model\Functionary $functionary
+	 * @param \RGU\Dvoconnector\Domain\Domain\Model\Functionary $functionary
 	 * @return void
 	 */
 	public function addFunctionary($functionary)
@@ -28,7 +28,7 @@ class Functionaries extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 /**
 	 * Removes a Functionary
 	 *
-	 * @param \RGU\Rgdvoconnector\Domain\Domain\Model\Functionary $functionary
+	 * @param \RGU\Dvoconnector\Domain\Domain\Model\Functionary $functionary
 	 * @return void
 	 */
 	public function removeFunctionary($functionary)
@@ -39,7 +39,7 @@ class Functionaries extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * returns the functionaries
 	 *
-	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RGU\Rgdvoconnector\Domain\Model\Functionary>
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RGU\Dvoconnector\Domain\Model\Functionary>
 	 */
 	public function getfunctionaries() {
 		return $this->functionaries;

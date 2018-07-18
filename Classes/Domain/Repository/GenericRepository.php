@@ -1,5 +1,5 @@
 <?php
-namespace RGU\Rgdvoconnector\Domain\Repository;
+namespace RGU\Dvoconnector\Domain\Repository;
 
 use \TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use \TYPO3\CMS\Extbase\Reflection\ClassSchema;
@@ -14,7 +14,7 @@ class GenericRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
 	/**
 	 * metaRepository
-	 * @var RGU\Rgdvoconnector\Domain\Repository\MetaRepository
+	 * @var RGU\Dvoconnector\Domain\Repository\MetaRepository
 	 * @inject
      */
 	protected $metaRepository;
@@ -50,22 +50,22 @@ class GenericRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 	private function recursivCompleteEntity($entity) {
 
 		switch (true) {
-			case is_a($entity, \RGU\Rgdvoconnector\Domain\Model\Meta\Association\Repertoire::class):
+			case is_a($entity, \RGU\Dvoconnector\Domain\Model\Meta\Association\Repertoire::class):
 
 				return $this->metaRepository->findAssociationRepertoireByID($entity->getID());
 
 				break;
-			case is_a($entity, \RGU\Rgdvoconnector\Domain\Model\Meta\Association\Category::class):
+			case is_a($entity, \RGU\Dvoconnector\Domain\Model\Meta\Association\Category::class):
 
 				return $this->metaRepository->findAssociationCategoryByID($entity->getID());
 
 				break;
-			case is_a($entity, \RGU\Rgdvoconnector\Domain\Model\Meta\Association\Performancelevel::class):
+			case is_a($entity, \RGU\Dvoconnector\Domain\Model\Meta\Association\Performancelevel::class):
 
 				return $this->metaRepository->findAssociationPerformancelevelByID($entity->getID());
 
 				break;
-			case is_a($entity, \RGU\Rgdvoconnector\Domain\Model\Meta\Event\Type::class):
+			case is_a($entity, \RGU\Dvoconnector\Domain\Model\Meta\Event\Type::class):
 
 				return $this->metaRepository->findEventTypeByID($entity->getID());
 

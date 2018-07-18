@@ -1,8 +1,8 @@
 <?php
 
-namespace RGU\Rgdvoconnector\Mapper;
+namespace RGU\Dvoconnector\Mapper;
 
-use \RGU\Rgdvoconnector\Mapper\Generic;
+use \RGU\Dvoconnector\Mapper\Generic;
 
 class AssociationCategories extends Generic {
 

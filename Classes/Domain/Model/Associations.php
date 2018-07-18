@@ -1,12 +1,12 @@
 <?php
-namespace RGU\Rgdvoconnector\Domain\Model;
+namespace RGU\Dvoconnector\Domain\Model;
 /** copyright notice **/
-use RGU\Rgdvoconnector\Domain\Model\ListEntity;
+use RGU\Dvoconnector\Domain\Model\ListEntity;
 
 class Associations extends ListEntity {
 
 	/**
-   * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RGU\Rgdvoconnector\Domain\Model\Association>
+   * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RGU\Dvoconnector\Domain\Model\Association>
    */
   protected $associations;
 
@@ -17,7 +17,7 @@ class Associations extends ListEntity {
 	/**
 	 * Adds a Association
 	 *
-	 * @param \RGU\Rgdvoconnector\Domain\Domain\Model\Association $association
+	 * @param \RGU\Dvoconnector\Domain\Domain\Model\Association $association
 	 * @return void
 	 */
 	public function addAssociation($association)
@@ -28,7 +28,7 @@ class Associations extends ListEntity {
 	 /**
 	 * Removes a Association
 	 *
-	 * @param \RGU\Rgdvoconnector\Domain\Domain\Model\Association $association
+	 * @param \RGU\Dvoconnector\Domain\Domain\Model\Association $association
 	 * @return void
 	 */
 	public function removeAssociation($association)
@@ -39,7 +39,7 @@ class Associations extends ListEntity {
 	/**
 	 * returns the Associations
 	 *
-	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RGU\Rgdvoconnector\Domain\Model\Association>
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RGU\Dvoconnector\Domain\Model\Association>
 	 */
 	public function getAssociations() {
 		return $this->associations;

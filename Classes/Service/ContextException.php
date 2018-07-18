@@ -1,6 +1,6 @@
 <?php
 
-namespace RGU\Rgdvoconnector\Service;
+namespace RGU\Dvoconnector\Service;
 
 class ContextException extends \Exception
 {
