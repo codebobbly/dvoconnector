@@ -9,12 +9,12 @@
     "dvo",
 	"connector"
   ],
-  "homepage": "http://rguttroff.de",
+  "homepage": "https://github.com/codebobbly/dvoconnector",
   "authors": [
     {
-      "name": "Rainer Guttroff",
+      "name": "codebobbly",
       "role": "Developer",
-      "homepage": "http://rguttroff.de"
+      "homepage": "https://github.com/codebobbly"
     }
   ],
   "require": {
