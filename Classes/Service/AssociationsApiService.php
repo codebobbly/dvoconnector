@@ -2,7 +2,6 @@
 
 namespace RGU\Dvoconnector\Service;
 
-
 class AssociationsApiService extends GenericApiService
 {
     const CO_XML_ATTRIBUT_VALID_CONTEXT = 'valid-context';
