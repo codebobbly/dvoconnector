@@ -1,5 +1,9 @@
 <?php
+<<<<<<< HEAD
 namespace RGU\Dvoconnector\Domain\Model;
+=======
+namespace RG\Rgdvoconnector\Domain\Model;
+>>>>>>> parent of 8432775... Change Namespace
 /** copyright notice **/
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
@@ -13,7 +17,11 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
 	 * Association
+<<<<<<< HEAD
 	 * @var \RGU\Dvoconnector\Domain\Model\Association
+=======
+	 * @var \RG\Rgdvoconnector\Domain\Model\Association
+>>>>>>> parent of 8432775... Change Namespace
 	 */
 	protected $association;
 
@@ -31,7 +39,11 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
 	 * Type
+<<<<<<< HEAD
 	 * @var \RGU\Dvoconnector\Domain\Model\Meta\Event\Type
+=======
+	 * @var \RG\Rgdvoconnector\Domain\Model\Meta\Event\Type
+>>>>>>> parent of 8432775... Change Namespace
 	 */
 	protected $type;
 
@@ -48,7 +60,11 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $title;
 
 	/**
+<<<<<<< HEAD
      * @var \RGU\Dvoconnector\Domain\Model\Address
+=======
+     * @var \RG\Rgdvoconnector\Domain\Model\Address
+>>>>>>> parent of 8432775... Change Namespace
      */
     protected $address;
 
@@ -95,7 +111,11 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $email;
 
 	public function __construct() {
+<<<<<<< HEAD
 		$this->$address = new \RGU\Dvoconnector\Domain\Model\Address();
+=======
+		$this->$address = new \RG\Rgdvoconnector\Domain\Model\Address();
+>>>>>>> parent of 8432775... Change Namespace
 	}
 
 	/**
@@ -120,7 +140,11 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * sets the association attribute
 	 *
+<<<<<<< HEAD
 	 * @param \RGU\Dvoconnector\Domain\Model\Association $association
+=======
+	 * @param \RG\Rgdvoconnector\Domain\Model\Association $association
+>>>>>>> parent of 8432775... Change Namespace
 	 * @return void
 	 */
 	public function setAssociation($association) {
@@ -130,7 +154,11 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * returns the association attribute
 	 *
+<<<<<<< HEAD
 	 * @return \RGU\Dvoconnector\Domain\Model\Association
+=======
+	 * @return \RG\Rgdvoconnector\Domain\Model\Association
+>>>>>>> parent of 8432775... Change Namespace
 	 */
 	public function getAssociation() {
 		return $this->association;
@@ -177,7 +205,11 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * sets the type attribute
 	 *
+<<<<<<< HEAD
 	 * @param \RGU\Dvoconnector\Domain\Model\Meta\Event\Type $type
+=======
+	 * @param \RG\Rgdvoconnector\Domain\Model\Meta\Event\Type $type
+>>>>>>> parent of 8432775... Change Namespace
 	 * @return void
 	 */
 	public function setType($type) {
@@ -187,7 +219,11 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * returns the type attribute
 	 *
+<<<<<<< HEAD
 	 * @return \RGU\Dvoconnector\Domain\Model\Meta\Event\Type
+=======
+	 * @return \RG\Rgdvoconnector\Domain\Model\Meta\Event\Type
+>>>>>>> parent of 8432775... Change Namespace
 	 */
 	public function getType() {
 		return $this->type;
@@ -215,7 +251,11 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * sets the address attribute
 	 *
+<<<<<<< HEAD
 	 * @param \RGU\Dvoconnector\Domain\Model\Address $address
+=======
+	 * @param \RG\Rgdvoconnector\Domain\Model\Address $address
+>>>>>>> parent of 8432775... Change Namespace
 	 * @return void
 	 */
 	public function setAddress($address) {
@@ -225,7 +265,11 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * returns the address attribute
 	 *
+<<<<<<< HEAD
 	 * @return \RGU\Dvoconnector\Domain\Model\Address
+=======
+	 * @return \RG\Rgdvoconnector\Domain\Model\Address
+>>>>>>> parent of 8432775... Change Namespace
 	 */
 	public function getAddress() {
 		return $this->address;

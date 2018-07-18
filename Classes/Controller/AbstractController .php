@@ -5,7 +5,11 @@
  */
 declare(strict_types=1);
 
+<<<<<<< HEAD
 namespace RGU\Dvoconnector\Controller;
+=======
+namespace RG\Rgdvoconnector\Controller;
+>>>>>>> parent of 8432775... Change Namespace
 
 use TYPO3\CMS\Core\Messaging\FlashMessage;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -20,12 +24,21 @@ use TYPO3\CMS\Extbase\Mvc\Controller\Arguments;
 use TYPO3\CMS\Extbase\Property\PropertyMapper;
 use TYPO3\CMS\Extbase\Property\PropertyMappingConfiguration;
 
+<<<<<<< HEAD
 use RGU\Dvoconnector\Domain\Filter\AssociationsFilter;
 use RGU\Dvoconnector\Domain\Filter\EventsFilter;
 use RGU\Dvoconnector\Domain\Filter\AnnouncementsFilter;
 use RGU\Dvoconnector\Domain\Filter\FunctionariesFilter;
 
 use \RGU\Dvoconnector\Domain\Model\Association;
+=======
+use RG\Rgdvoconnector\Domain\Filter\AssociationsFilter;
+use RG\Rgdvoconnector\Domain\Filter\EventsFilter;
+use RG\Rgdvoconnector\Domain\Filter\AnnouncementsFilter;
+use RG\Rgdvoconnector\Domain\Filter\FunctionariesFilter;
+
+use \RG\Rgdvoconnector\Domain\Model\Association;
+>>>>>>> parent of 8432775... Change Namespace
 
 /**
  * Abstract controller.
@@ -44,14 +57,22 @@ abstract class AbstractController extends ActionController {
 
     /**
      * typeConverterObjectConverter
+<<<<<<< HEAD
      * @var RGU\Dvoconnector\Property\TypeConverter\ObjectConverter
+=======
+     * @var RG\Rgdvoconnector\Property\TypeConverter\ObjectConverter
+>>>>>>> parent of 8432775... Change Namespace
      * @inject
     */
     protected $typeConverterObjectConverter;
 
     /**
   	 * associationRepository
+<<<<<<< HEAD
   	 * @var RGU\Dvoconnector\Domain\Repository\AssociationRepository
+=======
+  	 * @var RG\Rgdvoconnector\Domain\Repository\AssociationRepository
+>>>>>>> parent of 8432775... Change Namespace
   	 * @inject
     */
   	protected $associationRepository;
@@ -150,7 +171,11 @@ abstract class AbstractController extends ActionController {
 
       $mappingConfiguration = new PropertyMappingConfiguration();
       $mappingConfiguration->setTypeConverter($this->typeConverterObjectConverter);
+<<<<<<< HEAD
       $mappingConfiguration->setTypeConverterOption(\RGU\Dvoconnector\Property\TypeConverter\ObjectConverter::class, \RGU\Dvoconnector\Property\TypeConverter\ObjectConverter::CONFIGURATION_OBJECT, $this->getDefaultAssociationsFilter());
+=======
+      $mappingConfiguration->setTypeConverterOption(\RG\Rgdvoconnector\Property\TypeConverter\ObjectConverter::class, \RG\Rgdvoconnector\Property\TypeConverter\ObjectConverter::CONFIGURATION_OBJECT, $this->getDefaultAssociationsFilter());
+>>>>>>> parent of 8432775... Change Namespace
 
       return $this->convertAssociationsFilter($mappingConfiguration, $filter);
 
@@ -208,7 +233,11 @@ abstract class AbstractController extends ActionController {
 
       $mappingConfiguration = new PropertyMappingConfiguration();
       $mappingConfiguration->setTypeConverter($this->typeConverterObjectConverter);
+<<<<<<< HEAD
       $mappingConfiguration->setTypeConverterOption(\RGU\Dvoconnector\Property\TypeConverter\ObjectConverter::class, \RGU\Dvoconnector\Property\TypeConverter\ObjectConverter::CONFIGURATION_OBJECT, $this->getDefaultEventsFilter());
+=======
+      $mappingConfiguration->setTypeConverterOption(\RG\Rgdvoconnector\Property\TypeConverter\ObjectConverter::class, \RG\Rgdvoconnector\Property\TypeConverter\ObjectConverter::CONFIGURATION_OBJECT, $this->getDefaultEventsFilter());
+>>>>>>> parent of 8432775... Change Namespace
 
       return $this->convertEventsFilter($mappingConfiguration, $filter);
 
@@ -288,7 +317,11 @@ abstract class AbstractController extends ActionController {
 
   		$mappingConfiguration = new PropertyMappingConfiguration();
       $mappingConfiguration->setTypeConverter($this->typeConverterObjectConverter);
+<<<<<<< HEAD
       $mappingConfiguration->setTypeConverterOption(\RGU\Dvoconnector\Property\TypeConverter\ObjectConverter::class, \RGU\Dvoconnector\Property\TypeConverter\ObjectConverter::CONFIGURATION_OBJECT, $this->getDefaultAnnouncementsFilter());
+=======
+      $mappingConfiguration->setTypeConverterOption(\RG\Rgdvoconnector\Property\TypeConverter\ObjectConverter::class, \RG\Rgdvoconnector\Property\TypeConverter\ObjectConverter::CONFIGURATION_OBJECT, $this->getDefaultAnnouncementsFilter());
+>>>>>>> parent of 8432775... Change Namespace
 
   		return $this->convertAnnouncementsFilter($mappingConfiguration, $filter);
 
@@ -366,7 +399,11 @@ abstract class AbstractController extends ActionController {
 
       $mappingConfiguration = new PropertyMappingConfiguration();
       $mappingConfiguration->setTypeConverter($this->typeConverterObjectConverter);
+<<<<<<< HEAD
       $mappingConfiguration->setTypeConverterOption(\RGU\Dvoconnector\Property\TypeConverter\ObjectConverter::class, \RGU\Dvoconnector\Property\TypeConverter\ObjectConverter::CONFIGURATION_OBJECT, $this->getDefaultFunctionariesFilter());
+=======
+      $mappingConfiguration->setTypeConverterOption(\RG\Rgdvoconnector\Property\TypeConverter\ObjectConverter::class, \RG\Rgdvoconnector\Property\TypeConverter\ObjectConverter::CONFIGURATION_OBJECT, $this->getDefaultFunctionariesFilter());
+>>>>>>> parent of 8432775... Change Namespace
 
       return $this->convertFunctionariesFilter($mappingConfiguration, $filter);
 

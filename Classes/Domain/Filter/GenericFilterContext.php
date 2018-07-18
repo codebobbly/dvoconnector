@@ -1,8 +1,14 @@
 <?php
 
+<<<<<<< HEAD
 namespace RGU\Dvoconnector\Domain\Filter;
 
 class GenericFilterContext extends GenericFilter implements \RGU\Dvoconnector\Service\ApiServiceFilterContext  {
+=======
+namespace RG\Rgdvoconnector\Domain\Filter;
+
+class GenericFilterContext extends GenericFilter implements \RG\Rgdvoconnector\Service\ApiServiceFilterContext  {
+>>>>>>> parent of 8432775... Change Namespace
 
 	/**
 	 * Filter: ID der Vereinigung, unter welcher sich die angefragte Ressource befinden muss.

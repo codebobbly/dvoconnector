@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 namespace RGU\Dvoconnector\Domain\Model;
+=======
+namespace RG\Rgdvoconnector\Domain\Model;
+>>>>>>> parent of 8432775... Change Namespace
 
 /**
  * Extension Manager configuration
