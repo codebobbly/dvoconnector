@@ -1,9 +1,9 @@
 <?php
 
-namespace RG\Rgdvoconnector\Service\Url;
+namespace RGU\Rgdvoconnector\Service\Url;
 
-use RG\Rgdvoconnector\Domain\Filter\AssociationsFilter;
-use RG\Rgdvoconnector\Domain\Association;
+use RGU\Rgdvoconnector\Domain\Filter\AssociationsFilter;
+use RGU\Rgdvoconnector\Domain\Association;
 
 /**
  * RealUrl.

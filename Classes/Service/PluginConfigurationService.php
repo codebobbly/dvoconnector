@@ -1,11 +1,11 @@
 <?php
-namespace RG\Rgdvoconnector\Service;
+namespace RGU\Rgdvoconnector\Service;
 
-use RG\Rgdvoconnector\Utility\TemplateLayout;
-use RG\Rgdvoconnector\Domain\Repository\AssociationRepository;
-use RG\Rgdvoconnector\Domain\Repository\EventRepository;
-use RG\Rgdvoconnector\Domain\Repository\AnnouncementRepository;
-use RG\Rgdvoconnector\Domain\Repository\FunctionaryRepository;
+use RGU\Rgdvoconnector\Utility\TemplateLayout;
+use RGU\Rgdvoconnector\Domain\Repository\AssociationRepository;
+use RGU\Rgdvoconnector\Domain\Repository\EventRepository;
+use RGU\Rgdvoconnector\Domain\Repository\AnnouncementRepository;
+use RGU\Rgdvoconnector\Domain\Repository\FunctionaryRepository;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
 
@@ -33,7 +33,7 @@ class PluginConfigurationService {
    */
   public function addConfigAssociation(&$params, &$pObj) {
 
-    $associationRepository = $this->objectManager->get(\RG\Rgdvoconnector\Domain\Repository\AssociationRepository::class);
+    $associationRepository = $this->objectManager->get(\RGU\Rgdvoconnector\Domain\Repository\AssociationRepository::class);
 
     $rootAssociations = $associationRepository->getRootAssociations();
     foreach($rootAssociations->getAssociations() as $rootAssociation) {

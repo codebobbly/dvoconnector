@@ -1,8 +1,8 @@
 <?php
 
-namespace RG\Rgdvoconnector\Service\Url;
+namespace RGU\Rgdvoconnector\Service\Url;
 
-use RG\Rgdvoconnector\Domain\Filter\EventsFilter;
+use RGU\Rgdvoconnector\Domain\Filter\EventsFilter;
 
 /**
  * RealUrl.

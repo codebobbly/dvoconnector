@@ -1,12 +1,12 @@
 <?php
-namespace RG\Rgdvoconnector\Domain\Model\Meta\Association;
+namespace RGU\Rgdvoconnector\Domain\Model\Meta\Association;
 /** copyright notice **/
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 class Repertoires extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
-   * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RG\Rgdvoconnector\Domain\Model\Meta\Association\Repertoire>
+   * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RGU\Rgdvoconnector\Domain\Model\Meta\Association\Repertoire>
    */
   protected $repertoires;
 
@@ -17,7 +17,7 @@ class Repertoires extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Adds a Repertoire
 	 *
-	 * @param \RG\Rgdvoconnector\Domain\Model\Meta\Association\Repertoire $repertoire
+	 * @param \RGU\Rgdvoconnector\Domain\Model\Meta\Association\Repertoire $repertoire
 	 * @return void
 	 */
 	public function addRepertoire($repertoire)
@@ -28,7 +28,7 @@ class Repertoires extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 /**
 	 * Removes a Repertoire
 	 *
-	 * @param \RG\Rgdvoconnector\Domain\Model\Meta\Association\Repertoire $repertoire
+	 * @param \RGU\Rgdvoconnector\Domain\Model\Meta\Association\Repertoire $repertoire
 	 * @return void
 	 */
 	public function removeRepertoire($repertoire)
@@ -39,7 +39,7 @@ class Repertoires extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * returns the Repertoires
 	 *
-	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RG\Rgdvoconnector\Domain\Model\Meta\Association\Repertoire>
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RGU\Rgdvoconnector\Domain\Model\Meta\Association\Repertoire>
 	 */
 	public function getRepertoires() {
 		return $this->repertoires;

@@ -1,12 +1,12 @@
 <?php
-namespace RG\Rgdvoconnector\Domain\Model\Meta\Event;
+namespace RGU\Rgdvoconnector\Domain\Model\Meta\Event;
 /** copyright notice **/
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 class Types extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
-   * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RG\Rgdvoconnector\Domain\Model\Meta\Event\Type>
+   * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RGU\Rgdvoconnector\Domain\Model\Meta\Event\Type>
    */
   protected $types;
 
@@ -17,7 +17,7 @@ class Types extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Adds a Type
 	 *
-	 * @param \RG\Rgdvoconnector\Domain\Model\Meta\Event\Type $type
+	 * @param \RGU\Rgdvoconnector\Domain\Model\Meta\Event\Type $type
 	 * @return void
 	 */
 	public function addType($type)
@@ -28,7 +28,7 @@ class Types extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 /**
 	 * Removes a Type
 	 *
-	 * @param \RG\Rgdvoconnector\Domain\Model\Meta\Event\Type $type
+	 * @param \RGU\Rgdvoconnector\Domain\Model\Meta\Event\Type $type
 	 * @return void
 	 */
 	public function removeType($type)
@@ -39,7 +39,7 @@ class Types extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * returns the Types
 	 *
-	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RG\Rgdvoconnector\Domain\Model\Meta\Event\Type>
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RGU\Rgdvoconnector\Domain\Model\Meta\Event\Type>
 	 */
 	public function getTypes() {
 		return $this->types;

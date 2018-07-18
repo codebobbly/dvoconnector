@@ -1,12 +1,12 @@
 <?php
-namespace RG\Rgdvoconnector\Domain\Model;
+namespace RGU\Rgdvoconnector\Domain\Model;
 /** copyright notice **/
-use RG\Rgdvoconnector\Domain\Model\ListEntity;
+use RGU\Rgdvoconnector\Domain\Model\ListEntity;
 
 class Events extends ListEntity {
 
 	/**
-   * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RG\Rgdvoconnector\Domain\Model\Event>
+   * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RGU\Rgdvoconnector\Domain\Model\Event>
    */
   protected $events;
 
@@ -17,7 +17,7 @@ class Events extends ListEntity {
 	/**
 	 * Adds a Event
 	 *
-	 * @param \RG\Rgdvoconnector\Domain\Domain\Model\Event $Event
+	 * @param \RGU\Rgdvoconnector\Domain\Domain\Model\Event $Event
 	 * @return void
 	 */
 	public function addEvent($event)
@@ -28,7 +28,7 @@ class Events extends ListEntity {
 	 /**
 	 * Removes a Events
 	 *
-	 * @param \RG\Rgdvoconnector\Domain\Domain\Model\Event $Event
+	 * @param \RGU\Rgdvoconnector\Domain\Domain\Model\Event $Event
 	 * @return void
 	 */
 	public function removeEvent($event)
@@ -39,7 +39,7 @@ class Events extends ListEntity {
 	/**
 	 * returns the Events
 	 *
-	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RG\Rgdvoconnector\Domain\Model\Event>
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RGU\Rgdvoconnector\Domain\Model\Event>
 	 */
 	public function getEvents() {
 		return $this->events;

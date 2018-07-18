@@ -1,8 +1,8 @@
 <?php
 
-namespace RG\Rgdvoconnector\Service\Url;
+namespace RGU\Rgdvoconnector\Service\Url;
 
-use RG\Rgdvoconnector\Domain\Filter\AnnouncementsFilter;
+use RGU\Rgdvoconnector\Domain\Filter\AnnouncementsFilter;
 
 /**
  * RealUrl.
@@ -11,7 +11,7 @@ class RealUrlAnnouncement extends AbstractRealUrl {
 
   /**
    * $announcementRepository
-   * @var RG\Rgdvoconnector\Domain\Repository\AnnouncementRepository
+   * @var RGU\Rgdvoconnector\Domain\Repository\AnnouncementRepository
    * @inject
   */
   protected $announcementRepository;
@@ -19,7 +19,7 @@ class RealUrlAnnouncement extends AbstractRealUrl {
   public function __construct() {
 
     parent::__construct();
-    $this->announcementRepository = $this->objectManager->get(\RG\Rgdvoconnector\Domain\Repository\AnnouncementRepository::class);
+    $this->announcementRepository = $this->objectManager->get(\RGU\Rgdvoconnector\Domain\Repository\AnnouncementRepository::class);
 
   }
 

@@ -5,7 +5,7 @@
  */
 declare(strict_types=1);
 
-namespace RG\Rgdvoconnector\Controller;
+namespace RGU\Rgdvoconnector\Controller;
 
 use TYPO3\CMS\Core\Messaging\FlashMessage;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -20,12 +20,12 @@ use TYPO3\CMS\Extbase\Mvc\Controller\Arguments;
 use TYPO3\CMS\Extbase\Property\PropertyMapper;
 use TYPO3\CMS\Extbase\Property\PropertyMappingConfiguration;
 
-use RG\Rgdvoconnector\Domain\Filter\AssociationsFilter;
-use RG\Rgdvoconnector\Domain\Filter\EventsFilter;
-use RG\Rgdvoconnector\Domain\Filter\AnnouncementsFilter;
-use RG\Rgdvoconnector\Domain\Filter\FunctionariesFilter;
+use RGU\Rgdvoconnector\Domain\Filter\AssociationsFilter;
+use RGU\Rgdvoconnector\Domain\Filter\EventsFilter;
+use RGU\Rgdvoconnector\Domain\Filter\AnnouncementsFilter;
+use RGU\Rgdvoconnector\Domain\Filter\FunctionariesFilter;
 
-use \RG\Rgdvoconnector\Domain\Model\Association;
+use \RGU\Rgdvoconnector\Domain\Model\Association;
 
 /**
  * Abstract controller.
@@ -44,14 +44,14 @@ abstract class AbstractController extends ActionController {
 
     /**
      * typeConverterObjectConverter
-     * @var RG\Rgdvoconnector\Property\TypeConverter\ObjectConverter
+     * @var RGU\Rgdvoconnector\Property\TypeConverter\ObjectConverter
      * @inject
     */
     protected $typeConverterObjectConverter;
 
     /**
   	 * associationRepository
-  	 * @var RG\Rgdvoconnector\Domain\Repository\AssociationRepository
+  	 * @var RGU\Rgdvoconnector\Domain\Repository\AssociationRepository
   	 * @inject
     */
   	protected $associationRepository;
@@ -150,7 +150,7 @@ abstract class AbstractController extends ActionController {
 
       $mappingConfiguration = new PropertyMappingConfiguration();
       $mappingConfiguration->setTypeConverter($this->typeConverterObjectConverter);
-      $mappingConfiguration->setTypeConverterOption(\RG\Rgdvoconnector\Property\TypeConverter\ObjectConverter::class, \RG\Rgdvoconnector\Property\TypeConverter\ObjectConverter::CONFIGURATION_OBJECT, $this->getDefaultAssociationsFilter());
+      $mappingConfiguration->setTypeConverterOption(\RGU\Rgdvoconnector\Property\TypeConverter\ObjectConverter::class, \RGU\Rgdvoconnector\Property\TypeConverter\ObjectConverter::CONFIGURATION_OBJECT, $this->getDefaultAssociationsFilter());
 
       return $this->convertAssociationsFilter($mappingConfiguration, $filter);
 
@@ -208,7 +208,7 @@ abstract class AbstractController extends ActionController {
 
       $mappingConfiguration = new PropertyMappingConfiguration();
       $mappingConfiguration->setTypeConverter($this->typeConverterObjectConverter);
-      $mappingConfiguration->setTypeConverterOption(\RG\Rgdvoconnector\Property\TypeConverter\ObjectConverter::class, \RG\Rgdvoconnector\Property\TypeConverter\ObjectConverter::CONFIGURATION_OBJECT, $this->getDefaultEventsFilter());
+      $mappingConfiguration->setTypeConverterOption(\RGU\Rgdvoconnector\Property\TypeConverter\ObjectConverter::class, \RGU\Rgdvoconnector\Property\TypeConverter\ObjectConverter::CONFIGURATION_OBJECT, $this->getDefaultEventsFilter());
 
       return $this->convertEventsFilter($mappingConfiguration, $filter);
 
@@ -288,7 +288,7 @@ abstract class AbstractController extends ActionController {
 
   		$mappingConfiguration = new PropertyMappingConfiguration();
       $mappingConfiguration->setTypeConverter($this->typeConverterObjectConverter);
-      $mappingConfiguration->setTypeConverterOption(\RG\Rgdvoconnector\Property\TypeConverter\ObjectConverter::class, \RG\Rgdvoconnector\Property\TypeConverter\ObjectConverter::CONFIGURATION_OBJECT, $this->getDefaultAnnouncementsFilter());
+      $mappingConfiguration->setTypeConverterOption(\RGU\Rgdvoconnector\Property\TypeConverter\ObjectConverter::class, \RGU\Rgdvoconnector\Property\TypeConverter\ObjectConverter::CONFIGURATION_OBJECT, $this->getDefaultAnnouncementsFilter());
 
   		return $this->convertAnnouncementsFilter($mappingConfiguration, $filter);
 
@@ -366,7 +366,7 @@ abstract class AbstractController extends ActionController {
 
       $mappingConfiguration = new PropertyMappingConfiguration();
       $mappingConfiguration->setTypeConverter($this->typeConverterObjectConverter);
-      $mappingConfiguration->setTypeConverterOption(\RG\Rgdvoconnector\Property\TypeConverter\ObjectConverter::class, \RG\Rgdvoconnector\Property\TypeConverter\ObjectConverter::CONFIGURATION_OBJECT, $this->getDefaultFunctionariesFilter());
+      $mappingConfiguration->setTypeConverterOption(\RGU\Rgdvoconnector\Property\TypeConverter\ObjectConverter::class, \RGU\Rgdvoconnector\Property\TypeConverter\ObjectConverter::CONFIGURATION_OBJECT, $this->getDefaultFunctionariesFilter());
 
       return $this->convertFunctionariesFilter($mappingConfiguration, $filter);
 

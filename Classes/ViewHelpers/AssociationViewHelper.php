@@ -1,10 +1,10 @@
 <?php
 
-namespace RG\Rgdvoconnector\ViewHelpers;
+namespace RGU\Rgdvoconnector\ViewHelpers;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use RG\Rgdvoconnector\Domain\Filter\AssociationFilter;
-use RG\Rgdvoconnector\Domain\Filter\EventFilter;
+use RGU\Rgdvoconnector\Domain\Filter\AssociationFilter;
+use RGU\Rgdvoconnector\Domain\Filter\EventFilter;
 
 class AssociationViewHelper extends AbstractDvoContextApiViewHelper {
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace RG\Rgdvoconnector\ViewHelpers;
+namespace RGU\Rgdvoconnector\ViewHelpers;
 
 /*
  * This file is part of the FluidTYPO3/Vhs project under GPLv2 or later.

@@ -1,5 +1,5 @@
 <?php
-namespace RG\Rgdvoconnector\Property\TypeConverter;
+namespace RGU\Rgdvoconnector\Property\TypeConverter;
 
 class ObjectConverter extends \TYPO3\CMS\Extbase\Property\TypeConverter\ObjectConverter {
 
@@ -28,7 +28,7 @@ class ObjectConverter extends \TYPO3\CMS\Extbase\Property\TypeConverter\ObjectCo
   public function convertFrom($source, $targetType, array $convertedChildProperties = [], \TYPO3\CMS\Extbase\Property\PropertyMappingConfigurationInterface $configuration = null) {
 
     // Get Object from Configuration
-    $this->rgobject = $configuration->getConfigurationValue(\RG\Rgdvoconnector\Property\TypeConverter\ObjectConverter::class, self::CONFIGURATION_OBJECT);
+    $this->rgobject = $configuration->getConfigurationValue(\RGU\Rgdvoconnector\Property\TypeConverter\ObjectConverter::class, self::CONFIGURATION_OBJECT);
 
     $result = parent::convertFrom($source, $targetType, $convertedChildProperties, $configuration);
 

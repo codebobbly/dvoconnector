@@ -1,6 +1,6 @@
 <?php
 
-namespace RG\Rgdvoconnector\Domain\Model;
+namespace RGU\Rgdvoconnector\Domain\Model;
 
 /**
  * Extension Manager configuration

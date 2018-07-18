@@ -1,24 +1,24 @@
 <?php
-namespace RG\Rgdvoconnector\Domain\Repository;
+namespace RGU\Rgdvoconnector\Domain\Repository;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use \RG\Rgdvoconnector\Domain\Model\Association;
-use \RG\Rgdvoconnector\Domain\Model\Announcement;
-use \RG\Rgdvoconnector\Domain\Model\Announcements;
-use \RG\Rgdvoconnector\Service\AssociationsApiService;
+use \RGU\Rgdvoconnector\Domain\Model\Association;
+use \RGU\Rgdvoconnector\Domain\Model\Announcement;
+use \RGU\Rgdvoconnector\Domain\Model\Announcements;
+use \RGU\Rgdvoconnector\Service\AssociationsApiService;
 
-class AnnouncementRepository extends \RG\Rgdvoconnector\Domain\Repository\GenericRepository {
+class AnnouncementRepository extends \RGU\Rgdvoconnector\Domain\Repository\GenericRepository {
 
 	/**
 	 * associationRepository
-	 * @var RG\Rgdvoconnector\Domain\Repository\AssociationRepository
+	 * @var RGU\Rgdvoconnector\Domain\Repository\AssociationRepository
 	 * @inject
      */
 	protected $associationRepository;
 
 	/**
 	 * $associationsApiService
-	 * @var \RG\Rgdvoconnector\Service\AssociationsApiService
+	 * @var \RGU\Rgdvoconnector\Service\AssociationsApiService
 	 * @inject
  	*/
 	protected $associationsApiService;
@@ -50,7 +50,7 @@ class AnnouncementRepository extends \RG\Rgdvoconnector\Domain\Repository\Generi
 
 		$announcement = new Announcement();
 
-		$mapper = new \RG\Rgdvoconnector\Mapper\Announcement($xmlQuery);
+		$mapper = new \RGU\Rgdvoconnector\Mapper\Announcement($xmlQuery);
 		$mapper->mapToAbstractEntity($announcement);
 
 		return $this->completeEntity($announcement);
@@ -60,9 +60,9 @@ class AnnouncementRepository extends \RG\Rgdvoconnector\Domain\Repository\Generi
 	/**
 	 * return a announcement
 	 *
-	 * @param \RG\Rgdvoconnector\Domain\Model\Association $association
+	 * @param \RGU\Rgdvoconnector\Domain\Model\Association $association
 	 * @param string announcement id $anid
-	 * @param \RG\Rgdvoconnector\Domain\Filter\AnnouncementFilter $announcementFilter
+	 * @param \RGU\Rgdvoconnector\Domain\Filter\AnnouncementFilter $announcementFilter
 	 *
 	 * @return Announcement
  	*/
@@ -72,7 +72,7 @@ class AnnouncementRepository extends \RG\Rgdvoconnector\Domain\Repository\Generi
 
 		$announcement = new Announcement();
 
-		$mapper = new \RG\Rgdvoconnector\Mapper\Announcement($xmlQuery);
+		$mapper = new \RGU\Rgdvoconnector\Mapper\Announcement($xmlQuery);
 		$mapper->mapToAbstractEntity($announcement);
 
 		return $this->completeEntity($announcement);
@@ -82,8 +82,8 @@ class AnnouncementRepository extends \RG\Rgdvoconnector\Domain\Repository\Generi
 	/**
 	 * return all announcements
 	 *
-	 * @param \RG\Rgdvoconnector\Domain\Model\Association $association
-	 * @param \RG\Rgdvoconnector\Domain\Filter\AnnouncementsFilter $announcementsFilter
+	 * @param \RGU\Rgdvoconnector\Domain\Model\Association $association
+	 * @param \RGU\Rgdvoconnector\Domain\Filter\AnnouncementsFilter $announcementsFilter
 	 *
 	 * @return Announcements
  	*/
@@ -93,7 +93,7 @@ class AnnouncementRepository extends \RG\Rgdvoconnector\Domain\Repository\Generi
 
 		$announcements = new Announcements();
 
-		$mapper = new \RG\Rgdvoconnector\Mapper\Announcements($xmlQuery);
+		$mapper = new \RGU\Rgdvoconnector\Mapper\Announcements($xmlQuery);
 		$mapper->mapToAbstractEntity($announcements);
 
 		return $this->completeEntity($announcements);
@@ -103,7 +103,7 @@ class AnnouncementRepository extends \RG\Rgdvoconnector\Domain\Repository\Generi
 	/**
 	 * return all announcements
 	 *
-	 * @param \RG\Rgdvoconnector\Domain\Filter\AnnouncementsFilter $announcementsFilter
+	 * @param \RGU\Rgdvoconnector\Domain\Filter\AnnouncementsFilter $announcementsFilter
 	 *
 	 * @return Announcements
  	*/
@@ -115,7 +115,7 @@ class AnnouncementRepository extends \RG\Rgdvoconnector\Domain\Repository\Generi
 
 		foreach ($arrayWithAnnouncements as $xmlQuery) {
 
-				$mapper = new \RG\Rgdvoconnector\Mapper\Announcements($xmlQuery);
+				$mapper = new \RGU\Rgdvoconnector\Mapper\Announcements($xmlQuery);
 				$mapper->mapToAbstractEntity($announcements);
 
 		}

@@ -1,6 +1,6 @@
 <?php
 
-namespace RG\Rgdvoconnector\Service;
+namespace RGU\Rgdvoconnector\Service;
 
 use TYPO3\CMS\Core\Cache\CacheManager;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -41,14 +41,14 @@ class GenericApiService implements \TYPO3\CMS\Core\SingletonInterface {
 	* @return string
 	*/
   public function getBaseApiUrl() {
-		return \RG\Rgdvoconnector\Utility\EmConfiguration::getSettings()->getApiUrl();
+		return \RGU\Rgdvoconnector\Utility\EmConfiguration::getSettings()->getApiUrl();
 	}
 
 	/**
 	* Queries XML data from server or cache
 	*
 	* @param string API URL
-	* @param \RG\Rgdvoconnector\Service\ApiServiceFilter $apiServiceFilter
+	* @param \RGU\Rgdvoconnector\Service\ApiServiceFilter $apiServiceFilter
 	*
 	* @return object \SimpleXMLElement
 	*/
@@ -71,7 +71,7 @@ class GenericApiService implements \TYPO3\CMS\Core\SingletonInterface {
 
       // additional headers
       $headers = array(
-          'User-Agent: ' . \RG\Rgdvoconnector\Utility\EmConfiguration::getSettings()->getHttpUserAgent(),
+          'User-Agent: ' . \RGU\Rgdvoconnector\Utility\EmConfiguration::getSettings()->getHttpUserAgent(),
       );
       if (!$useCache) {
           $headers[] = 'Cache-Control: no-cache';
@@ -96,7 +96,7 @@ class GenericApiService implements \TYPO3\CMS\Core\SingletonInterface {
         $maxAge = preg_replace('/.*Cache-Control: .*max-age=(\d+).*/sm', '${1}', $header);
 
         // cache response
-        $this->writeCache(md5($url), $body, ($maxAge == '') ? \RG\Rgdvoconnector\Utility\EmConfiguration::getSettings()->getCachetime() : (int)$maxAge);
+        $this->writeCache(md5($url), $body, ($maxAge == '') ? \RGU\Rgdvoconnector\Utility\EmConfiguration::getSettings()->getCachetime() : (int)$maxAge);
 
       }
 		}	elseif($useCache && $this->cacheManager->has(md5($url)) == true) {

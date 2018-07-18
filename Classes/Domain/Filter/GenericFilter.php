@@ -1,8 +1,8 @@
 <?php
 
-namespace RG\Rgdvoconnector\Domain\Filter;
+namespace RGU\Rgdvoconnector\Domain\Filter;
 
-class GenericFilter implements \RG\Rgdvoconnector\Service\ApiServiceFilter  {
+class GenericFilter implements \RGU\Rgdvoconnector\Service\ApiServiceFilter  {
 
 	/**
 	 * returns the array of parameters

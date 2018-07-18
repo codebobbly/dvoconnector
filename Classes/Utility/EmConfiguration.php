@@ -1,6 +1,6 @@
 <?php
 
-namespace RG\Rgdvoconnector\Utility;
+namespace RGU\Rgdvoconnector\Utility;
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
@@ -14,14 +14,14 @@ class EmConfiguration
     /**
      * Parses the extension settings.
      *
-     * @return \RG\Rgdvoconnector\Domain\Model\EmConfiguration
+     * @return \RGU\Rgdvoconnector\Domain\Model\EmConfiguration
      * @throws \Exception If the configuration is invalid.
      */
     public static function getSettings()
     {
         $configuration = self::parseSettings();
         require_once(ExtensionManagementUtility::extPath('rgdvoconnector') . 'Classes/Domain/Model/EmConfiguration.php');
-        $settings = new \RG\Rgdvoconnector\Domain\Model\EmConfiguration($configuration);
+        $settings = new \RGU\Rgdvoconnector\Domain\Model\EmConfiguration($configuration);
         return $settings;
     }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace RG\Rgdvoconnector\Service;
+namespace RGU\Rgdvoconnector\Service;
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\SingletonInterface;
@@ -101,7 +101,7 @@ class ImageService implements SingletonInterface
           $currentFile = $storage->getFile($cacheFile);
           if($currentFile->getSha1() == sha1($imageContent)) {
 
-            $this->cacheManager->set(md5($cacheFile), $currentFile->getSha1(), [], \RG\Rgdvoconnector\Utility\EmConfiguration::getSettings()->getCachetime());
+            $this->cacheManager->set(md5($cacheFile), $currentFile->getSha1(), [], \RGU\Rgdvoconnector\Utility\EmConfiguration::getSettings()->getCachetime());
             return $currentFile;
 
           }
@@ -137,7 +137,7 @@ class ImageService implements SingletonInterface
      */
     protected function supports($file)
     {
-        return parse_url($file, PHP_URL_HOST) == parse_url(\RG\Rgdvoconnector\Utility\EmConfiguration::getSettings()->getApiUrl(), PHP_URL_HOST) ? true : false;
+        return parse_url($file, PHP_URL_HOST) == parse_url(\RGU\Rgdvoconnector\Utility\EmConfiguration::getSettings()->getApiUrl(), PHP_URL_HOST) ? true : false;
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace RG\Rgdvoconnector\Utility;
+namespace RGU\Rgdvoconnector\Utility;
 
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\SingletonInterface;

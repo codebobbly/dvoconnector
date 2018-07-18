@@ -1,5 +1,5 @@
 <?php
-namespace RG\Rgdvoconnector\Controller;
+namespace RGU\Rgdvoconnector\Controller;
 
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 

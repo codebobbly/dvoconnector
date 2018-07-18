@@ -1,6 +1,6 @@
 <?php
 
-namespace RG\Rgdvoconnector\Service;
+namespace RGU\Rgdvoconnector\Service;
 
 interface ApiServiceFilter {
 

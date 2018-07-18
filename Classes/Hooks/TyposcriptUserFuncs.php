@@ -1,6 +1,6 @@
 <?php
 
-namespace RG\Rgdvoconnector\Hooks;
+namespace RGU\Rgdvoconnector\Hooks;
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -17,28 +17,28 @@ class TyposcriptUserFuncs {
 
   /**
    * associationRepository
-   * @var RG\Rgdvoconnector\Domain\Repository\AssociationRepository
+   * @var RGU\Rgdvoconnector\Domain\Repository\AssociationRepository
    * @inject
   */
   protected $associationRepository;
 
   /**
    * announcementRepository
-   * @var RG\Rgdvoconnector\Domain\Repository\AnnouncementRepository
+   * @var RGU\Rgdvoconnector\Domain\Repository\AnnouncementRepository
    * @inject
   */
   protected $announcementRepository;
 
   /**
    * eventRepository
-   * @var RG\Rgdvoconnector\Domain\Repository\EventRepository
+   * @var RGU\Rgdvoconnector\Domain\Repository\EventRepository
    * @inject
   */
   protected $eventRepository;
 
   /**
    * functionaryRepository
-   * @var RG\Rgdvoconnector\Domain\Repository\FunctionaryRepository
+   * @var RGU\Rgdvoconnector\Domain\Repository\FunctionaryRepository
    * @inject
   */
   protected $functionaryRepository;
@@ -46,10 +46,10 @@ class TyposcriptUserFuncs {
   public function __construct() {
 
     $this->objectManager = GeneralUtility::makeInstance(ObjectManager::class);
-    $this->associationRepository = $this->objectManager->get(\RG\Rgdvoconnector\Domain\Repository\AssociationRepository::class);
-    $this->announcementRepository = $this->objectManager->get(\RG\Rgdvoconnector\Domain\Repository\AnnouncementRepository::class);
-    $this->eventRepository = $this->objectManager->get(\RG\Rgdvoconnector\Domain\Repository\EventRepository::class);
-    $this->functionaryRepository = $this->objectManager->get(\RG\Rgdvoconnector\Domain\Repository\FunctionaryRepository::class);
+    $this->associationRepository = $this->objectManager->get(\RGU\Rgdvoconnector\Domain\Repository\AssociationRepository::class);
+    $this->announcementRepository = $this->objectManager->get(\RGU\Rgdvoconnector\Domain\Repository\AnnouncementRepository::class);
+    $this->eventRepository = $this->objectManager->get(\RGU\Rgdvoconnector\Domain\Repository\EventRepository::class);
+    $this->functionaryRepository = $this->objectManager->get(\RGU\Rgdvoconnector\Domain\Repository\FunctionaryRepository::class);
 
   }
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace RG\Rgdvoconnector\Service\Url;
+namespace RGU\Rgdvoconnector\Service\Url;
 
-use RG\Rgdvoconnector\Domain\Filter\EventsFilter;
+use RGU\Rgdvoconnector\Domain\Filter\EventsFilter;
 
 /**
  * RealUrl.
@@ -11,7 +11,7 @@ class RealUrlEvent extends AbstractRealUrl {
 
   /**
    * eventRepository
-   * @var RG\Rgdvoconnector\Domain\Repository\EventRepository
+   * @var RGU\Rgdvoconnector\Domain\Repository\EventRepository
    * @inject
   */
   protected $eventRepository;
@@ -19,7 +19,7 @@ class RealUrlEvent extends AbstractRealUrl {
   public function __construct() {
 
     parent::__construct();
-    $this->eventRepository = $this->objectManager->get(\RG\Rgdvoconnector\Domain\Repository\EventRepository::class);
+    $this->eventRepository = $this->objectManager->get(\RGU\Rgdvoconnector\Domain\Repository\EventRepository::class);
 
   }
 

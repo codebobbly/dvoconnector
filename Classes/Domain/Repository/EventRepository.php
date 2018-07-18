@@ -1,24 +1,24 @@
 <?php
-namespace RG\Rgdvoconnector\Domain\Repository;
+namespace RGU\Rgdvoconnector\Domain\Repository;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use \RG\Rgdvoconnector\Domain\Model\Association;
-use \RG\Rgdvoconnector\Domain\Model\Event;
-use \RG\Rgdvoconnector\Domain\Model\Events;
-use \RG\Rgdvoconnector\Service\AssociationsApiService;
+use \RGU\Rgdvoconnector\Domain\Model\Association;
+use \RGU\Rgdvoconnector\Domain\Model\Event;
+use \RGU\Rgdvoconnector\Domain\Model\Events;
+use \RGU\Rgdvoconnector\Service\AssociationsApiService;
 
-class EventRepository extends \RG\Rgdvoconnector\Domain\Repository\GenericRepository {
+class EventRepository extends \RGU\Rgdvoconnector\Domain\Repository\GenericRepository {
 
 	/**
 	 * associationRepository
-	 * @var RG\Rgdvoconnector\Domain\Repository\AssociationRepository
+	 * @var RGU\Rgdvoconnector\Domain\Repository\AssociationRepository
 	 * @inject
      */
 	protected $associationRepository;
 
 	/**
 	 * $associationsApiService
-	 * @var \RG\Rgdvoconnector\Service\AssociationsApiService
+	 * @var \RGU\Rgdvoconnector\Service\AssociationsApiService
 	 * @inject
  	*/
 	protected $associationsApiService;
@@ -50,7 +50,7 @@ class EventRepository extends \RG\Rgdvoconnector\Domain\Repository\GenericReposi
 
 		$event = new Event();
 
-		$mapper = new \RG\Rgdvoconnector\Mapper\Event($xmlQuery);
+		$mapper = new \RGU\Rgdvoconnector\Mapper\Event($xmlQuery);
 		$mapper->mapToAbstractEntity($event);
 
 		return $this->completeEntity($event);
@@ -60,9 +60,9 @@ class EventRepository extends \RG\Rgdvoconnector\Domain\Repository\GenericReposi
 	/**
 	 * return a event
 	 *
-	 * @param \RG\Rgdvoconnector\Domain\Model\Association $association
+	 * @param \RGU\Rgdvoconnector\Domain\Model\Association $association
 	 * @param string event id $eid
-	 * @param \RG\Rgdvoconnector\Domain\Filter\EventFilter $eventFilter
+	 * @param \RGU\Rgdvoconnector\Domain\Filter\EventFilter $eventFilter
 	 *
 	 * @return Event
  	*/
@@ -72,7 +72,7 @@ class EventRepository extends \RG\Rgdvoconnector\Domain\Repository\GenericReposi
 
 		$event = new Event();
 
-		$mapper = new \RG\Rgdvoconnector\Mapper\Event($xmlQuery);
+		$mapper = new \RGU\Rgdvoconnector\Mapper\Event($xmlQuery);
 		$mapper->mapToAbstractEntity($event);
 
 		return $this->completeEntity($event);
@@ -82,8 +82,8 @@ class EventRepository extends \RG\Rgdvoconnector\Domain\Repository\GenericReposi
 	/**
 	 * return all events
 	 *
-	 * @param \RG\Rgdvoconnector\Domain\Model\Association $association
-	 * @param \RG\Rgdvoconnector\Domain\Filter\EventsFilter $eventsFilter
+	 * @param \RGU\Rgdvoconnector\Domain\Model\Association $association
+	 * @param \RGU\Rgdvoconnector\Domain\Filter\EventsFilter $eventsFilter
 	 *
 	 * @return Events
  	*/
@@ -93,7 +93,7 @@ class EventRepository extends \RG\Rgdvoconnector\Domain\Repository\GenericReposi
 
 		$events = new Events();
 
-		$mapper = new \RG\Rgdvoconnector\Mapper\Events($xmlQuery);
+		$mapper = new \RGU\Rgdvoconnector\Mapper\Events($xmlQuery);
 		$mapper->mapToAbstractEntity($events);
 
 		return $this->completeEntity($events);
@@ -103,7 +103,7 @@ class EventRepository extends \RG\Rgdvoconnector\Domain\Repository\GenericReposi
 	/**
 	 * return all events
 	 *
-	 * @param \RG\Rgdvoconnector\Domain\Filter\EventsFilter $eventsFilter
+	 * @param \RGU\Rgdvoconnector\Domain\Filter\EventsFilter $eventsFilter
 	 *
 	 * @return Events
  	*/
@@ -115,7 +115,7 @@ class EventRepository extends \RG\Rgdvoconnector\Domain\Repository\GenericReposi
 
 		foreach ($arrayWithEvents as $xmlQuery) {
 
-				$mapper = new \RG\Rgdvoconnector\Mapper\Events($xmlQuery);
+				$mapper = new \RGU\Rgdvoconnector\Mapper\Events($xmlQuery);
 				$mapper->mapToAbstractEntity($events);
 
 		}

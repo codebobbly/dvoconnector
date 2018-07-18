@@ -1,5 +1,5 @@
 <?php
-namespace RG\Rgdvoconnector\Domain\Model\Meta\Association;
+namespace RGU\Rgdvoconnector\Domain\Model\Meta\Association;
 /** copyright notice **/
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 

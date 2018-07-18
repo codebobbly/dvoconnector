@@ -1,6 +1,6 @@
 <?php
 
-namespace RG\Rgdvoconnector\Hooks;
+namespace RGU\Rgdvoconnector\Hooks;
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
@@ -29,7 +29,7 @@ class RealUrlAutoConfiguration {
                 ],
                 [
                     'GETvar' => 'tx_rgdvoconnector_pi1[aID]',
-                    'userFunc' => RG\Rgdvoconnector\Service\Url\RealUrlAssociation::class . '->convert',
+                    'userFunc' => RGU\Rgdvoconnector\Service\Url\RealUrlAssociation::class . '->convert',
                 ],
                 [
                     'GETvar' => 'tx_rgdvoconnector_pi1[action]',
@@ -54,19 +54,19 @@ class RealUrlAutoConfiguration {
       					],	
                 [
                     'GETvar' => 'tx_rgdvoconnector_pi1[eID]',
-                    'userFunc' => RG\Rgdvoconnector\Service\Url\RealUrlEvent::class . '->convert',
+                    'userFunc' => RGU\Rgdvoconnector\Service\Url\RealUrlEvent::class . '->convert',
                 ],
                 [
                     'GETvar' => 'tx_rgdvoconnector_pi1[anID]',
-                    'userFunc' => RG\Rgdvoconnector\Service\Url\RealUrlAnnouncement::class . '->convert',
+                    'userFunc' => RGU\Rgdvoconnector\Service\Url\RealUrlAnnouncement::class . '->convert',
                 ],
                 [
                     'GETvar' => 'tx_rgdvoconnector_pi1[fID]',
-                    'userFunc' => RG\Rgdvoconnector\Service\Url\RealUrlFunctionary::class . '->convert',
+                    'userFunc' => RGU\Rgdvoconnector\Service\Url\RealUrlFunctionary::class . '->convert',
                 ],
                 [
                     'GETvar' => 'tx_rgdvoconnector_pi1[filter]',
-                    'userFunc' => RG\Rgdvoconnector\Service\Url\RealUrlFilter::class . '->convert',
+                    'userFunc' => RGU\Rgdvoconnector\Service\Url\RealUrlFilter::class . '->convert',
                 ],
               ]
             ]

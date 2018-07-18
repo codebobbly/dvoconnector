@@ -1,8 +1,8 @@
 <?php
 
-namespace RG\Rgdvoconnector\Domain\Filter;
+namespace RGU\Rgdvoconnector\Domain\Filter;
 
-class GenericFilterContext extends GenericFilter implements \RG\Rgdvoconnector\Service\ApiServiceFilterContext  {
+class GenericFilterContext extends GenericFilter implements \RGU\Rgdvoconnector\Service\ApiServiceFilterContext  {
 
 	/**
 	 * Filter: ID der Vereinigung, unter welcher sich die angefragte Ressource befinden muss.

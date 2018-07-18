@@ -1,10 +1,10 @@
 <?php
 
-namespace RG\Rgdvoconnector\ViewHelpers;
+namespace RGU\Rgdvoconnector\ViewHelpers;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use RG\Rgdvoconnector\Domain\Filter\AssociationFilter;
-use RG\Rgdvoconnector\Domain\Filter\AssociationsFilter;
+use RGU\Rgdvoconnector\Domain\Filter\AssociationFilter;
+use RGU\Rgdvoconnector\Domain\Filter\AssociationsFilter;
 
 use TYPO3\CMS\Extbase\Property\PropertyMapper;
 

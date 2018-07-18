@@ -1,8 +1,8 @@
 <?php
 
-namespace RG\Rgdvoconnector\Mapper;
+namespace RGU\Rgdvoconnector\Mapper;
 
-use \RG\Rgdvoconnector\Mapper\Generic;
+use \RGU\Rgdvoconnector\Mapper\Generic;
 
 class EventTypes extends Generic {
 

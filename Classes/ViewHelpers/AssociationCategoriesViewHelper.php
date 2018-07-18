@@ -1,6 +1,6 @@
 <?php
 
-namespace RG\Rgdvoconnector\ViewHelpers;
+namespace RGU\Rgdvoconnector\ViewHelpers;
 
 class AssociationCategoriesViewHelper extends AbstractDvoApiViewHelper {
 
@@ -11,7 +11,7 @@ class AssociationCategoriesViewHelper extends AbstractDvoApiViewHelper {
 
   /**
    * metaRepository
-   * @var RG\Rgdvoconnector\Domain\Repository\MetaRepository
+   * @var RGU\Rgdvoconnector\Domain\Repository\MetaRepository
    * @inject
   */
   protected $metaRepository;

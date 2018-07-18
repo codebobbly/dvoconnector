@@ -1,5 +1,5 @@
 <?php
-namespace RG\Rgdvoconnector\Domain\Model;
+namespace RGU\Rgdvoconnector\Domain\Model;
 /** copyright notice **/
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
@@ -30,7 +30,7 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $description;
 
 	/**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RG\Rgdvoconnector\Domain\Model\Association>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RGU\Rgdvoconnector\Domain\Model\Association>
      */
     protected $parents;
 
@@ -59,27 +59,27 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $website;
 
 	/**
-     * @var \RG\Rgdvoconnector\Domain\Model\Address
+     * @var \RGU\Rgdvoconnector\Domain\Model\Address
      */
     protected $address;
 
 	/**
-     * @var \RG\Rgdvoconnector\Domain\Model\Meta\Association\Category
+     * @var \RGU\Rgdvoconnector\Domain\Model\Meta\Association\Category
      */
     protected $category;
 
 	/**
-     * @var \RG\Rgdvoconnector\Domain\Model\Meta\Association\Performancelevel
+     * @var \RGU\Rgdvoconnector\Domain\Model\Meta\Association\Performancelevel
      */
     protected $performancelevel;
 
 	/**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RG\Rgdvoconnector\Domain\Model\Meta\Association\Repertoire>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RGU\Rgdvoconnector\Domain\Model\Meta\Association\Repertoire>
      */
 	protected $repertoires;
 
 	/**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RG\Rgdvoconnector\Domain\Model\Functionary>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RGU\Rgdvoconnector\Domain\Model\Functionary>
      */
 	protected $functionaries;
 
@@ -90,7 +90,7 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $repertoire_extra;
 
 	/**
-     * @var \RG\Rgdvoconnector\Domain\Model\ContactPerson
+     * @var \RGU\Rgdvoconnector\Domain\Model\ContactPerson
      */
 	protected $contactperson;
 
@@ -207,7 +207,7 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * returns the parents attribute
 	 *
-	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RG\Rgdvoconnector\Domain\Model\Association>
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RGU\Rgdvoconnector\Domain\Model\Association>
 	 */
 	public function getParents() {
 		return $this->parents;
@@ -311,7 +311,7 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * sets the address attribute
 	 *
-	 * @param \RG\Rgdvoconnector\Domain\Model\Address $address
+	 * @param \RGU\Rgdvoconnector\Domain\Model\Address $address
 	 * @return void
 	 */
 	public function setAddress($address) {
@@ -321,7 +321,7 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * returns the address attribute
 	 *
-	 * @return \RG\Rgdvoconnector\Domain\Model\Address
+	 * @return \RGU\Rgdvoconnector\Domain\Model\Address
 	 */
 	public function getAddress() {
 		return $this->address;
@@ -330,7 +330,7 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * sets the category attribute
 	 *
-	 * @param \RG\Rgdvoconnector\Domain\Model\Meta\Association\Category $category
+	 * @param \RGU\Rgdvoconnector\Domain\Model\Meta\Association\Category $category
 	 * @return void
 	 */
 	public function setCategory($category) {
@@ -340,7 +340,7 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * returns the category attribute
 	 *
-	 * @return \RG\Rgdvoconnector\Domain\Model\Meta\Association\Category
+	 * @return \RGU\Rgdvoconnector\Domain\Model\Meta\Association\Category
 	 */
 	public function getCategory() {
 		return $this->category;
@@ -349,7 +349,7 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * sets the performancelevel attribute
 	 *
-	 * @param \RG\Rgdvoconnector\Domain\Model\Meta\Association\Performancelevel $performancelevel
+	 * @param \RGU\Rgdvoconnector\Domain\Model\Meta\Association\Performancelevel $performancelevel
 	 * @return void
 	 */
 	public function setPerformancelevel($performancelevel) {
@@ -359,7 +359,7 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * returns the performancelevel attribute
 	 *
-	 * @return \RG\Rgdvoconnector\Domain\Model\Meta\Association\Performancelevel
+	 * @return \RGU\Rgdvoconnector\Domain\Model\Meta\Association\Performancelevel
 	 */
 	public function getPerformancelevel() {
 		return $this->performancelevel;
@@ -368,7 +368,7 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
     /**
      * Adds a repertoire to this association.
      *
-     * @param \RG\Rgdvoconnector\Domain\Model\Meta\Association\Repertoire $repertoire
+     * @param \RGU\Rgdvoconnector\Domain\Model\Meta\Association\Repertoire $repertoire
      * @return void
      */
     public function addRepertoire($repertoire)
@@ -379,7 +379,7 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
      /**
      * Removes a repertoire from this association.
      *
-     * @param \RG\Rgdvoconnector\Domain\Model\Meta\Association\Repertoire $repertoire
+     * @param \RGU\Rgdvoconnector\Domain\Model\Meta\Association\Repertoire $repertoire
      * @return void
      */
     public function removeRepertoire($repertoire)
@@ -390,7 +390,7 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * returns the repertoires attribute
 	 *
-	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RG\Rgdvoconnector\Domain\Model\Repertoire>
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RGU\Rgdvoconnector\Domain\Model\Repertoire>
 	 */
 	public function getRepertoires() {
 		return $this->repertoires;
@@ -418,7 +418,7 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * sets the contactperson attribute
 	 *
-	 * @param \RG\Rgdvoconnector\Domain\Model\ContactPerson $contactperson
+	 * @param \RGU\Rgdvoconnector\Domain\Model\ContactPerson $contactperson
 	 * @return void
 	 */
 	public function setContactPerson($contactperson) {
@@ -428,7 +428,7 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * returns the contactperson attribute
 	 *
-	 * @return \RG\Rgdvoconnector\Domain\Model\ContactPerson
+	 * @return \RGU\Rgdvoconnector\Domain\Model\ContactPerson
 	 */
 	public function getContactPerson() {
 		return $this->contactperson;
@@ -475,7 +475,7 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
    * Adds a functionary to this association.
    *
-   * @param \RG\Rgdvoconnector\Domain\Model\Meta\Association\Functionary $functionary
+   * @param \RGU\Rgdvoconnector\Domain\Model\Meta\Association\Functionary $functionary
    * @return void
    */
   public function addFunctionary($functionary)
@@ -486,7 +486,7 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
    /**
    * Removes a functionary from this association.
    *
-   * @param \RG\Rgdvoconnector\Domain\Model\Meta\Association\Functionary $functionary
+   * @param \RGU\Rgdvoconnector\Domain\Model\Meta\Association\Functionary $functionary
    * @return void
    */
   public function removeFunctionary($functionary)
@@ -497,7 +497,7 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * returns the functionaries attribute
 	 *
-	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RG\Rgdvoconnector\Domain\Model\Functionary>
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RGU\Rgdvoconnector\Domain\Model\Functionary>
 	 */
 	public function getFunctionaries() {
 		return $this->functionaries;
@@ -548,7 +548,7 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function getUrlPhotoFile() {
 		$objectManager = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Object\ObjectManager::class);
-		return $objectManager->get(\RG\Rgdvoconnector\Service\ImageService::class)->getCachedFile($this->getUrlPhoto());
+		return $objectManager->get(\RGU\Rgdvoconnector\Service\ImageService::class)->getCachedFile($this->getUrlPhoto());
 	}
 
 	/**
@@ -558,7 +558,7 @@ class Association extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function getUrlEmblemFile() {
 		$objectManager = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Object\ObjectManager::class);
-		return $objectManager->get(\RG\Rgdvoconnector\Service\ImageService::class)->getCachedFile($this->getUrlEmblem());
+		return $objectManager->get(\RGU\Rgdvoconnector\Service\ImageService::class)->getCachedFile($this->getUrlEmblem());
 	}
 
 }

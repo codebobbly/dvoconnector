@@ -1,5 +1,5 @@
 <?php
-namespace RG\Rgdvoconnector\Domain\Model;
+namespace RGU\Rgdvoconnector\Domain\Model;
 /** copyright notice **/
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
@@ -13,7 +13,7 @@ class Functionary extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
 	 * Association
-	 * @var \RG\Rgdvoconnector\Domain\Domain\Model\Association
+	 * @var \RGU\Rgdvoconnector\Domain\Domain\Model\Association
 	 */
 	protected $association;
 
@@ -36,7 +36,7 @@ class Functionary extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $lastName;
 
 	/**
-     * @var \RG\Rgdvoconnector\Domain\Domain\Model\Address
+     * @var \RGU\Rgdvoconnector\Domain\Domain\Model\Address
      */
     protected $address;
 
@@ -112,7 +112,7 @@ class Functionary extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * sets the association attribute
 	 *
-	 * @param \RG\Rgdvoconnector\Domain\Domain\Model\Association $association
+	 * @param \RGU\Rgdvoconnector\Domain\Domain\Model\Association $association
 	 * @return void
 	 */
 	public function setAssociation($association) {
@@ -122,7 +122,7 @@ class Functionary extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * returns the association attribute
 	 *
-	 * @return \RG\Rgdvoconnector\Domain\Domain\Model\Association
+	 * @return \RGU\Rgdvoconnector\Domain\Domain\Model\Association
 	 */
 	public function getAssociation() {
 		return $this->association;
@@ -188,7 +188,7 @@ class Functionary extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * sets the address attribute
 	 *
-	 * @param \RG\Rgdvoconnector\Domain\Domain\Model\Address $lastName
+	 * @param \RGU\Rgdvoconnector\Domain\Domain\Model\Address $lastName
 	 * @return void
 	 */
 	public function setAddress($address) {
@@ -198,7 +198,7 @@ class Functionary extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * returns the address attribute
 	 *
-	 * @return \RG\Rgdvoconnector\Domain\Domain\Model\Address
+	 * @return \RGU\Rgdvoconnector\Domain\Domain\Model\Address
 	 */
 	public function getAddress() {
 		return $this->address;
@@ -363,7 +363,7 @@ class Functionary extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function getPhotoSourceFile() {
 		$objectManager = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Object\ObjectManager::class);
-		return $objectManager->get(\RG\Rgdvoconnector\Service\ImageService::class)->getCachedFile($this->getPhotoSource());
+		return $objectManager->get(\RGU\Rgdvoconnector\Service\ImageService::class)->getCachedFile($this->getPhotoSource());
 	}
 
 }

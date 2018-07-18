@@ -1,16 +1,16 @@
 <?php
-namespace RG\Rgdvoconnector\Domain\Repository;
+namespace RGU\Rgdvoconnector\Domain\Repository;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use \RG\Rgdvoconnector\Domain\Model\Association;
-use \RG\Rgdvoconnector\Domain\Model\Associations;
-use \RG\Rgdvoconnector\Service\AssociationsApiService;
+use \RGU\Rgdvoconnector\Domain\Model\Association;
+use \RGU\Rgdvoconnector\Domain\Model\Associations;
+use \RGU\Rgdvoconnector\Service\AssociationsApiService;
 
-class AssociationRepository extends \RG\Rgdvoconnector\Domain\Repository\GenericRepository {
+class AssociationRepository extends \RGU\Rgdvoconnector\Domain\Repository\GenericRepository {
 
 	/**
 	 * $associationsApiService
-	 * @var \RG\Rgdvoconnector\Service\AssociationsApiService
+	 * @var \RGU\Rgdvoconnector\Service\AssociationsApiService
 	 * @inject
  	*/
 	protected $associationsApiService;
@@ -55,7 +55,7 @@ class AssociationRepository extends \RG\Rgdvoconnector\Domain\Repository\Generic
 
 			$association = new Association();
 
-			$mapper = new \RG\Rgdvoconnector\Mapper\Association($xmlQuery);
+			$mapper = new \RGU\Rgdvoconnector\Mapper\Association($xmlQuery);
 			$mapper->mapToAbstractEntity($association);
 
 			$associations->addAssociation($this->completeEntity($association));
@@ -79,7 +79,7 @@ class AssociationRepository extends \RG\Rgdvoconnector\Domain\Repository\Generic
 
 		$association = new Association();
 
-		$mapper = new \RG\Rgdvoconnector\Mapper\Association($xmlQuery);
+		$mapper = new \RGU\Rgdvoconnector\Mapper\Association($xmlQuery);
 		$mapper->mapToAbstractEntity($association);
 
 		return $this->completeEntity($association);
@@ -89,7 +89,7 @@ class AssociationRepository extends \RG\Rgdvoconnector\Domain\Repository\Generic
 	/**
 	 * return all associations
 	 *
-	 * @param \RG\Rgdvoconnector\Domain\Filter\AssociationsFilter $associationsFilter
+	 * @param \RGU\Rgdvoconnector\Domain\Filter\AssociationsFilter $associationsFilter
 	 *
 	 * @return Associations
  	*/
@@ -101,7 +101,7 @@ class AssociationRepository extends \RG\Rgdvoconnector\Domain\Repository\Generic
 
 		foreach($arrayWithChilds as $xmlQuery) {
 
-				$mapper = new \RG\Rgdvoconnector\Mapper\Associations($xmlQuery);
+				$mapper = new \RGU\Rgdvoconnector\Mapper\Associations($xmlQuery);
 				$mapper->mapToAbstractEntity($associations);
 
 		}
@@ -113,8 +113,8 @@ class AssociationRepository extends \RG\Rgdvoconnector\Domain\Repository\Generic
 	/**
 	 * return all associations
 	 *
-	 * @param \RG\Rgdvoconnector\Domain\Model\Association $association
-	 * @param \RG\Rgdvoconnector\Domain\Filter\AssociationsFilter $associationsFilter
+	 * @param \RGU\Rgdvoconnector\Domain\Model\Association $association
+	 * @param \RGU\Rgdvoconnector\Domain\Filter\AssociationsFilter $associationsFilter
 	 *
 	 * @return Associations
  	*/
@@ -124,7 +124,7 @@ class AssociationRepository extends \RG\Rgdvoconnector\Domain\Repository\Generic
 
 		$associations = new Associations();
 
-		$mapper = new \RG\Rgdvoconnector\Mapper\Associations($xmlQuery);
+		$mapper = new \RGU\Rgdvoconnector\Mapper\Associations($xmlQuery);
 		$mapper->mapToAbstractEntity($associations);
 
 		return $this->completeEntity($associations);

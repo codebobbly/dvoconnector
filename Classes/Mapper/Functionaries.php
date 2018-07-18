@@ -1,10 +1,10 @@
 <?php
 
-namespace RG\Rgdvoconnector\Mapper;
+namespace RGU\Rgdvoconnector\Mapper;
 
-use \RG\Rgdvoconnector\Mapper\Generic;
-use \RG\Rgdvoconnector\Domain\Model\Association;
-use \RG\Rgdvoconnector\Domain\Model\Address;
+use \RGU\Rgdvoconnector\Mapper\Generic;
+use \RGU\Rgdvoconnector\Domain\Model\Association;
+use \RGU\Rgdvoconnector\Domain\Model\Address;
 
 class Functionaries extends Generic {
 
