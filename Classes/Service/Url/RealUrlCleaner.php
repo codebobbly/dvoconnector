@@ -2,12 +2,11 @@
 
 namespace RGU\Dvoconnector\Service\Url;
 
-use RGU\Dvoconnector\Domain\Filter\EventsFilter;
-
 /**
  * RealUrl.
  */
-class RealUrlCleaner extends AbstractRealUrl {
+class RealUrlCleaner extends AbstractRealUrl
+{
 
   /**
    * Build the realurl alias.
@@ -17,14 +16,12 @@ class RealUrlCleaner extends AbstractRealUrl {
    *
    * @return string
    */
-  public function main($params, $ref) {
+    public function main($params, $ref)
+    {
+        $params['pathParts'] = array_filter($params['pathParts'], function ($v, $k) {
+            return !empty($v);
+        }, ARRAY_FILTER_USE_BOTH);
 
-    $params['pathParts'] = array_filter($params['pathParts'], function($v, $k) {
-        return !empty($v);
-    }, ARRAY_FILTER_USE_BOTH);
-
-    return null;
-
-  }
-
+        return null;
+    }
 }

@@ -1,46 +1,42 @@
 <?php
 namespace RGU\Dvoconnector\Controller;
 
-use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
+class AnnouncementStaticController extends AbstractController
+{
 
-class AnnouncementStaticController extends AbstractController {
+    /**
+     * list announcements action.
+     *
+     * @return string
+     */
+    public function listAnnouncementsAction()
+    {
+        $this->checkStaticTemplateIsIncluded();
+        $this->checkSettings();
 
-	/**
-	 * list announcements action.
-	 *
-	 * @return string
-	 */
-	public function listAnnouncementsAction() {
+        $this->slotExtendedAssignMultiple([
+            'associationID' => $this->settings['associationID'],
+            'filter' => $this->getAnnouncementsFilter(),
+        ], __CLASS__, __FUNCTION__);
 
-		$this->checkStaticTemplateIsIncluded();
-		$this->checkSettings();
+        return $this->view->render();
+    }
 
-		$this->slotExtendedAssignMultiple([
-			'associationID' => $this->settings['associationID'],
-			'filter' => $this->getAnnouncementsFilter(),
-		], __CLASS__, __FUNCTION__);
+    /**
+     * single announcement action.
+     *
+     * @return string
+     */
+    public function singleAnnouncementAction()
+    {
+        $this->checkStaticTemplateIsIncluded();
+        $this->checkSettings();
 
-		return $this->view->render();
+        $this->slotExtendedAssignMultiple([
+            'association' => $this->settings['associationID'],
+            'announcementID' => $this->settings['announcementID']
+        ], __CLASS__, __FUNCTION__);
 
-	}
-
-	/**
-	 * single announcement action.
-	 *
-	 * @return string
-	 */
-	public function singleAnnouncementAction() {
-
-		$this->checkStaticTemplateIsIncluded();
-		$this->checkSettings();
-
-		$this->slotExtendedAssignMultiple([
-			'association' => $this->settings['associationID'],
-			'announcementID' => $this->settings['announcementID']
-		], __CLASS__, __FUNCTION__);
-
-		return $this->view->render();
-
-	}
-
+        return $this->view->render();
+    }
 }

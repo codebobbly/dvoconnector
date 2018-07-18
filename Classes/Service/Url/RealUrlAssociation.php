@@ -2,13 +2,14 @@
 
 namespace RGU\Dvoconnector\Service\Url;
 
-use RGU\Dvoconnector\Domain\Filter\AssociationsFilter;
 use RGU\Dvoconnector\Domain\Association;
+use RGU\Dvoconnector\Domain\Filter\AssociationsFilter;
 
 /**
  * RealUrl.
  */
-class RealUrlAssociation extends AbstractRealUrl {
+class RealUrlAssociation extends AbstractRealUrl
+{
 
   /**
    * Handle the ID to alias convert.
@@ -17,51 +18,47 @@ class RealUrlAssociation extends AbstractRealUrl {
    *
    * @return string
    */
-  protected function id2alias($value) {
+    protected function id2alias($value)
+    {
+        $association = $this->associationRepository->findByID($value);
 
-    $association = $this->associationRepository->findByID($value);
+        $alias = $association->getName();
 
-    $alias = $association->getName();
+        if (!$this->isNameUnique($association)) {
+            $alias = $alias . self::SEPARATOR_OFFSET . dechex(intval($association->getID()));
+        }
 
-    if(!$this->isNameUnique($association)) {
-      $alias = $alias . self::SEPARATOR_OFFSET . dechex(intval($association->getID()));
+        return $this->cleanUrl($alias);
     }
 
-    return $this->cleanUrl($alias);
+    /**
+     * determine if the association is unique by the name
+     *
+     * @param Association $association
+     *
+     * @return bool
+     * @throws \Exception
+     */
+    protected function isNameUnique($association)
+    {
+        $associations = $this->determineAssociationsByName($association->getName());
+        return $associations->getAssociations()->count() == 1;
+    }
 
-  }
+    /**
+     * determine offset for association
+     *
+     * @param string $name
+     *
+     * @return string
+     */
+    protected function determineAssociationsByName($name)
+    {
+        $associationsFilter = new AssociationsFilter();
+        $associationsFilter->setName($name);
 
-  /**
-   * determine if the association is unique by the name
-   *
-   * @param Association $association
-   *
-   * @return boolean
-   * @throws \Exception
-   */
-  protected function isNameUnique($association) {
+        $associations = $this->associationRepository->findAssociationsByRootAssociations($associationsFilter);
 
-    $associations = $this->determineAssociationsByName($association->getName());
-    return $associations->getAssociations()->count() == 1;
-
-  }
-
-  /**
-   * determine offset for association
-   *
-   * @param string $name
-   *
-   * @return string
-   */
-  protected function determineAssociationsByName($name) {
-
-    $associationsFilter = new AssociationsFilter();
-    $associationsFilter->setName($name);
-
-    $associations = $this->associationRepository->findAssociationsByRootAssociations($associationsFilter);
-
-    return $associations;
-
-  }
-
+        return $associations;
+    }
 }

@@ -2,6 +2,6 @@
 
 namespace RGU\Dvoconnector\Domain\Filter;
 
-class EventFilter extends GenericFilterContext   {
-
+class EventFilter extends GenericFilterContext
+{
 }

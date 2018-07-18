@@ -2,526 +2,453 @@
 
 namespace RGU\Dvoconnector\Service;
 
-use TYPO3\CMS\Core\Cache\CacheManager;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use RGU\Dvoconnector\Service\GenericApiService;
-use RGU\Dvoconnector\Service\GenericFilterContext;
-use RGU\Dvoconnector\Service\ContextException;
 
-class AssociationsApiService extends GenericApiService {
+class AssociationsApiService extends GenericApiService
+{
+    protected const CO_XML_ATTRIBUT_VALID_CONTEXT = 'valid-context';
+    protected const CO_XML_ATTRIBUT_VALID_CONTEXT_TRUE = 'yes';
+    protected const CO_XML_ATTRIBUT_VALID_CONTEXT_FALSE = 'no';
 
-	protected const CO_XML_ATTRIBUT_VALID_CONTEXT = 'valid-context';
-	protected const CO_XML_ATTRIBUT_VALID_CONTEXT_TRUE = 'yes';
-	protected const CO_XML_ATTRIBUT_VALID_CONTEXT_FALSE = 'no';
+    /**
+    * return the root association IDs
+    *
+    * @return array root association IDs
+    */
+    public function getRootAssociationIDs()
+    {
+        return \RGU\Dvoconnector\Utility\EmConfiguration::getSettings()->getRootAssociationIDs();
+    }
 
-	/**
-	* return the root association IDs
-	*
-	* @return array root association IDs
-	*/
-	public function getRootAssociationIDs() {
+    /**
+    * return a association
+    *
+    * @param string association id
+    * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
+    *
+    * @return \SimpleXMLElement XML data
+    */
+    public function getAssociation($aid, $apiServiceFilterContext = null)
+    {
+        $apiServiceFilterContext = $this->checkApiServiceFilterContext($apiServiceFilterContext, $aid);
 
-    return \RGU\Dvoconnector\Utility\EmConfiguration::getSettings()->getRootAssociationIDs();
+        $url = $this->getBaseApiUrl() . '/associations/' . $aid . '';
 
-	}
+        $params = null;
 
-	/**
-	* return a association
-	*
-	* @param string association id
-	* @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
-	*
-	* @return \SimpleXMLElement XML data
-	*/
-	public function getAssociation($aid, $apiServiceFilterContext = null) {
+        $xml = $this->queryXml($url, $apiServiceFilterContext);
 
-		$apiServiceFilterContext = $this->checkApiServiceFilterContext($apiServiceFilterContext, $aid);
+        $this->checkValidContext($xml->query[self::CO_XML_ATTRIBUT_VALID_CONTEXT]);
 
-		$url = $this->getBaseApiUrl()."/associations/".$aid."";
+        return $xml->query->children()[0];
+    }
 
-		$params = null;
+    /**
+     * return the root associations
+     *
+     * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
+     *
+     * @return array XML data
+    */
+    public function getRootAssociations($apiServiceFilterContext = null)
+    {
+        $result = [];
 
-    $xml = $this->queryXml($url, $apiServiceFilterContext);
+        foreach ($this->getRootAssociationIDs() as $key => $rootAssociationID) {
+            try {
+                $result[] = $this->getAssociation($rootAssociationID, $apiServiceFilterContext);
+            } catch (ContextException $e) {
+                if ($key === count($this->getRootAssociationIDs()) - 1) {
+                    throw $e;
+                }
+            }
+        }
 
-		$this->checkValidContext($xml->query[AssociationsApiService::CO_XML_ATTRIBUT_VALID_CONTEXT]);
+        return $result;
+    }
 
-    return $xml->query->children()[0];
+    /**
+     * return a list of child associations from the root association
+     *
+     * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
+     *
+     * @return array XML data
+    */
+    public function findAssociationsByRootAssociations($apiServiceFilterContext = null)
+    {
+        $result = [];
 
-	}
+        foreach ($this->getRootAssociationIDs() as $key => $rootAssociationID) {
+            try {
+                $result[] = $this->getChildAssociationsFromAssociation($rootAssociationID, $apiServiceFilterContext);
+            } catch (ContextException $e) {
+                if ($key === count($this->getRootAssociationIDs()) - 1) {
+                    throw $e;
+                }
+            }
+        }
 
-	/**
-	 * return the root associations
-	 *
-	 * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
-	 *
-	 * @return array XML data
- 	*/
-	public function getRootAssociations($apiServiceFilterContext = null) {
+        return $result;
+    }
 
-		$result = [];
-
-		foreach ($this->getRootAssociationIDs() as $key => $rootAssociationID) {
-
-			try {
-
-				$result[] = $this->getAssociation($rootAssociationID, $apiServiceFilterContext);
-
-			} catch (ContextException $e) {
-
-				if($key === count($this->getRootAssociationIDs()) - 1) {
-					throw $e;
-				}
-
-			}
-
-		}
-
-    return $result;
-
-	}
-
-	/**
-	 * return a list of child associations from the root association
-	 *
-	 * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
-	 *
-	 * @return array XML data
- 	*/
-	public function findAssociationsByRootAssociations($apiServiceFilterContext = null) {
-
-		$result = [];
-
-		foreach ($this->getRootAssociationIDs() as $key => $rootAssociationID) {
-
-			try {
-
-				$result[] = $this->getChildAssociationsFromAssociation($rootAssociationID, $apiServiceFilterContext);
-
-			} catch (ContextException $e) {
-
-				if($key === count($this->getRootAssociationIDs()) - 1) {
-					throw $e;
-				}
-
-			}
-
-		}
-
-    return $result;
-
-	}
-
-	/**
+    /**
    * return a list of child associations from a association
    *
-	 * @param string association id
-	 * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
-	 *
+     * @param string association id
+     * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
+     *
    * @return \SimpleXMLElement XML data
    */
-	public function getChildAssociationsFromAssociation($aid, $apiServiceFilterContext = null) {
+    public function getChildAssociationsFromAssociation($aid, $apiServiceFilterContext = null)
+    {
+        $apiServiceFilterContext = $this->checkApiServiceFilterContext($apiServiceFilterContext, $aid);
 
-		$apiServiceFilterContext = $this->checkApiServiceFilterContext($apiServiceFilterContext, $aid);
+        $url = $this->getBaseApiUrl() . '/associations/' . $aid . '/associations';
 
-		$url = $this->getBaseApiUrl()."/associations/".$aid."/associations";
+        $params = null;
 
-		$params = null;
+        $xml = $this->queryXml($url, $apiServiceFilterContext);
 
-    $xml = $this->queryXml($url, $apiServiceFilterContext);
+        $this->checkValidContext($xml->list[self::CO_XML_ATTRIBUT_VALID_CONTEXT]);
 
-		$this->checkValidContext($xml->list[AssociationsApiService::CO_XML_ATTRIBUT_VALID_CONTEXT]);
+        return $xml->list;
+    }
 
-    return $xml->list;
-
-	}
-
-	/**
+    /**
    * return a list of events from a association
    *
-	 * @param string association id
-	 * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
-	 *
+     * @param string association id
+     * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
+     *
    * @return \SimpleXMLElement XML data
    */
-	public function getEventsFromAssociation($aid, $apiServiceFilterContext = null) {
+    public function getEventsFromAssociation($aid, $apiServiceFilterContext = null)
+    {
+        $apiServiceFilterContext = $this->checkApiServiceFilterContext($apiServiceFilterContext, $aid);
 
-		$apiServiceFilterContext = $this->checkApiServiceFilterContext($apiServiceFilterContext, $aid);
+        $url = $this->getBaseApiUrl() . '/associations/' . $aid . '/events';
 
-		$url = $this->getBaseApiUrl()."/associations/".$aid."/events";
+        $params = null;
 
-		$params = null;
+        $xml = $this->queryXml($url, $apiServiceFilterContext);
 
-    $xml = $this->queryXml($url, $apiServiceFilterContext);
+        $this->checkValidContext($xml->list[self::CO_XML_ATTRIBUT_VALID_CONTEXT]);
 
-		$this->checkValidContext($xml->list[AssociationsApiService::CO_XML_ATTRIBUT_VALID_CONTEXT]);
+        return $xml->list;
+    }
 
-    return $xml->list;
-
-	}
-
-	/**
+    /**
    * return a list of events from the root associations
    *
-	 * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
-	 *
+     * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
+     *
    * @return \SimpleXMLElement XML data
    */
-	public function getEventsFromRootAssociations($apiServiceFilterContext = null) {
+    public function getEventsFromRootAssociations($apiServiceFilterContext = null)
+    {
+        $result = [];
 
-		$result = [];
+        foreach ($this->getRootAssociationIDs() as $key => $rootAssociationID) {
+            try {
+                $result[] = $this->getChildAssociationsFromAssociation($rootAssociationID, $apiServiceFilterContext);
+            } catch (ContextException $e) {
+                if ($key === count($this->getRootAssociationIDs()) - 1) {
+                    throw $e;
+                }
+            }
+        }
 
-		foreach ($this->getRootAssociationIDs() as $key => $rootAssociationID) {
+        return $result;
+    }
 
-			try {
-
-				$result[] = $this->getChildAssociationsFromAssociation($rootAssociationID, $apiServiceFilterContext);
-
-			} catch (ContextException $e) {
-
-				if($key === count($this->getRootAssociationIDs()) - 1) {
-					throw $e;
-				}
-
-			}
-
-		}
-
-    return $result;
-
-	}
-
-	/**
+    /**
    * return a event
    *
-	 * @param string event id
-	 * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
-	 *
+     * @param string event id
+     * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
+     *
    * @return \SimpleXMLElement XML data
    */
-	public function getEventFromID($eid, $apiServiceFilterContext = null) {
+    public function getEventFromID($eid, $apiServiceFilterContext = null)
+    {
+        foreach ($this->getRootAssociationIDs() as $key => $rootAssociationID) {
+            try {
+                $result = $this->getEventFromAssociation($rootAssociationID, $eid, $apiServiceFilterContext);
+                if (isset($result)) {
+                    return $result;
+                }
+            } catch (ContextException $e) {
+                if ($key === count($this->getRootAssociationIDs()) - 1) {
+                    throw $e;
+                }
+            }
+        }
 
-		foreach ($this->getRootAssociationIDs() as $key => $rootAssociationID) {
+        return null;
+    }
 
-			try {
-
-				$result = $this->getEventFromAssociation($rootAssociationID, $eid, $apiServiceFilterContext);
-				if(isset($result)) {
-					return $result;
-				}
-
-			} catch (ContextException $e) {
-
-				if($key === count($this->getRootAssociationIDs()) - 1) {
-					throw $e;
-				}
-
-			}
-
-		}
-
-		return null;
-
-	}
-
-	/**
+    /**
    * return a event from a association
    *
-	 * @param string association id
-	 * @param string event id
-	 * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
-	 *
+     * @param string association id
+     * @param string event id
+     * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
+     *
    * @return \SimpleXMLElement XML data
    */
-	public function getEventFromAssociation($aid, $eid, $apiServiceFilterContext = null) {
+    public function getEventFromAssociation($aid, $eid, $apiServiceFilterContext = null)
+    {
+        $apiServiceFilterContext = $this->checkApiServiceFilterContext($apiServiceFilterContext, $aid);
 
-		$apiServiceFilterContext = $this->checkApiServiceFilterContext($apiServiceFilterContext, $aid);
+        $url = $this->getBaseApiUrl() . '/associations/' . $aid . '/events/' . $eid . '';
 
-		$url = $this->getBaseApiUrl()."/associations/".$aid."/events/".$eid."";
+        $params = null;
 
-		$params = null;
+        $xml = $this->queryXml($url, $apiServiceFilterContext);
 
-    $xml = $this->queryXml($url, $apiServiceFilterContext);
+        $this->checkValidContext($xml->query[self::CO_XML_ATTRIBUT_VALID_CONTEXT]);
 
-		$this->checkValidContext($xml->query[AssociationsApiService::CO_XML_ATTRIBUT_VALID_CONTEXT]);
+        return $xml->query->children()[0];
+    }
 
-    return $xml->query->children()[0];
-
-	}
-
-	/**
+    /**
    * return a list of announcements from the root associations
    *
-	 * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
-	 *
+     * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
+     *
    * @return array XML data
    */
-	public function getAnnouncementsFromRootAssociations($apiServiceFilterContext = null) {
+    public function getAnnouncementsFromRootAssociations($apiServiceFilterContext = null)
+    {
+        $result = [];
 
-		$result = [];
+        foreach ($this->getRootAssociationIDs() as $key => $rootAssociationID) {
+            try {
+                $result[] = $this->getAnnouncementsFromAssociation($rootAssociationID, $apiServiceFilterContext);
+            } catch (ContextException $e) {
+                if ($key === count($this->getRootAssociationIDs()) - 1) {
+                    throw $e;
+                }
+            }
+        }
 
-		foreach ($this->getRootAssociationIDs() as $key => $rootAssociationID) {
+        return $result;
+    }
 
-			try {
-
-				$result[] = $this->getAnnouncementsFromAssociation($rootAssociationID, $apiServiceFilterContext);
-
-			} catch (ContextException $e) {
-
-				if($key === count($this->getRootAssociationIDs()) - 1) {
-					throw $e;
-				}
-
-			}
-
-		}
-
-    return $result;
-
-	}
-
-	/**
+    /**
    * return a list of announcements from a association
    *
-	 * @param string association id
-	 * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
-	 *
+     * @param string association id
+     * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
+     *
    * @return \SimpleXMLElement XML data
    */
-	public function getAnnouncementsFromAssociation($aid, $apiServiceFilterContext = null) {
+    public function getAnnouncementsFromAssociation($aid, $apiServiceFilterContext = null)
+    {
+        $apiServiceFilterContext = $this->checkApiServiceFilterContext($apiServiceFilterContext, $aid);
 
-		$apiServiceFilterContext = $this->checkApiServiceFilterContext($apiServiceFilterContext, $aid);
+        $url = $this->getBaseApiUrl() . '/associations/' . $aid . '/announcements';
 
-		$url = $this->getBaseApiUrl()."/associations/".$aid."/announcements";
+        $params = null;
 
-		$params = null;
+        $xml = $this->queryXml($url, $apiServiceFilterContext);
 
-    $xml = $this->queryXml($url, $apiServiceFilterContext);
+        $this->checkValidContext($xml->list[self::CO_XML_ATTRIBUT_VALID_CONTEXT]);
 
-		$this->checkValidContext($xml->list[AssociationsApiService::CO_XML_ATTRIBUT_VALID_CONTEXT]);
+        return $xml->list;
+    }
 
-    return $xml->list;
-
-	}
-
-	/**
+    /**
    * return a announcement from a association
    *
-	 * @param string association id
-	 * @param string announcement id
-	 * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
-	 *
+     * @param string association id
+     * @param string announcement id
+     * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
+     *
    * @return \SimpleXMLElement XML data
    */
-	public function getAnnouncementFromAssociation($aid, $mid, $apiServiceFilterContext = null) {
+    public function getAnnouncementFromAssociation($aid, $mid, $apiServiceFilterContext = null)
+    {
+        $apiServiceFilterContext = $this->checkApiServiceFilterContext($apiServiceFilterContext, $aid);
 
-		$apiServiceFilterContext = $this->checkApiServiceFilterContext($apiServiceFilterContext, $aid);
+        $url = $this->getBaseApiUrl() . '/associations/' . $aid . '/announcements/' . $mid . '';
 
-		$url = $this->getBaseApiUrl()."/associations/".$aid."/announcements/".$mid."";
+        $params = null;
 
-		$params = null;
+        $xml = $this->queryXml($url, $apiServiceFilterContext);
 
-    $xml = $this->queryXml($url, $apiServiceFilterContext);
+        $this->checkValidContext($xml->query[self::CO_XML_ATTRIBUT_VALID_CONTEXT]);
 
-		$this->checkValidContext($xml->query[AssociationsApiService::CO_XML_ATTRIBUT_VALID_CONTEXT]);
+        return $xml->query->children()[0];
+    }
 
-    return $xml->query->children()[0];
-
-	}
-
-	/**
+    /**
    * return a announcement
    *
-	 * @param string announcement id
-	 * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
-	 *
+     * @param string announcement id
+     * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
+     *
    * @return \SimpleXMLElement XML data
    */
-	public function getAnnouncementFromID($mid, $apiServiceFilterContext = null) {
+    public function getAnnouncementFromID($mid, $apiServiceFilterContext = null)
+    {
+        foreach ($this->getRootAssociationIDs() as $key => $rootAssociationID) {
+            try {
+                $result = $this->getAnnouncementFromAssociation($rootAssociationID, $mid, $apiServiceFilterContext);
+                if (isset($result)) {
+                    return $result;
+                }
+            } catch (ContextException $e) {
+                if ($key === count($this->getRootAssociationIDs()) - 1) {
+                    throw $e;
+                }
+            }
+        }
 
-		foreach ($this->getRootAssociationIDs() as $key => $rootAssociationID) {
+        return null;
+    }
 
-			try {
-
-				$result = $this->getAnnouncementFromAssociation($rootAssociationID, $mid, $apiServiceFilterContext);
-				if(isset($result)) {
-					return $result;
-				}
-
-			} catch (ContextException $e) {
-
-				if($key === count($this->getRootAssociationIDs()) - 1) {
-					throw $e;
-				}
-
-			}
-
-		}
-
-		return null;
-
-	}
-
-	/**
+    /**
    * return a list of functionaries from a association
    *
-	 * @param string association id
-	 * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
-	 *
+     * @param string association id
+     * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
+     *
    * @return \SimpleXMLElement XML data
    */
-	public function getFunctionariesFromAssociation($aid, $apiServiceFilterContext = null) {
+    public function getFunctionariesFromAssociation($aid, $apiServiceFilterContext = null)
+    {
+        $apiServiceFilterContext = $this->checkApiServiceFilterContext($apiServiceFilterContext, $aid);
 
-		$apiServiceFilterContext = $this->checkApiServiceFilterContext($apiServiceFilterContext, $aid);
+        $url = $this->getBaseApiUrl() . '/associations/' . $aid . '/functionaries';
 
-		$url = $this->getBaseApiUrl()."/associations/".$aid."/functionaries";
+        $params = null;
 
-		$params = null;
+        $xml = $this->queryXml($url, $apiServiceFilterContext);
 
-    $xml = $this->queryXml($url, $apiServiceFilterContext);
+        $this->checkValidContext($xml->list[self::CO_XML_ATTRIBUT_VALID_CONTEXT]);
 
-		$this->checkValidContext($xml->list[AssociationsApiService::CO_XML_ATTRIBUT_VALID_CONTEXT]);
+        $filterParamters = $apiServiceFilterContext->getParametersArray();
 
-		$filterParamters = $apiServiceFilterContext->getParametersArray();
+        for ($i = 0; $i < count($xml->list->functionaries->functionary); $i++) {
+            $functionaryChildEntry = $xml->list->functionaries->functionary[$i];
 
-		for ($i = 0; $i < count($xml->list->functionaries->functionary); $i++) {
+            if (isset($filterParamters['f_role']) && preg_match('/(' . $filterParamters['f_role'] . ')/', $functionaryChildEntry['role']) == 0) {
+                unset($xml->list->functionaries->functionary[$i]);
+                $i--;
+            } else {
+                $functionaryChildEntry->addAttribute('associationid', $aid);
+            }
+        }
 
-			$functionaryChildEntry = $xml->list->functionaries->functionary[$i];
+        return $xml->list;
+    }
 
-			if(isset($filterParamters['f_role']) && preg_match('/('.$filterParamters['f_role'].')/', $functionaryChildEntry['role']) == 0) {
-				unset($xml->list->functionaries->functionary[$i]);
-				$i--;
-			} else {
-				$functionaryChildEntry->addAttribute('associationid', $aid);
-			}
-
-		}
-
-    return $xml->list;
-
-	}
-
-	/**
+    /**
    * return a list of functionaries from the root associations
    *
-	 * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
-	 *
+     * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
+     *
    * @return \SimpleXMLElement XML data
    */
-	public function getFunctionariesFromRootAssociations($apiServiceFilterContext = null) {
+    public function getFunctionariesFromRootAssociations($apiServiceFilterContext = null)
+    {
+        $result = [];
 
-		$result = [];
+        foreach ($this->getRootAssociationIDs() as $key => $rootAssociationID) {
+            try {
+                $result[] = $this->getFunctionariesFromAssociation($rootAssociationID, $apiServiceFilterContext);
+            } catch (ContextException $e) {
+                if ($key === count($this->getRootAssociationIDs()) - 1) {
+                    throw $e;
+                }
+            }
+        }
 
-		foreach ($this->getRootAssociationIDs() as $key => $rootAssociationID) {
+        return $result;
+    }
 
-			try {
-				$result[] = $this->getFunctionariesFromAssociation($rootAssociationID, $apiServiceFilterContext);
-			} catch (ContextException $e) {
-
-				if($key === count($this->getRootAssociationIDs()) - 1) {
-					throw $e;
-				}
-
-			}
-
-		}
-
-    return $result;
-
-	}
-
-	/**
+    /**
    * return a functionary from a association
    *
-	 * @param string association id
-	 * @param string functionary id
-	 * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
-	 *
+     * @param string association id
+     * @param string functionary id
+     * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
+     *
    * @return \SimpleXMLElement XML data
    */
-	public function getFunctionaryFromAssociation($aid, $fid, $apiServiceFilterContext = null) {
+    public function getFunctionaryFromAssociation($aid, $fid, $apiServiceFilterContext = null)
+    {
+        $apiServiceFilterContext = $this->checkApiServiceFilterContext($apiServiceFilterContext, $aid);
 
-		$apiServiceFilterContext = $this->checkApiServiceFilterContext($apiServiceFilterContext, $aid);
+        $url = $this->getBaseApiUrl() . '/associations/' . $aid . '/functionaries/' . $fid . '';
 
-		$url = $this->getBaseApiUrl()."/associations/".$aid."/functionaries/".$fid."";
+        $params = null;
 
-		$params = null;
+        $xml = $this->queryXml($url, $apiServiceFilterContext);
 
-    $xml = $this->queryXml($url, $apiServiceFilterContext);
+        $this->checkValidContext($xml->query[self::CO_XML_ATTRIBUT_VALID_CONTEXT]);
 
-		$this->checkValidContext($xml->query[AssociationsApiService::CO_XML_ATTRIBUT_VALID_CONTEXT]);
+        return $xml->query->children()[0];
+    }
 
-    return $xml->query->children()[0];
-
-	}
-
-	/**
+    /**
    * return a functionary
    *
-	 * @param string functionary id
-	 * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
-	 *
+     * @param string functionary id
+     * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
+     *
    * @return \SimpleXMLElement XML data
    */
-	public function getFunctionaryFromID($fid, $apiServiceFilterContext = null) {
+    public function getFunctionaryFromID($fid, $apiServiceFilterContext = null)
+    {
+        foreach ($this->getRootAssociationIDs() as $key => $rootAssociationID) {
+            try {
+                $result = $this->getFunctionaryFromAssociation($rootAssociationID, $fid, $apiServiceFilterContext);
+                if (isset($result)) {
+                    return $result;
+                }
+            } catch (ContextException $e) {
+                if ($key === count($this->getRootAssociationIDs()) - 1) {
+                    throw $e;
+                }
+            }
+        }
 
-		foreach ($this->getRootAssociationIDs() as $key => $rootAssociationID) {
+        return null;
+    }
 
-			try {
-
-				$result = $this->getFunctionaryFromAssociation($rootAssociationID, $fid, $apiServiceFilterContext);
-				if(isset($result)) {
-					return $result;
-				}
-
-			} catch (ContextException $e) {
-
-				if($key === count($this->getRootAssociationIDs()) - 1) {
-					throw $e;
-				}
-
-			}
-
-		}
-
-		return null;
-
-	}
-
-	/**
+    /**
    * check that the filter has a inside association value
    *
-	 * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
-	 * @param string $aID association ID
-	 *
-	 * @return \RGU\Dvoconnector\Service\ApiServiceFilterContext
+     * @param \RGU\Dvoconnector\Service\ApiServiceFilterContext $apiServiceFilterContext
+     * @param string $aID association ID
+     *
+     * @return \RGU\Dvoconnector\Service\ApiServiceFilterContext
    */
-	protected function checkApiServiceFilterContext($apiServiceFilterContext = null, $aID = null) {
+    protected function checkApiServiceFilterContext($apiServiceFilterContext = null, $aID = null)
+    {
+        if (is_null($apiServiceFilterContext)) {
+            $resultApiServiceFilterContext = new \RGU\Dvoconnector\Domain\Filter\GenericFilterContext();
+        } else {
+            $resultApiServiceFilterContext = clone $apiServiceFilterContext;
+        }
 
-		if(is_null($apiServiceFilterContext)) {
-			$resultApiServiceFilterContext = new \RGU\Dvoconnector\Domain\Filter\GenericFilterContext();
-		} else {
-			$resultApiServiceFilterContext = clone $apiServiceFilterContext;
-		}
+        if (is_null($resultApiServiceFilterContext->getInsideAssociationID()) && isset($aID)) {
+            $resultApiServiceFilterContext->setInsideAssociationID($aID);
+        }
 
-		if(is_null($resultApiServiceFilterContext->getInsideAssociationID()) && isset($aID)) {
-			$resultApiServiceFilterContext->setInsideAssociationID($aID);
-		}
+        return $resultApiServiceFilterContext;
+    }
 
-		return $resultApiServiceFilterContext;
-
-	}
-
-	/**
+    /**
    * check that valid context is true or not relevant
    *
-	 * @param string valid context
+     * @param string valid context
    */
-	protected function checkValidContext($validContext) {
-
-		if(!empty($validContext) && $validContext == AssociationsApiService::CO_XML_ATTRIBUT_VALID_CONTEXT_FALSE) {
-			throw new ContextException();
-		}
-
-	}
-
+    protected function checkValidContext($validContext)
+    {
+        if (!empty($validContext) && $validContext == self::CO_XML_ATTRIBUT_VALID_CONTEXT_FALSE) {
+            throw new ContextException();
+        }
+    }
 }

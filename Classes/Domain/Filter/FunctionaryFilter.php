@@ -2,6 +2,6 @@
 
 namespace RGU\Dvoconnector\Domain\Filter;
 
-class FunctionaryFilter extends GenericFilterContext   {
-
+class FunctionaryFilter extends GenericFilterContext
+{
 }

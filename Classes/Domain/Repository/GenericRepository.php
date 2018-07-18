@@ -1,123 +1,115 @@
 <?php
 namespace RGU\Dvoconnector\Domain\Repository;
 
-use \TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
-use \TYPO3\CMS\Extbase\Reflection\ClassSchema;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
-class GenericRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
+class GenericRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+{
 
-	/**
-	 * @var \TYPO3\CMS\Extbase\Reflection\ReflectionService
-	 */
-	protected $reflectionService;
-
-	/**
-	 * metaRepository
-	 * @var RGU\Dvoconnector\Domain\Repository\MetaRepository
-	 * @inject
+    /**
+     * @var \TYPO3\CMS\Extbase\Reflection\ReflectionService
      */
-	protected $metaRepository;
+    protected $reflectionService;
 
-	public function initializeObject() {
+    /**
+     * metaRepository
+     * @var RGU\Dvoconnector\Domain\Repository\MetaRepository
+     * @inject
+     */
+    protected $metaRepository;
 
-		$this->reflectionService = GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Reflection\ReflectionService::class);
+    public function initializeObject()
+    {
+        $this->reflectionService = GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Reflection\ReflectionService::class);
+    }
 
-	}
+    /**
+     * complete a entity
+     *
+     * @param AbstractEntity entity
+     *
+     * @return AbstractEntity
+     *
+    */
+    protected function completeEntity($entity)
+    {
+        return $this->recursivCompleteEntity($entity);
+    }
 
-	/**
-	 * complete a entity
-	 *
-	 * @param AbstractEntity entity
-	 *
-	 * @return AbstractEntity
-	 *
- 	*/
-	protected function completeEntity($entity) {
+    /**
+     * complete a entity
+     *
+     * @param AbstractEntity entity
+     *
+     * @return AbstractEntity
+     *
+    */
+    private function recursivCompleteEntity($entity)
+    {
+        switch (true) {
+            case is_a($entity, \RGU\Dvoconnector\Domain\Model\Meta\Association\Repertoire::class):
 
-		return $this->recursivCompleteEntity($entity);
+                return $this->metaRepository->findAssociationRepertoireByID($entity->getID());
 
-	}
+                break;
+            case is_a($entity, \RGU\Dvoconnector\Domain\Model\Meta\Association\Category::class):
 
-	/**
-	 * complete a entity
-	 *
-	 * @param AbstractEntity entity
-	 *
-	 * @return AbstractEntity
-	 *
- 	*/
-	private function recursivCompleteEntity($entity) {
+                return $this->metaRepository->findAssociationCategoryByID($entity->getID());
 
-		switch (true) {
-			case is_a($entity, \RGU\Dvoconnector\Domain\Model\Meta\Association\Repertoire::class):
+                break;
+            case is_a($entity, \RGU\Dvoconnector\Domain\Model\Meta\Association\Performancelevel::class):
 
-				return $this->metaRepository->findAssociationRepertoireByID($entity->getID());
+                return $this->metaRepository->findAssociationPerformancelevelByID($entity->getID());
 
-				break;
-			case is_a($entity, \RGU\Dvoconnector\Domain\Model\Meta\Association\Category::class):
+                break;
+            case is_a($entity, \RGU\Dvoconnector\Domain\Model\Meta\Event\Type::class):
 
-				return $this->metaRepository->findAssociationCategoryByID($entity->getID());
+                return $this->metaRepository->findEventTypeByID($entity->getID());
 
-				break;
-			case is_a($entity, \RGU\Dvoconnector\Domain\Model\Meta\Association\Performancelevel::class):
+                break;
+            default:
 
-				return $this->metaRepository->findAssociationPerformancelevelByID($entity->getID());
+                $classSchema = $this->reflectionService->getClassSchema(get_class($entity));
 
-				break;
-			case is_a($entity, \RGU\Dvoconnector\Domain\Model\Meta\Event\Type::class):
+                foreach ($classSchema->getProperties() as $propertyName => $propertyDefinition) {
+                    switch (true) {
+                        case is_a($propertyDefinition['type'], \TYPO3\CMS\Extbase\Persistence\ObjectStorage::class, true):
 
-				return $this->metaRepository->findEventTypeByID($entity->getID());
+                            $objectStorage = $entity->_getProperty($propertyName);
+                            $newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 
-				break;
-			default:
+                            $objectStorage->rewind();
 
-				$classSchema = $this->reflectionService->getClassSchema(get_class($entity));
+                            while ($objectStorage->valid()) {
+                                $subEntity = $objectStorage->current();
 
-				foreach ($classSchema->getProperties() as $propertyName => $propertyDefinition) {
+                                $newSubEntity = $this->recursivCompleteEntity($subEntity);
+                                if ($newSubEntity) {
+                                    $newObjectStorage->attach($newSubEntity);
+                                } else {
+                                    $newObjectStorage->attach($subEntity);
+                                }
 
-					switch (true) {
-						case is_a($propertyDefinition['type'], \TYPO3\CMS\Extbase\Persistence\ObjectStorage::class, true):
+                                $objectStorage->next();
+                            }
 
-							$objectStorage = $entity->_getProperty($propertyName);
-							$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+                            $entity->_setProperty($propertyName, $newObjectStorage);
 
-							$objectStorage->rewind();
+                            break;
+                        case is_a($propertyDefinition['type'], \TYPO3\CMS\Extbase\DomainObject\AbstractEntity::class, true):
 
-							while($objectStorage->valid()) {
+                            $subEntity = $entity->_getProperty($propertyName);
+                            $newSubEntity = $this->recursivCompleteEntity($subEntity);
+                            $entity->_setProperty($propertyName, $newSubEntity);
 
-							    $subEntity = $objectStorage->current();
+                            break;
+                    }
+                }
 
-									$newSubEntity = $this->recursivCompleteEntity($subEntity);
-									if($newSubEntity) {
-										$newObjectStorage->attach($newSubEntity);
-									} else {
-										$newObjectStorage->attach($subEntity);
-									}
+                return $entity;
 
-							    $objectStorage->next();
-
-							}
-
-							$entity->_setProperty($propertyName, $newObjectStorage);
-
-							break;
-						case is_a($propertyDefinition['type'], \TYPO3\CMS\Extbase\DomainObject\AbstractEntity::class, true):
-
-							$subEntity = $entity->_getProperty($propertyName);
-							$newSubEntity = $this->recursivCompleteEntity($subEntity);
-							$entity->_setProperty($propertyName, $newSubEntity);
-
-							break;
-					}
-
-				}
-
-				return $entity;
-
-				break;
-		}
-
-	}
-
+                break;
+        }
+    }
 }

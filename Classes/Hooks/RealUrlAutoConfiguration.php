@@ -2,13 +2,12 @@
 
 namespace RGU\Dvoconnector\Hooks;
 
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-
 /**
  * AutoConfiguration-Hook for RealURL
  *
  */
-class RealUrlAutoConfiguration {
+class RealUrlAutoConfiguration
+{
 
     /**
      * Generates additional RealURL configuration and merges it with provided configuration
@@ -17,8 +16,8 @@ class RealUrlAutoConfiguration {
      * @return      array Updated configuration
      * @hook TYPO3_CONF_VARS|SC_OPTIONS|ext/realurl/class.tx_realurl_autoconfgen.php|extensionConfiguration
      */
-    public function addDVOConnectorConfig($params) {
-
+    public function addDVOConnectorConfig($params)
+    {
         return array_merge_recursive($params['config'], [
           'postVarSets' => [
             '_DEFAULT' => [
@@ -33,7 +32,7 @@ class RealUrlAutoConfiguration {
                 ],
                 [
                     'GETvar' => 'tx_Dvoconnector_pi1[action]',
-                    'valueMap' => array(
+                    'valueMap' => [
                       'veranstaltungen' => 'listEvents',
                       'meldungen' => 'listAnnouncements',
                       'funktionaere' => 'listFunctionaries',
@@ -45,13 +44,13 @@ class RealUrlAutoConfiguration {
                       'funktionaer' => 'detailFunctionary',
                       'meldung' => 'detailAnnouncement',
                       'veranstaltung' => 'detailEvent',
-                    ),
+                    ],
                     'noMatch' => 'bypass',
                 ],
                 [
-      						'GETvar' => 'tx_Dvoconnector_pi1[@widget_0][currentPage]',
-      						'noMatch' => 'bypass',
-      					],	
+                              'GETvar' => 'tx_Dvoconnector_pi1[@widget_0][currentPage]',
+                              'noMatch' => 'bypass',
+                          ],
                 [
                     'GETvar' => 'tx_Dvoconnector_pi1[eID]',
                     'userFunc' => RGU\Dvoconnector\Service\Url\RealUrlEvent::class . '->convert',
@@ -72,6 +71,5 @@ class RealUrlAutoConfiguration {
             ]
           ]
         ]);
-
     }
 }

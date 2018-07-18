@@ -2,6 +2,6 @@
 
 namespace RGU\Dvoconnector\Domain\Filter;
 
-class AssociationFilter extends GenericFilterContext   {
-
+class AssociationFilter extends GenericFilterContext
+{
 }

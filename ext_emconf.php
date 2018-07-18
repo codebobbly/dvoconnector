@@ -1,34 +1,32 @@
 <?php
 
-$EM_CONF[$_EXTKEY] = array(
-	'title' => 'DVO Connector',
-	'description' => 'DVO Connector',
-	'author' => 'Rainer Guttroff',
-	'author_email' => 'typo3-Dvoconnector@as.rguttroff.de',
-	'category' => 'misc',
-	'shy' => '',
-	'conflicts' => '',
-	'priority' => '',
-	'module' => '',
-	'state' => 'stable',
-	'internal' => '',
-	'uploadfolder' => 0,
-	'createDirs' => '',
-	'modify_tables' => '',
-	'clearCacheOnLoad' => 1,
-	'lockType' => '',
-	'version' => '1.0.0',
-	'constraints' => array(
-		'depends' => array(
-			'typo3' => '7.6.0-*',
-		),
-		'conflicts' => array(
-		),
-		'suggests' => array(
-		),
-	),
-	'suggests' => array(
-	)
-);
-
-?>
+$EM_CONF[$_EXTKEY] = [
+    'title' => 'DVO Connector',
+    'description' => 'DVO Connector',
+    'author' => 'Rainer Guttroff',
+    'author_email' => 'typo3-Dvoconnector@as.rguttroff.de',
+    'category' => 'misc',
+    'shy' => '',
+    'conflicts' => '',
+    'priority' => '',
+    'module' => '',
+    'state' => 'stable',
+    'internal' => '',
+    'uploadfolder' => 0,
+    'createDirs' => '',
+    'modify_tables' => '',
+    'clearCacheOnLoad' => 1,
+    'lockType' => '',
+    'version' => '1.0.0',
+    'constraints' => [
+        'depends' => [
+            'typo3' => '7.6.0-*',
+        ],
+        'conflicts' => [
+        ],
+        'suggests' => [
+        ],
+    ],
+    'suggests' => [
+    ]
+];

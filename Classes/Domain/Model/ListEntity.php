@@ -1,83 +1,88 @@
 <?php
 namespace RGU\Dvoconnector\Domain\Model;
+
 /** copyright notice **/
-use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
-
-class ListEntity extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
-
-  /**
-	 * rows
-	 * @var integer
-	 */
-	protected $rows;
+class ListEntity extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+{
 
   /**
-	 * offset
-	 * @var integer
-	 */
-	protected $offset;
+     * rows
+     * @var int
+     */
+    protected $rows;
 
-	/**
-	 * limit
-	 * @var integer
-	 */
-	protected $limit;
+    /**
+       * offset
+       * @var int
+       */
+    protected $offset;
 
-  /**
-	 * sets the rows attribute
-	 *
-	 * @param integer $rows
-	 * @return void
-	 */
-	public function setRows($rows) {
-		$this->rows = $rows;
-	}
+    /**
+     * limit
+     * @var int
+     */
+    protected $limit;
 
-	/**
-	 * returns the rows attribute
-	 *
-	 * @return integer
-	 */
-	public function getRows() {
-		return $this->rows;
-	}
+    /**
+       * sets the rows attribute
+       *
+       * @param int $rows
+       * @return void
+       */
+    public function setRows($rows)
+    {
+        $this->rows = $rows;
+    }
 
-  /**
-	 * sets the offset attribute
-	 *
-	 * @param integer $offset
-	 * @return void
-	 */
-	public function setOffset($offset) {
-		$this->offset = $offset;
-	}
+    /**
+     * returns the rows attribute
+     *
+     * @return int
+     */
+    public function getRows()
+    {
+        return $this->rows;
+    }
 
-	/**
-	 * returns the offset attribute
-	 *
-	 * @return integer
-	 */
-	public function getOffset() {
-		return $this->offset;
-	}
+    /**
+       * sets the offset attribute
+       *
+       * @param int $offset
+       * @return void
+       */
+    public function setOffset($offset)
+    {
+        $this->offset = $offset;
+    }
 
-  /**
-	 * sets the limit attribute
-	 *
-	 * @param integer $limit
-	 * @return void
-	 */
-	public function setLimit($limit) {
-		$this->limit = $limit;
-	}
+    /**
+     * returns the offset attribute
+     *
+     * @return int
+     */
+    public function getOffset()
+    {
+        return $this->offset;
+    }
 
-	/**
-	 * returns the limit attribute
-	 *
-	 * @return integer
-	 */
-	public function getLimit() {
-		return $this->limit;
-	}
+    /**
+       * sets the limit attribute
+       *
+       * @param int $limit
+       * @return void
+       */
+    public function setLimit($limit)
+    {
+        $this->limit = $limit;
+    }
 
+    /**
+     * returns the limit attribute
+     *
+     * @return int
+     */
+    public function getLimit()
+    {
+        return $this->limit;
+    }
 }
