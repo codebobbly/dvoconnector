@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 namespace RGU\Dvoconnector\ViewHelpers;
+=======
+namespace RG\Rgdvoconnector\ViewHelpers;
+>>>>>>> parent of 8432775... Change Namespace
 
 class AssociationRepertoiresViewHelper extends AbstractDvoApiViewHelper {
 
@@ -11,7 +15,11 @@ class AssociationRepertoiresViewHelper extends AbstractDvoApiViewHelper {
 
   /**
    * metaRepository
+<<<<<<< HEAD
    * @var RGU\Dvoconnector\Domain\Repository\MetaRepository
+=======
+   * @var RG\Rgdvoconnector\Domain\Repository\MetaRepository
+>>>>>>> parent of 8432775... Change Namespace
    * @inject
   */
   protected $metaRepository;

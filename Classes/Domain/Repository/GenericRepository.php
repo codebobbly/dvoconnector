@@ -1,5 +1,9 @@
 <?php
+<<<<<<< HEAD
 namespace RGU\Dvoconnector\Domain\Repository;
+=======
+namespace RG\Rgdvoconnector\Domain\Repository;
+>>>>>>> parent of 8432775... Change Namespace
 
 use \TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use \TYPO3\CMS\Extbase\Reflection\ClassSchema;
@@ -14,7 +18,11 @@ class GenericRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
 	/**
 	 * metaRepository
+<<<<<<< HEAD
 	 * @var RGU\Dvoconnector\Domain\Repository\MetaRepository
+=======
+	 * @var RG\Rgdvoconnector\Domain\Repository\MetaRepository
+>>>>>>> parent of 8432775... Change Namespace
 	 * @inject
      */
 	protected $metaRepository;
@@ -50,22 +58,38 @@ class GenericRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 	private function recursivCompleteEntity($entity) {
 
 		switch (true) {
+<<<<<<< HEAD
 			case is_a($entity, \RGU\Dvoconnector\Domain\Model\Meta\Association\Repertoire::class):
+=======
+			case is_a($entity, \RG\Rgdvoconnector\Domain\Model\Meta\Association\Repertoire::class):
+>>>>>>> parent of 8432775... Change Namespace
 
 				return $this->metaRepository->findAssociationRepertoireByID($entity->getID());
 
 				break;
+<<<<<<< HEAD
 			case is_a($entity, \RGU\Dvoconnector\Domain\Model\Meta\Association\Category::class):
+=======
+			case is_a($entity, \RG\Rgdvoconnector\Domain\Model\Meta\Association\Category::class):
+>>>>>>> parent of 8432775... Change Namespace
 
 				return $this->metaRepository->findAssociationCategoryByID($entity->getID());
 
 				break;
+<<<<<<< HEAD
 			case is_a($entity, \RGU\Dvoconnector\Domain\Model\Meta\Association\Performancelevel::class):
+=======
+			case is_a($entity, \RG\Rgdvoconnector\Domain\Model\Meta\Association\Performancelevel::class):
+>>>>>>> parent of 8432775... Change Namespace
 
 				return $this->metaRepository->findAssociationPerformancelevelByID($entity->getID());
 
 				break;
+<<<<<<< HEAD
 			case is_a($entity, \RGU\Dvoconnector\Domain\Model\Meta\Event\Type::class):
+=======
+			case is_a($entity, \RG\Rgdvoconnector\Domain\Model\Meta\Event\Type::class):
+>>>>>>> parent of 8432775... Change Namespace
 
 				return $this->metaRepository->findEventTypeByID($entity->getID());
 

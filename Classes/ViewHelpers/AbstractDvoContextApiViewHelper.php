@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 namespace RGU\Dvoconnector\ViewHelpers;
+=======
+namespace RG\Rgdvoconnector\ViewHelpers;
+>>>>>>> parent of 8432775... Change Namespace
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -8,6 +12,7 @@ use TYPO3\CMS\Core\Utility\MathUtility;
 use TYPO3\CMS\Extbase\Property\PropertyMapper;
 
 
+<<<<<<< HEAD
 use RGU\Dvoconnector\Domain\Filter\AssociationFilter;
 use RGU\Dvoconnector\Domain\Filter\EventFilter;
 use RGU\Dvoconnector\Domain\Filter\AnnouncementFilter;
@@ -17,6 +22,17 @@ use RGU\Dvoconnector\Domain\Filter\AssociationsFilter;
 use RGU\Dvoconnector\Domain\Filter\EventsFilter;
 use RGU\Dvoconnector\Domain\Filter\AnnouncementsFilter;
 use RGU\Dvoconnector\Domain\Filter\FunctionariesFilter;
+=======
+use RG\Rgdvoconnector\Domain\Filter\AssociationFilter;
+use RG\Rgdvoconnector\Domain\Filter\EventFilter;
+use RG\Rgdvoconnector\Domain\Filter\AnnouncementFilter;
+use RG\Rgdvoconnector\Domain\Filter\FunctionaryFilter;
+
+use RG\Rgdvoconnector\Domain\Filter\AssociationsFilter;
+use RG\Rgdvoconnector\Domain\Filter\EventsFilter;
+use RG\Rgdvoconnector\Domain\Filter\AnnouncementsFilter;
+use RG\Rgdvoconnector\Domain\Filter\FunctionariesFilter;
+>>>>>>> parent of 8432775... Change Namespace
 
 class AbstractDvoContextApiViewHelper extends AbstractDvoApiViewHelper {
 
@@ -27,7 +43,11 @@ class AbstractDvoContextApiViewHelper extends AbstractDvoApiViewHelper {
 
   /**
    * associationRepository
+<<<<<<< HEAD
    * @var RGU\Dvoconnector\Domain\Repository\AssociationRepository
+=======
+   * @var RG\Rgdvoconnector\Domain\Repository\AssociationRepository
+>>>>>>> parent of 8432775... Change Namespace
    * @inject
   */
   protected $associationRepository;

@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 namespace RGU\Dvoconnector\Utility;
+=======
+namespace RG\Rgdvoconnector\Utility;
+>>>>>>> parent of 8432775... Change Namespace
 
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\SingletonInterface;

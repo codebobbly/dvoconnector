@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 namespace RGU\Dvoconnector\Service;
+=======
+namespace RG\Rgdvoconnector\Service;
+>>>>>>> parent of 8432775... Change Namespace
 
 class ContextException extends \Exception
 {

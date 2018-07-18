@@ -1,10 +1,18 @@
 <?php
 
+<<<<<<< HEAD
 namespace RGU\Dvoconnector\ViewHelpers;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use RGU\Dvoconnector\Domain\Filter\AssociationFilter;
 use RGU\Dvoconnector\Domain\Filter\AssociationsFilter;
+=======
+namespace RG\Rgdvoconnector\ViewHelpers;
+
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use RG\Rgdvoconnector\Domain\Filter\AssociationFilter;
+use RG\Rgdvoconnector\Domain\Filter\AssociationsFilter;
+>>>>>>> parent of 8432775... Change Namespace
 
 use TYPO3\CMS\Extbase\Property\PropertyMapper;
 

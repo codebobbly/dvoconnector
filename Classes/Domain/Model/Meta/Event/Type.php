@@ -1,5 +1,9 @@
 <?php
+<<<<<<< HEAD
 namespace RGU\Dvoconnector\Domain\Model\Meta\Event;
+=======
+namespace RG\Rgdvoconnector\Domain\Model\Meta\Event;
+>>>>>>> parent of 8432775... Change Namespace
 /** copyright notice **/
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 

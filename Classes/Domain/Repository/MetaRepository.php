@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 namespace RGU\Dvoconnector\Domain\Repository;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -11,12 +12,30 @@ use \RGU\Dvoconnector\Domain\Model\Meta\Association\Repertoires;
 use \RGU\Dvoconnector\Domain\Model\Meta\Event\Type;
 use \RGU\Dvoconnector\Domain\Model\Meta\Event\Types;
 use \RGU\Dvoconnector\Service\metaApiService;
+=======
+namespace RG\Rgdvoconnector\Domain\Repository;
+
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use \RG\Rgdvoconnector\Domain\Model\Meta\Association\Categories;
+use \RG\Rgdvoconnector\Domain\Model\Meta\Association\Category;
+use \RG\Rgdvoconnector\Domain\Model\Meta\Association\Performancelevel;
+use \RG\Rgdvoconnector\Domain\Model\Meta\Association\Performancelevels;
+use \RG\Rgdvoconnector\Domain\Model\Meta\Association\Repertoire;
+use \RG\Rgdvoconnector\Domain\Model\Meta\Association\Repertoires;
+use \RG\Rgdvoconnector\Domain\Model\Meta\Event\Type;
+use \RG\Rgdvoconnector\Domain\Model\Meta\Event\Types;
+use \RG\Rgdvoconnector\Service\metaApiService;
+>>>>>>> parent of 8432775... Change Namespace
 
 class MetaRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
 	/**
 	 * $metaApiService
+<<<<<<< HEAD
 	 * @var \RGU\Dvoconnector\Service\MetaApiService
+=======
+	 * @var \RG\Rgdvoconnector\Service\MetaApiService
+>>>>>>> parent of 8432775... Change Namespace
 	 * @inject
  	*/
 	protected $metaApiService;
@@ -59,7 +78,11 @@ class MetaRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
 		$categories = new Categories();
 
+<<<<<<< HEAD
 		$mapper = new \RGU\Dvoconnector\Mapper\AssociationCategories($xmlQuery);
+=======
+		$mapper = new \RG\Rgdvoconnector\Mapper\AssociationCategories($xmlQuery);
+>>>>>>> parent of 8432775... Change Namespace
 		$mapper->mapToAbstractEntity($categories);
 
 		return $categories;
@@ -104,7 +127,11 @@ class MetaRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
 		$repertoires = new Repertoires();
 
+<<<<<<< HEAD
 		$mapper = new \RGU\Dvoconnector\Mapper\AssociationRepertoires($xmlQuery);
+=======
+		$mapper = new \RG\Rgdvoconnector\Mapper\AssociationRepertoires($xmlQuery);
+>>>>>>> parent of 8432775... Change Namespace
 		$mapper->mapToAbstractEntity($repertoires);
 
 		return $repertoires;
@@ -149,7 +176,11 @@ class MetaRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
 		$performancelevels = new Performancelevels();
 
+<<<<<<< HEAD
 		$mapper = new \RGU\Dvoconnector\Mapper\AssociationPerformancelevels($xmlQuery);
+=======
+		$mapper = new \RG\Rgdvoconnector\Mapper\AssociationPerformancelevels($xmlQuery);
+>>>>>>> parent of 8432775... Change Namespace
 		$mapper->mapToAbstractEntity($performancelevels);
 
 		return $performancelevels;
@@ -194,7 +225,11 @@ class MetaRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
 		$types = new Types();
 
+<<<<<<< HEAD
 		$mapper = new \RGU\Dvoconnector\Mapper\EventTypes($xmlQuery);
+=======
+		$mapper = new \RG\Rgdvoconnector\Mapper\EventTypes($xmlQuery);
+>>>>>>> parent of 8432775... Change Namespace
 		$mapper->mapToAbstractEntity($types);
 
 		return $types;

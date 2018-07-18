@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "RGU/Dvoconnector",
+=======
+  "name": "RG/Rgdvoconnector",
+>>>>>>> parent of 8432775... Change Namespace
   "version": "1.0.0",
   "type": "typo3-cms-extension",
   "description": "DVO Connector",
@@ -22,7 +26,11 @@
   },
   "autoload": {
     "psr-4": {
+<<<<<<< HEAD
       "RGU\\Dvoconnector\\": "Classes"
+=======
+      "RG\\Rgdvoconnector\\": "Classes"
+>>>>>>> parent of 8432775... Change Namespace
     }
   }
 }

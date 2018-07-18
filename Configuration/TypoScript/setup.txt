@@ -49,7 +49,11 @@ module.tx_Dvoconnector < plugin.tx_Dvoconnector
 			variables {
 				breadcrumbExtendedValue = USER
 				breadcrumbExtendedValue {
+<<<<<<< HEAD
 					userFunc = RGU\Dvoconnector\Hooks\TyposcriptUserFuncs->getBreadcrumbAssociation
+=======
+					userFunc = RG\Rgdvoconnector\Hooks\TyposcriptUserFuncs->getBreadcrumbAssociation
+>>>>>>> parent of 8432775... Change Namespace
 				}
 			}
 			settings {
@@ -67,7 +71,11 @@ module.tx_Dvoconnector < plugin.tx_Dvoconnector
 			variables {
 				breadcrumbExtendedValue = USER
 				breadcrumbExtendedValue {
+<<<<<<< HEAD
 					userFunc = RGU\Dvoconnector\Hooks\TyposcriptUserFuncs->getBreadcrumbEvent
+=======
+					userFunc = RG\Rgdvoconnector\Hooks\TyposcriptUserFuncs->getBreadcrumbEvent
+>>>>>>> parent of 8432775... Change Namespace
 				}
 			}
 			settings {
@@ -85,7 +93,11 @@ module.tx_Dvoconnector < plugin.tx_Dvoconnector
 			variables {
 				breadcrumbExtendedValue = USER
 				breadcrumbExtendedValue {
+<<<<<<< HEAD
 					userFunc = RGU\Dvoconnector\Hooks\TyposcriptUserFuncs->getBreadcrumbAnnouncement
+=======
+					userFunc = RG\Rgdvoconnector\Hooks\TyposcriptUserFuncs->getBreadcrumbAnnouncement
+>>>>>>> parent of 8432775... Change Namespace
 				}
 			}
 			settings {
@@ -103,7 +115,11 @@ module.tx_Dvoconnector < plugin.tx_Dvoconnector
 			variables {
 				breadcrumbExtendedValue = USER
 				breadcrumbExtendedValue {
+<<<<<<< HEAD
 					userFunc = RGU\Dvoconnector\Hooks\TyposcriptUserFuncs->getBreadcrumbFunctionary
+=======
+					userFunc = RG\Rgdvoconnector\Hooks\TyposcriptUserFuncs->getBreadcrumbFunctionary
+>>>>>>> parent of 8432775... Change Namespace
 				}
 			}
 			settings {

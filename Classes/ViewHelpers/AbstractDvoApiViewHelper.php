@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 namespace RGU\Dvoconnector\ViewHelpers;
+=======
+namespace RG\Rgdvoconnector\ViewHelpers;
+>>>>>>> parent of 8432775... Change Namespace
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 

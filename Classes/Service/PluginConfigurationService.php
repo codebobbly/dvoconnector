@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 namespace RGU\Dvoconnector\Service;
 
 use RGU\Dvoconnector\Utility\TemplateLayout;
@@ -6,6 +7,15 @@ use RGU\Dvoconnector\Domain\Repository\AssociationRepository;
 use RGU\Dvoconnector\Domain\Repository\EventRepository;
 use RGU\Dvoconnector\Domain\Repository\AnnouncementRepository;
 use RGU\Dvoconnector\Domain\Repository\FunctionaryRepository;
+=======
+namespace RG\Rgdvoconnector\Service;
+
+use RG\Rgdvoconnector\Utility\TemplateLayout;
+use RG\Rgdvoconnector\Domain\Repository\AssociationRepository;
+use RG\Rgdvoconnector\Domain\Repository\EventRepository;
+use RG\Rgdvoconnector\Domain\Repository\AnnouncementRepository;
+use RG\Rgdvoconnector\Domain\Repository\FunctionaryRepository;
+>>>>>>> parent of 8432775... Change Namespace
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
 
@@ -33,7 +43,11 @@ class PluginConfigurationService {
    */
   public function addConfigAssociation(&$params, &$pObj) {
 
+<<<<<<< HEAD
     $associationRepository = $this->objectManager->get(\RGU\Dvoconnector\Domain\Repository\AssociationRepository::class);
+=======
+    $associationRepository = $this->objectManager->get(\RG\Rgdvoconnector\Domain\Repository\AssociationRepository::class);
+>>>>>>> parent of 8432775... Change Namespace
 
     $rootAssociations = $associationRepository->getRootAssociations();
     foreach($rootAssociations->getAssociations() as $rootAssociation) {

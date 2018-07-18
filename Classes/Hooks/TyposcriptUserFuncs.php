@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 namespace RGU\Dvoconnector\Hooks;
+=======
+namespace RG\Rgdvoconnector\Hooks;
+>>>>>>> parent of 8432775... Change Namespace
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -17,28 +21,44 @@ class TyposcriptUserFuncs {
 
   /**
    * associationRepository
+<<<<<<< HEAD
    * @var RGU\Dvoconnector\Domain\Repository\AssociationRepository
+=======
+   * @var RG\Rgdvoconnector\Domain\Repository\AssociationRepository
+>>>>>>> parent of 8432775... Change Namespace
    * @inject
   */
   protected $associationRepository;
 
   /**
    * announcementRepository
+<<<<<<< HEAD
    * @var RGU\Dvoconnector\Domain\Repository\AnnouncementRepository
+=======
+   * @var RG\Rgdvoconnector\Domain\Repository\AnnouncementRepository
+>>>>>>> parent of 8432775... Change Namespace
    * @inject
   */
   protected $announcementRepository;
 
   /**
    * eventRepository
+<<<<<<< HEAD
    * @var RGU\Dvoconnector\Domain\Repository\EventRepository
+=======
+   * @var RG\Rgdvoconnector\Domain\Repository\EventRepository
+>>>>>>> parent of 8432775... Change Namespace
    * @inject
   */
   protected $eventRepository;
 
   /**
    * functionaryRepository
+<<<<<<< HEAD
    * @var RGU\Dvoconnector\Domain\Repository\FunctionaryRepository
+=======
+   * @var RG\Rgdvoconnector\Domain\Repository\FunctionaryRepository
+>>>>>>> parent of 8432775... Change Namespace
    * @inject
   */
   protected $functionaryRepository;
@@ -46,10 +66,17 @@ class TyposcriptUserFuncs {
   public function __construct() {
 
     $this->objectManager = GeneralUtility::makeInstance(ObjectManager::class);
+<<<<<<< HEAD
     $this->associationRepository = $this->objectManager->get(\RGU\Dvoconnector\Domain\Repository\AssociationRepository::class);
     $this->announcementRepository = $this->objectManager->get(\RGU\Dvoconnector\Domain\Repository\AnnouncementRepository::class);
     $this->eventRepository = $this->objectManager->get(\RGU\Dvoconnector\Domain\Repository\EventRepository::class);
     $this->functionaryRepository = $this->objectManager->get(\RGU\Dvoconnector\Domain\Repository\FunctionaryRepository::class);
+=======
+    $this->associationRepository = $this->objectManager->get(\RG\Rgdvoconnector\Domain\Repository\AssociationRepository::class);
+    $this->announcementRepository = $this->objectManager->get(\RG\Rgdvoconnector\Domain\Repository\AnnouncementRepository::class);
+    $this->eventRepository = $this->objectManager->get(\RG\Rgdvoconnector\Domain\Repository\EventRepository::class);
+    $this->functionaryRepository = $this->objectManager->get(\RG\Rgdvoconnector\Domain\Repository\FunctionaryRepository::class);
+>>>>>>> parent of 8432775... Change Namespace
 
   }
 

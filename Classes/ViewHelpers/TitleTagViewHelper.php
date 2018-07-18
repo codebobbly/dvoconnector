@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 namespace RGU\Dvoconnector\ViewHelpers;
+=======
+namespace RG\Rgdvoconnector\ViewHelpers;
+>>>>>>> parent of 8432775... Change Namespace
 
 /*
  * This file is part of the FluidTYPO3/Vhs project under GPLv2 or later.

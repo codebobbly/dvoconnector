@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 namespace RGU\Dvoconnector\Hooks;
+=======
+namespace RG\Rgdvoconnector\Hooks;
+>>>>>>> parent of 8432775... Change Namespace
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
@@ -28,8 +32,13 @@ class RealUrlAutoConfiguration {
                     'noMatch' => 'bypass',
                 ],
                 [
+<<<<<<< HEAD
                     'GETvar' => 'tx_Dvoconnector_pi1[aID]',
                     'userFunc' => RGU\Dvoconnector\Service\Url\RealUrlAssociation::class . '->convert',
+=======
+                    'GETvar' => 'tx_rgdvoconnector_pi1[aID]',
+                    'userFunc' => RG\Rgdvoconnector\Service\Url\RealUrlAssociation::class . '->convert',
+>>>>>>> parent of 8432775... Change Namespace
                 ],
                 [
                     'GETvar' => 'tx_Dvoconnector_pi1[action]',
@@ -53,6 +62,7 @@ class RealUrlAutoConfiguration {
       						'noMatch' => 'bypass',
       					],	
                 [
+<<<<<<< HEAD
                     'GETvar' => 'tx_Dvoconnector_pi1[eID]',
                     'userFunc' => RGU\Dvoconnector\Service\Url\RealUrlEvent::class . '->convert',
                 ],
@@ -67,6 +77,22 @@ class RealUrlAutoConfiguration {
                 [
                     'GETvar' => 'tx_Dvoconnector_pi1[filter]',
                     'userFunc' => RGU\Dvoconnector\Service\Url\RealUrlFilter::class . '->convert',
+=======
+                    'GETvar' => 'tx_rgdvoconnector_pi1[eID]',
+                    'userFunc' => RG\Rgdvoconnector\Service\Url\RealUrlEvent::class . '->convert',
+                ],
+                [
+                    'GETvar' => 'tx_rgdvoconnector_pi1[anID]',
+                    'userFunc' => RG\Rgdvoconnector\Service\Url\RealUrlAnnouncement::class . '->convert',
+                ],
+                [
+                    'GETvar' => 'tx_rgdvoconnector_pi1[fID]',
+                    'userFunc' => RG\Rgdvoconnector\Service\Url\RealUrlFunctionary::class . '->convert',
+                ],
+                [
+                    'GETvar' => 'tx_rgdvoconnector_pi1[filter]',
+                    'userFunc' => RG\Rgdvoconnector\Service\Url\RealUrlFilter::class . '->convert',
+>>>>>>> parent of 8432775... Change Namespace
                 ],
               ]
             ]
