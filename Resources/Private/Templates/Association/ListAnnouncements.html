@@ -2,17 +2,14 @@
 
 <rgdvo:Association associationID="{associationID}" as="association" insideAssociationID="{settings.associationID}">
 
-  <rgdvo:titleTag>Meldungen - {association.name}</rgdvo:titleTag>
+  <f:render partial="Header/ListAnnouncements" arguments="{association: association}"/>
 
-  <h3>{association.name} - Meldungen</h3>
-
+  <h3><f:render partial="Title/ListAnnouncements" arguments="{association: association}"/></h3>
   <hr>
 
   <rgdvo:Announcements associationID="{associationID}" as="announcements" childs="{filter.childs}" text="{filter.text}" startDate="{filter.startDate}" endDate="{filter.endDate}" zipStart="{filter.zipStart}" zipEnd="{filter.zipEnd}" location="{filter.location}" insideAssociationID="{settings.associationID}">
 
-    <div class="well">
-      <f:render partial="FilterAnnouncements" arguments="{associationID: associationID, filter: filter, userFilter: userFilter, allowedProperty: settings.filterAnnouncements.allowedProperty}"/>
-    </div>
+    <f:render partial="FilterAnnouncements" arguments="{associationID: associationID, filter: filter, userFilter: userFilter, allowedProperty: settings.filterAnnouncements.allowedProperty}"/>
 
     <f:widget.paginate objects="{announcements.announcements}" as="paginatedAnnouncements" configuration="{itemsPerPage: settings.pagination.itemsPerPage, insertAbove: settings.pagination.insertAbove, insertBelow: settings.pagination.insertBelow, maximumNumberOfLinks: settings.pagination.maximumNumberOfLinks}">
       <table class="table table-striped">
@@ -35,7 +32,7 @@
 
     <hr>
 
-    <f:render partial="AssociationLinks" arguments="{association: association, listPid: settings.additional.listPid, light: 1}"/>
+    <f:render partial="AssociationLinks" arguments="{association: association, listPid: settings.additional.listPid}"/>
 
     <f:link.action pageUid="{settings.additional.detailPid}" class="btn btn-default" arguments="{aID: associationID}" action="detailAssociation"><span class="glyphicon glyphicon-arrow-left"></span> Zurück</f:link.action>
 

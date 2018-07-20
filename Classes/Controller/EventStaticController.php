@@ -15,8 +15,8 @@ class EventStaticController extends AbstractController
         $this->checkSettings();
 
         $this->slotExtendedAssignMultiple([
-            'associationID' => $this->settings['associationID'],
-            'filter' => $this->getEventsFilter()
+            self::VIEW_VARIABLE_ASSOCIATION_ID => $this->settings[self::SETTINGS_ASSOCIATION_ID],
+            self::VIEW_VARIABLE_FILTER => $this->getEventsFilter()
         ], __CLASS__, __FUNCTION__);
 
         return $this->view->render();
@@ -33,8 +33,8 @@ class EventStaticController extends AbstractController
         $this->checkSettings();
 
         $this->slotExtendedAssignMultiple([
-            'associationID' => $this->settings['associationID'],
-            'event' => $this->settings['eventID']
+            self::VIEW_VARIABLE_ASSOCIATION_ID => $this->settings[self::SETTINGS_ASSOCIATION_ID],
+            self::VIEW_VARIABLE_EVENT_ID => $this->settings[self::SETTINGS_EVENT_ID]
         ], __CLASS__, __FUNCTION__);
 
         return $this->view->render();

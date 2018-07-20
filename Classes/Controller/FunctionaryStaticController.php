@@ -15,8 +15,8 @@ class FunctionaryStaticController extends AbstractController
         $this->checkSettings();
 
         $this->slotExtendedAssignMultiple([
-            'associationID' => $this->settings['associationID'],
-            'filter' => $this->getFunctionariesFilter()
+            self::VIEW_VARIABLE_ASSOCIATION_ID => $this->settings[self::SETTINGS_ASSOCIATION_ID],
+            self::VIEW_VARIABLE_FILTER => $this->getFunctionariesFilter()
         ], __CLASS__, __FUNCTION__);
 
         return $this->view->render();
@@ -33,8 +33,8 @@ class FunctionaryStaticController extends AbstractController
         $this->checkSettings();
 
         $this->slotExtendedAssignMultiple([
-            'associationID' => $this->settings['associationID'],
-            'functionaryID' => $this->settings['functionaryID']
+            self::VIEW_VARIABLE_ASSOCIATION_ID => $this->settings[self::SETTINGS_ASSOCIATION_ID],
+            self::VIEW_VARIABLE_FUNCTIONARY_ID => $this->settings[self::SETTINGS_FUNCTIONARY_ID]
         ], __CLASS__, __FUNCTION__);
 
         return $this->view->render();

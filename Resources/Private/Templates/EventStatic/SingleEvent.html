@@ -2,8 +2,8 @@
 
 <rgdvo:Event associationID="{associationID}" eventID="{eventID}" as="event" insideAssociationID="{settings.associationID}">
 
-  <rgdvo:titleTag>{event.title}</rgdvo:titleTag>
-
   <f:render partial="Event" arguments="{detailPid: settings.additional.detailPid, event: event}"/>
+
+  <f:render partial="DvoLink/Event" arguments="{event: event, linkdvo: settings.additional.linkdvo}"/>
 
 </rgdvo:Event>

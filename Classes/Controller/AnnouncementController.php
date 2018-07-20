@@ -17,7 +17,7 @@ class AnnouncementController extends AbstractController
 
         $filtertext = $this->arrayToFiltertext($filter);
 
-        $arguments['filter'] = $filtertext;
+        $arguments[self::ARGUMENT_FILTER] = $filtertext;
 
         $this->redirect('listAnnouncements', null, null, $arguments);
     }
@@ -34,9 +34,9 @@ class AnnouncementController extends AbstractController
         $this->checkSettings();
 
         $this->slotExtendedAssignMultiple([
-            'associationID' => $this->settings['associationID'],
-            'filter' => $this->getAnnouncementsFilter($filter),
-            'userFilter' => $this->getUserAnnouncementsFilter($filter)
+            self::VIEW_VARIABLE_ASSOCIATION_ID => $this->settings[self::SETTINGS_ASSOCIATION_ID],
+            self::VIEW_VARIABLE_FILTER => $this->getAnnouncementsFilter($filter),
+            self::VIEW_VARIABLE_USER_FILTER => $this->getUserAnnouncementsFilter($filter)
         ], __CLASS__, __FUNCTION__);
 
         return $this->view->render();
@@ -55,8 +55,8 @@ class AnnouncementController extends AbstractController
         $this->checkSettings();
 
         $this->slotExtendedAssignMultiple([
-            'associationID' => $this->settings['associationID'],
-            'announcementID' => $anID
+            self::VIEW_VARIABLE_ASSOCIATION_ID => $this->settings[self::SETTINGS_ASSOCIATION_ID],
+            self::VIEW_VARIABLE_ANNOUNCEMENT_ID => $anID
         ], __CLASS__, __FUNCTION__);
 
         return $this->view->render();

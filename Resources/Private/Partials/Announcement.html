@@ -1,4 +1,4 @@
-<h1>{announcement.title}</h1>
+<h1><f:render partial="Title/Announcement" arguments="{announcement: announcement}"/></h1>
 <p> Erstellt am <f:format.date format="d.m.Y H:i">{announcement.createdDate}</f:format.date></p>
 <hr>
 <p>

@@ -17,7 +17,7 @@ class EventController extends AbstractController
 
         $filtertext = $this->arrayToFiltertext($filter);
 
-        $arguments['filter'] = $filtertext;
+        $arguments[self::ARGUMENT_FILTER] = $filtertext;
 
         $this->redirect('listEvents', null, null, $arguments);
     }
@@ -34,9 +34,9 @@ class EventController extends AbstractController
         $this->checkSettings();
 
         $this->slotExtendedAssignMultiple([
-            'associationID' => $this->settings['associationID'],
-            'filter' => $this->getEventsFilter($filter),
-            'userFilter' => $this->getUserEventsFilter($filter)
+            self::VIEW_VARIABLE_ASSOCIATION_ID => $this->settings[self::SETTINGS_ASSOCIATION_ID],
+            self::VIEW_VARIABLE_FILTER => $this->getEventsFilter($filter),
+            self::VIEW_VARIABLE_USER_FILTER => $this->getUserEventsFilter($filter)
         ], __CLASS__, __FUNCTION__);
 
         return $this->view->render();
@@ -55,8 +55,8 @@ class EventController extends AbstractController
         $this->checkSettings();
 
         $this->slotExtendedAssignMultiple([
-            'associationID' => $this->settings['associationID'],
-            'eventID' => $eID
+            self::VIEW_VARIABLE_ASSOCIATION_ID => $this->settings[self::SETTINGS_ASSOCIATION_ID],
+            self::VIEW_VARIABLE_EVENT_ID => $eID
         ], __CLASS__, __FUNCTION__);
 
         return $this->view->render();

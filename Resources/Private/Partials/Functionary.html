@@ -1,5 +1,5 @@
 <center>
-  <h3 class="media-heading">{functionary.firstName} {functionary.lastName}</h3>
+  <h3 class="media-heading"><f:render partial="Title/Functionary" arguments="{functionary: functionary}"/></h3>
   <br>
   <f:if condition="{functionary.photoSourceFile}">
     <p><f:image image="{functionary.photoSourceFile}" maxWidth="835" class="img-thumbnail"/></p>

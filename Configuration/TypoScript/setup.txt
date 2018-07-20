@@ -7,18 +7,15 @@ plugin.tx_dvoconnector {
 
 	view {
 		templateRootPaths {
-			0 = EXT:dvoconnector/Resources/Private/Templates/
-			1 = {$plugin.tx_dvoconnector.view.templateRootPath}
+			0 = {$plugin.tx_dvoconnector.view.templateRootPath}
 		}
 
 		partialRootPaths {
-			0 = EXT:dvoconnector/Resources/Private/Partials/
-			1 = {$plugin.tx_dvoconnector.view.partialRootPath}
+			0 = {$plugin.tx_dvoconnector.view.partialRootPath}
 		}
 
 		layoutRootPaths {
-			0 = EXT:dvoconnector/Resources/Private/Layouts/
-			1 = {$plugin.tx_dvoconnector.view.layoutRootPath}
+			0 = {$plugin.tx_dvoconnector.view.layoutRootPath}
 		}
 
 		widget {

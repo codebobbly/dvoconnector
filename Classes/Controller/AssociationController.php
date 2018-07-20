@@ -17,7 +17,7 @@ class AssociationController extends AbstractController
 
         $filtertext = $this->arrayToFiltertext($filter);
 
-        $arguments['filter'] = $filtertext;
+        $arguments[self::ARGUMENT_FILTER] = $filtertext;
 
         $this->redirect('listEvents', null, null, $arguments);
     }
@@ -35,7 +35,7 @@ class AssociationController extends AbstractController
 
         $filtertext = $this->arrayToFiltertext($filter);
 
-        $arguments['filter'] = $filtertext;
+        $arguments[self::ARGUMENT_FILTER] = $filtertext;
 
         $this->redirect('listAssociations', null, null, $arguments);
     }
@@ -53,7 +53,7 @@ class AssociationController extends AbstractController
 
         $filtertext = $this->arrayToFiltertext($filter);
 
-        $arguments['filter'] = $filtertext;
+        $arguments[self::ARGUMENT_FILTER] = $filtertext;
 
         $this->redirect('listAnnouncements', null, null, $arguments);
     }
@@ -71,7 +71,7 @@ class AssociationController extends AbstractController
 
         $filtertext = $this->arrayToFiltertext($filter);
 
-        $arguments['filter'] = $filtertext;
+        $arguments[self::ARGUMENT_FILTER] = $filtertext;
 
         $this->redirect('listFunctionaries', null, null, $arguments);
     }
@@ -104,9 +104,9 @@ class AssociationController extends AbstractController
         $this->checkSettings();
 
         $this->slotExtendedAssignMultiple([
-            'associationID' => $aID,
-            'filter' => $this->getAssociationsFilter($filter),
-            'userFilter' => $this->getUserAssociationsFilter($filter)
+            self::VIEW_VARIABLE_ASSOCIATION_ID => $aID,
+            self::VIEW_VARIABLE_FILTER => $this->getAssociationsFilter($filter),
+            self::VIEW_VARIABLE_USER_FILTER => $this->getUserAssociationsFilter($filter)
         ], __CLASS__, __FUNCTION__);
 
         return $this->view->render();
@@ -125,9 +125,9 @@ class AssociationController extends AbstractController
         $this->checkSettings();
 
         $this->slotExtendedAssignMultiple([
-            'associationID' => $this->settings['associationID'],
-            'filter' => $this->getAssociationsFilter($filter),
-            'userFilter' => $this->getUserAssociationsFilter($filter)
+            self::VIEW_VARIABLE_ASSOCIATION_ID => $this->settings[self::SETTINGS_ASSOCIATION_ID],
+            self::VIEW_VARIABLE_FILTER => $this->getAssociationsFilter($filter),
+            self::VIEW_VARIABLE_USER_FILTER => $this->getUserAssociationsFilter($filter)
         ], __CLASS__, __FUNCTION__);
 
         return $this->view->render();
@@ -146,7 +146,7 @@ class AssociationController extends AbstractController
         $this->checkSettings();
 
         $this->slotExtendedAssignMultiple([
-            'associationID' => $aID
+            self::VIEW_VARIABLE_ASSOCIATION_ID => $aID
         ], __CLASS__, __FUNCTION__);
 
         return $this->view->render();
@@ -166,8 +166,8 @@ class AssociationController extends AbstractController
         $this->checkSettings();
 
         $this->slotExtendedAssignMultiple([
-            'associationID' => $aID,
-            'eventID' => $eID
+            self::VIEW_VARIABLE_ASSOCIATION_ID => $aID,
+            self::VIEW_VARIABLE_EVENT_ID => $eID
         ], __CLASS__, __FUNCTION__);
 
         return $this->view->render();
@@ -187,9 +187,9 @@ class AssociationController extends AbstractController
         $this->checkSettings();
 
         $this->slotExtendedAssignMultiple([
-            'associationID' => $aID,
-            'filter' => $this->getEventsFilter($filter),
-            'userFilter' => $this->getUserEventsFilter($filter)
+            self::VIEW_VARIABLE_ASSOCIATION_ID => $aID,
+            self::VIEW_VARIABLE_FILTER => $this->getEventsFilter($filter),
+            self::VIEW_VARIABLE_USER_FILTER => $this->getUserEventsFilter($filter)
         ], __CLASS__, __FUNCTION__);
 
         return $this->view->render();
@@ -209,8 +209,8 @@ class AssociationController extends AbstractController
         $this->checkSettings();
 
         $this->slotExtendedAssignMultiple([
-            'associationID' => $aID,
-            'announcementID' => $anID
+            self::VIEW_VARIABLE_ASSOCIATION_ID => $aID,
+            self::VIEW_VARIABLE_ANNOUNCEMENT_ID => $anID
         ], __CLASS__, __FUNCTION__);
 
         return $this->view->render();
@@ -230,9 +230,9 @@ class AssociationController extends AbstractController
         $this->checkSettings();
 
         $this->slotExtendedAssignMultiple([
-            'associationID' => $aID,
-            'filter' => $this->getAnnouncementsFilter($filter),
-            'userFilter' => $this->getUserAnnouncementsFilter($filter)
+            self::VIEW_VARIABLE_ASSOCIATION_ID => $aID,
+            self::VIEW_VARIABLE_FILTER => $this->getAnnouncementsFilter($filter),
+            self::VIEW_VARIABLE_USER_FILTER => $this->getUserAnnouncementsFilter($filter)
         ], __CLASS__, __FUNCTION__);
 
         return $this->view->render();
@@ -252,8 +252,8 @@ class AssociationController extends AbstractController
         $this->checkSettings();
 
         $this->slotExtendedAssignMultiple([
-            'associationID' => $aID,
-            'functionaryID' => $fID
+            self::VIEW_VARIABLE_ASSOCIATION_ID => $aID,
+            self::VIEW_VARIABLE_FUNCTIONARY_ID => $fID
         ], __CLASS__, __FUNCTION__);
 
         return $this->view->render();
@@ -273,9 +273,9 @@ class AssociationController extends AbstractController
         $this->checkSettings();
 
         $this->slotExtendedAssignMultiple([
-            'associationID' => $aID,
-            'filter' => $this->getFunctionariesFilter($filter),
-            'userFilter' => $this->getUserFunctionariesFilter($filter)
+            self::VIEW_VARIABLE_ASSOCIATION_ID => $aID,
+            self::VIEW_VARIABLE_FILTER => $this->getFunctionariesFilter($filter),
+            self::VIEW_VARIABLE_USER_FILTER => $this->getUserFunctionariesFilter($filter)
         ], __CLASS__, __FUNCTION__);
 
         return $this->view->render();

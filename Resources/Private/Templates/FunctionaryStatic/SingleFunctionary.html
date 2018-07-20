@@ -2,8 +2,8 @@
 
 <rgdvo:Functionary associationID="{associationID}" functionaryID="{functionaryID}" as="functionary" insideAssociationID="{settings.associationID}">
 
-  <rgdvo:titleTag>{functionary.role} - {functionary.lastName} {functionary.firstName}</rgdvo:titleTag>
-
   <f:render partial="Functionary" arguments="{detailPid: settings.additional.detailPid, functionary: functionary}"/>
+
+  <f:render partial="DvoLink/Functionary" arguments="{functionary: functionary, linkdvo: settings.additional.linkdvo}"/>
 
 </rgdvo:Functionary>

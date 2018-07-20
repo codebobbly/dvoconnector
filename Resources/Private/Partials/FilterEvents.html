@@ -2,108 +2,110 @@
 
 <f:if condition="{allowedProperty.text} || {allowedProperty.startDate} || {allowedProperty.endDate} || {allowedProperty.zipStart} || {allowedProperty.zipEnd} || {allowedProperty.location} || {allowedProperty.eventTypeID} || {allowedProperty.childs} || {allowedProperty.privateEvents}">
 
-  <form action="{f:uri.action(action: 'filterEvents', arguments: '{aID: associationID}')}" method="post">
-    <f:if condition="{allowedProperty.text}">
-      <div class="form-group">
-        <label for="text"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.text.label" /></label>
-        <input name="tx_dvoconnector_pi1[filter][text]" value="{userFilter.text}" class="form-control" id="text" aria-describedby="textHelp" placeholder="<f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.text.placeholder" />">
-        <small id="textHelp" class="form-text text-muted"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.text.describedby" /></small>
-      </div>
-    </f:if>
-    <f:if condition="{allowedProperty.startDate}">
-      <div class="form-group">
-        <label for="datestart"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.datestart.label" /></label>
-        <f:if condition="{filter.startDate}">
-          <f:then>
-            <input name="tx_dvoconnector_pi1[filter][startDate]" value="{userFilter.startDate -> f:format.date(format: 'd.m.Y')}" class="form-control" id="datestart" aria-describedby="datestartHelp" placeholder="{filter.startDate -> f:format.date(format: 'd.m.Y')}">
-          </f:then>
-          <f:else>
-            <input name="tx_dvoconnector_pi1[filter][startDate]" value="{filter.startDate -> f:format.date(format: 'd.m.Y')}" class="form-control" id="datestart" aria-describedby="datestartHelp" placeholder="<f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.datestart.placeholder" arguments="{0: \"{f:format.date(date: 'now', format: 'd.m.Y')}\"}" />">
-          </f:else>
-        </f:if>
-        <small id="datestartHelp" class="form-text text-muted"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.datestart.describedby"/></small>
-      </div>
-    </f:if>
-    <f:if condition="{allowedProperty.endDate}">
-      <div class="form-group">
-        <label for="dateend"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.dateend.label" /></label>
-        <f:if condition="{filter.endDate}">
-          <f:then>
-            <input name="tx_dvoconnector_pi1[filter][endDate]" value="{userFilter.endDate -> f:format.date(format: 'd.m.Y')}" class="form-control" id="dateend" aria-describedby="dateendHelp" placeholder="{filter.endDate -> f:format.date(format: 'd.m.Y')}">
-          </f:then>
-          <f:else>
-            <input name="tx_dvoconnector_pi1[filter][endDate]" value="{filter.endDate -> f:format.date(format: 'd.m.Y')}" class="form-control" id="dateend" aria-describedby="dateendHelp" placeholder="<f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.dateend.placeholder" arguments="{0: \"{f:format.date(date: 'now', format: 'd.m.Y')}\"}" />">
-          </f:else>
-        </f:if>
-        <small id="dateendHelp" class="form-text text-muted"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.dateend.describedby"/></small>
-      </div>
-    </f:if>
-    <f:if condition="{allowedProperty.zipStart}">
-      <div class="form-group">
-        <label for="zipstart"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.zipstart.label" /></label>
-        <input name="tx_dvoconnector_pi1[filter][zipStart]" value="{userFilter.zipStart}" class="form-control" id="zipstart" aria-describedby="zipstartHelp" placeholder="<f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.zipstart.placeholder" />">
-        <small id="zipstartHelp" class="form-text text-muted"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.zipstart.describedby" /></small>
-      </div>
-    </f:if>
-    <f:if condition="{allowedProperty.zipEnd}">
-      <div class="form-group">
-        <label for="zipend"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.zipend.label" /></label>
-        <input name="tx_dvoconnector_pi1[filter][zipEnd]" value="{userFilter.zipEnd}" class="form-control" id="zipend" aria-describedby="zipendHelp" placeholder="<f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.zipend.placeholder" />">
-        <small id="zipendHelp" class="form-text text-muted"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.zipend.describedby" /></small>
-      </div>
-    </f:if>
-    <f:if condition="{allowedProperty.location}">
-      <div class="form-group">
-        <label for="location"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.location.label" /></label>
-        <input name="tx_dvoconnector_pi1[filter][location]" value="{userFilter.location}" class="form-control" id="location" aria-describedby="locationHelp" placeholder="<f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.location.placeholder" />">
-        <small id="locationHelp" class="form-text text-muted"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.location.describedby" /></small>
-      </div>
-    </f:if>
-    <f:if condition="{allowedProperty.eventTypeID}">
-      <div class="form-group">
-        <label for="eventtypeid"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.eventtypeid.label" /></label>
-        <rgdvo:EventTypes as="eventTypes">
-          <f:form.select class="form-control" id="eventtypeid" value="{userFilter.eventTypeID}" name="tx_dvoconnector_pi1[filter][eventTypeID]" optionValueField="id" optionLabelField="name" options="{eventTypes}" optionsAfterContent="true">
-            <option value=""></option>
-          </f:form.select>
-        </rgdvo:EventTypes>
-      </div>
-    </f:if>
-    <f:if condition="{allowedProperty.private_events}">
-      <div class="form-group">
-        <label for="private_events"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.private_events.label" /></label>
-        <div class="form-check">
-          <f:form.radio class="form-check-input" name="tx_dvoconnector_pi1[filter][privateEvents]" id="private_events_all" value="" checked="{userFilter.privateEvents} == ''"/>
-          <label class="form-check-label" for="private_events_all"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.private_events.all.label" /></label>
+  <div class="well">
+    <form action="{f:uri.action(action: 'filterEvents', arguments: '{aID: associationID}')}" method="post">
+      <f:if condition="{allowedProperty.text}">
+        <div class="form-group">
+          <label for="text"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.text.label" /></label>
+          <input name="tx_dvoconnector_pi1[filter][text]" value="{userFilter.text}" class="form-control" id="text" aria-describedby="textHelp" placeholder="<f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.text.placeholder" />">
+          <small id="textHelp" class="form-text text-muted"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.text.describedby" /></small>
         </div>
-        <div class="form-check">
-          <f:form.radio class="form-check-input" name="tx_dvoconnector_pi1[filter][privateEvents]" id="private_events_public" value="0" checked="{userFilter.privateEvents} == '0'"/>
-          <label class="form-check-label" for="private_events_public"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.private_events.public.label" /></label>
+      </f:if>
+      <f:if condition="{allowedProperty.startDate}">
+        <div class="form-group">
+          <label for="datestart"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.datestart.label" /></label>
+          <f:if condition="{filter.startDate}">
+            <f:then>
+              <input name="tx_dvoconnector_pi1[filter][startDate]" value="{userFilter.startDate -> f:format.date(format: 'd.m.Y')}" class="form-control" id="datestart" aria-describedby="datestartHelp" placeholder="{filter.startDate -> f:format.date(format: 'd.m.Y')}">
+            </f:then>
+            <f:else>
+              <input name="tx_dvoconnector_pi1[filter][startDate]" value="{filter.startDate -> f:format.date(format: 'd.m.Y')}" class="form-control" id="datestart" aria-describedby="datestartHelp" placeholder="<f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.datestart.placeholder" arguments="{0: \"{f:format.date(date: 'now', format: 'd.m.Y')}\"}" />">
+            </f:else>
+          </f:if>
+          <small id="datestartHelp" class="form-text text-muted"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.datestart.describedby"/></small>
         </div>
-        <div class="form-check">
-          <f:form.radio class="form-check-input" name="tx_dvoconnector_pi1[filter][privateEvents]" id="private_events_private" value="1" checked="{userFilter.privateEvents} == '1'"/>
-          <label class="form-check-label" for="private_events_private"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.private_events.private.label" /></label>
+      </f:if>
+      <f:if condition="{allowedProperty.endDate}">
+        <div class="form-group">
+          <label for="dateend"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.dateend.label" /></label>
+          <f:if condition="{filter.endDate}">
+            <f:then>
+              <input name="tx_dvoconnector_pi1[filter][endDate]" value="{userFilter.endDate -> f:format.date(format: 'd.m.Y')}" class="form-control" id="dateend" aria-describedby="dateendHelp" placeholder="{filter.endDate -> f:format.date(format: 'd.m.Y')}">
+            </f:then>
+            <f:else>
+              <input name="tx_dvoconnector_pi1[filter][endDate]" value="{filter.endDate -> f:format.date(format: 'd.m.Y')}" class="form-control" id="dateend" aria-describedby="dateendHelp" placeholder="<f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.dateend.placeholder" arguments="{0: \"{f:format.date(date: 'now', format: 'd.m.Y')}\"}" />">
+            </f:else>
+          </f:if>
+          <small id="dateendHelp" class="form-text text-muted"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.dateend.describedby"/></small>
         </div>
-      </div>
-    </f:if>
-    <f:if condition="{allowedProperty.childs}">
-      <div class="form-group">
-        <label for="childs"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.childs.label" /></label>
-        <div class="form-check">
-          <f:form.radio class="form-check-input" name="tx_dvoconnector_pi1[filter][childs]" id="childs_current_and_sub" value="2" checked="{userFilter.childs} == 2"/>
-          <label class="form-check-label" for="childs_current_and_sub"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.childs.current_and_sub.label" /></label>
+      </f:if>
+      <f:if condition="{allowedProperty.zipStart}">
+        <div class="form-group">
+          <label for="zipstart"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.zipstart.label" /></label>
+          <input name="tx_dvoconnector_pi1[filter][zipStart]" value="{userFilter.zipStart}" class="form-control" id="zipstart" aria-describedby="zipstartHelp" placeholder="<f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.zipstart.placeholder" />">
+          <small id="zipstartHelp" class="form-text text-muted"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.zipstart.describedby" /></small>
         </div>
-        <div class="form-check">
-          <f:form.radio class="form-check-input" name="tx_dvoconnector_pi1[filter][childs]" id="childs_sub" value="1" checked="{userFilter.childs} == 1"/>
-          <label class="form-check-label" for="childs_sub"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.childs.sub.label" /></label>
+      </f:if>
+      <f:if condition="{allowedProperty.zipEnd}">
+        <div class="form-group">
+          <label for="zipend"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.zipend.label" /></label>
+          <input name="tx_dvoconnector_pi1[filter][zipEnd]" value="{userFilter.zipEnd}" class="form-control" id="zipend" aria-describedby="zipendHelp" placeholder="<f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.zipend.placeholder" />">
+          <small id="zipendHelp" class="form-text text-muted"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.zipend.describedby" /></small>
         </div>
-        <div class="form-check">
-          <f:form.radio class="form-check-input" name="tx_dvoconnector_pi1[filter][childs]" id="childs_current" value="0" checked="{userFilter.childs} == 0"/>
-          <label class="form-check-label" for="childs_current"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.childs.current.label" /></label>
+      </f:if>
+      <f:if condition="{allowedProperty.location}">
+        <div class="form-group">
+          <label for="location"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.location.label" /></label>
+          <input name="tx_dvoconnector_pi1[filter][location]" value="{userFilter.location}" class="form-control" id="location" aria-describedby="locationHelp" placeholder="<f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.location.placeholder" />">
+          <small id="locationHelp" class="form-text text-muted"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.location.describedby" /></small>
         </div>
-      </div>
-    </f:if>
-    <button type="submit" class="btn btn-primary"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.submit" /></button>
-  </form>
+      </f:if>
+      <f:if condition="{allowedProperty.eventTypeID}">
+        <div class="form-group">
+          <label for="eventtypeid"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.eventtypeid.label" /></label>
+          <rgdvo:EventTypes as="eventTypes">
+            <f:form.select class="form-control" id="eventtypeid" value="{userFilter.eventTypeID}" name="tx_dvoconnector_pi1[filter][eventTypeID]" optionValueField="id" optionLabelField="name" options="{eventTypes}" optionsAfterContent="true">
+              <option value=""></option>
+            </f:form.select>
+          </rgdvo:EventTypes>
+        </div>
+      </f:if>
+      <f:if condition="{allowedProperty.private_events}">
+        <div class="form-group">
+          <label for="private_events"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.private_events.label" /></label>
+          <div class="form-check">
+            <f:form.radio class="form-check-input" name="tx_dvoconnector_pi1[filter][privateEvents]" id="private_events_all" value="" checked="{userFilter.privateEvents} == ''"/>
+            <label class="form-check-label" for="private_events_all"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.private_events.all.label" /></label>
+          </div>
+          <div class="form-check">
+            <f:form.radio class="form-check-input" name="tx_dvoconnector_pi1[filter][privateEvents]" id="private_events_public" value="0" checked="{userFilter.privateEvents} == '0'"/>
+            <label class="form-check-label" for="private_events_public"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.private_events.public.label" /></label>
+          </div>
+          <div class="form-check">
+            <f:form.radio class="form-check-input" name="tx_dvoconnector_pi1[filter][privateEvents]" id="private_events_private" value="1" checked="{userFilter.privateEvents} == '1'"/>
+            <label class="form-check-label" for="private_events_private"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.private_events.private.label" /></label>
+          </div>
+        </div>
+      </f:if>
+      <f:if condition="{allowedProperty.childs}">
+        <div class="form-group">
+          <label for="childs"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.childs.label" /></label>
+          <div class="form-check">
+            <f:form.radio class="form-check-input" name="tx_dvoconnector_pi1[filter][childs]" id="childs_current_and_sub" value="2" checked="{userFilter.childs} == 2"/>
+            <label class="form-check-label" for="childs_current_and_sub"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.childs.current_and_sub.label" /></label>
+          </div>
+          <div class="form-check">
+            <f:form.radio class="form-check-input" name="tx_dvoconnector_pi1[filter][childs]" id="childs_sub" value="1" checked="{userFilter.childs} == 1"/>
+            <label class="form-check-label" for="childs_sub"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.childs.sub.label" /></label>
+          </div>
+          <div class="form-check">
+            <f:form.radio class="form-check-input" name="tx_dvoconnector_pi1[filter][childs]" id="childs_current" value="0" checked="{userFilter.childs} == 0"/>
+            <label class="form-check-label" for="childs_current"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.childs.current.label" /></label>
+          </div>
+        </div>
+      </f:if>
+      <button type="submit" class="btn btn-primary"><f:translate key="LLL:EXT:dvoconnector/Resources/Private/Language/locallang_ff.xml:events.filter.submit" /></button>
+    </form>
+  </div>
 
 </f:if>

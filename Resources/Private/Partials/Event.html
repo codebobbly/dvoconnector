@@ -1,4 +1,4 @@
-<h1>{event.title} ({event.type.name})</h1>
+<h1><f:render partial="Title/Event" arguments="{event: event}"/></h1>
 <p>
 <f:if condition="{event.endDate}">
   <f:then>

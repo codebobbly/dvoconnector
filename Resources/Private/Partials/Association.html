@@ -6,7 +6,7 @@
       </p>
     </f:then>
     <f:else>
-      <h3 class="media-heading">{association.name}</h3>
+      <h3 class="media-heading"><f:render partial="Title/Association" arguments="{association: association}"/></h3>
 	  <br>
       <f:if condition="{association.urlPhotoFile}">
         <p><f:image image="{association.urlPhotoFile}" maxWidth="835"  alt="{association.name}"/></p>
@@ -24,7 +24,7 @@
       <span class="label label-info">{association.category.name}</span>&thinsp;
     </f:if>
     <f:if condition="{association.performancelevel.name}">
-      <span class="label label-info">{association.performancelevel.name}</span>&thinsp;
+      <span class="label label-info">Leistungsstufe {association.performancelevel.name}</span>&thinsp;
     </f:if>
     <f:for each="{association.repertoires}" as="repertoire" iteration="iterator">
       <span class="label label-success">{repertoire.name}</span>&thinsp;

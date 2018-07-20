@@ -2,10 +2,10 @@
 
 <rgdvo:Functionary associationID="{associationID}" functionaryID="{functionaryID}" as="functionary" insideAssociationID="{settings.associationID}">
 
-  <rgdvo:titleTag>{functionary.role} - {functionary.lastName} {functionary.firstName}</rgdvo:titleTag>
-
+  <f:render partial="Header/Functionary" arguments="{functionary: functionary}"/>
   <f:render partial="Functionary" arguments="{detailPid: settings.additional.detailPid, functionary: functionary}"/>
   <f:link.action pageUid="{settings.additional.listPid}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span> Zurück</f:link.action>
-  <f:link.external uri="{settings.additional.linkdvo}" class="btn btn-default pull-right" target="_blank"><span class="glyphicon glyphicon-edit"></span> ändern</f:link.external>
+
+  <f:render partial="DvoLink/Functionary" arguments="{functionary: functionary, linkdvo: settings.additional.linkdvo}"/>
 
 </rgdvo:Functionary>

@@ -2,12 +2,8 @@
 
 <rgdvo:Association associationID="{associationID}" as="association" insideAssociationID="{settings.associationID}">
 
-  <rgdvo:titleTag>{association.name}</rgdvo:titleTag>
-
   <f:render partial="Association" arguments="{detailPid: settings.additional.detailPid, association: association}"/>
 
-  <rgdvo:Functionaries associationID="{association.id}" as="functionaries" insideAssociationID="{settings.associationID}">
-    <f:render partial="ListFunctionaries" arguments="{functionaries: functionaries, pagination: settings.pagination, detailPid: settings.additional.detailPid}"/>
-  </rgdvo:Functionaries>
+  <f:render partial="DvoLink/Association" arguments="{association: association, linkdvo: settings.additional.linkdvo}"/>
 
 </rgdvo:Association>

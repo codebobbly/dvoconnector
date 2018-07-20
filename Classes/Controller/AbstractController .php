@@ -38,6 +38,62 @@ abstract class AbstractController extends ActionController
     const SEPARATOR_ENTRY = ',';
 
     /**
+     * @var string
+     */
+    const ARGUMENT_FILTER = 'filter';
+
+    /**
+     * @var string
+     */
+    const VIEW_VARIABLE_ASSOCIATION_ID = 'associationID';
+
+    /**
+     * @var string
+     */
+    const VIEW_VARIABLE_ANNOUNCEMENT_ID = 'announcementID';
+
+    /**
+     * @var string
+     */
+    const VIEW_VARIABLE_EVENT_ID = 'eventID';
+
+    /**
+     * @var string
+     */
+    const VIEW_VARIABLE_FUNCTIONARY_ID = 'functionaryID';
+
+    /**
+     * @var string
+     */
+    const VIEW_VARIABLE_FILTER = 'filter';
+
+    /**
+     * @var string
+     */
+    const VIEW_VARIABLE_USER_FILTER = 'userFilter';
+
+    /**
+     * @var string
+     */
+    const SETTINGS_ASSOCIATION_ID = 'associationID';
+
+    /**
+     * @var string
+     */
+    const SETTINGS_ANNOUNCEMENT_ID = 'announcementID';
+
+    /**
+     * @var string
+     */
+    const SETTINGS_EVENT_ID = 'eventID';
+
+    /**
+     * @var string
+     */
+    const SETTINGS_FUNCTIONARY_ID = 'functionaryID';
+
+
+    /**
      * typeConverterObjectConverter
      * @var RGU\Dvoconnector\Property\TypeConverter\ObjectConverter
      * @inject
