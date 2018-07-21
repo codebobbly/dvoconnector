@@ -9,6 +9,10 @@
     "dvo",
 	"connector"
   ],
+  "support": {
+    "issues": "https://github.com/codebobbly/dvoconnector/issues"
+  },
+  "license": ["GPL-3.0+"],
   "homepage": "https://github.com/codebobbly/dvoconnector",
   "authors": [
     {
