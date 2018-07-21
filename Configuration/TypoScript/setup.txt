@@ -27,11 +27,6 @@ plugin.tx_dvoconnector {
 	}
 
 	settings {
-		ApiService {
-			apiUrl =
-			defaultCachetime =
-			rootAssociation =
-		}
 	}
 }
 
