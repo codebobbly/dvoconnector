@@ -4,7 +4,7 @@ namespace RGU\Dvoconnector\ViewHelpers;
 
 use TYPO3\CMS\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
-use \TYPO3\CMS\Fluid\Core\ViewHelper\Facets\CompilableInterface;
+use TYPO3\CMS\Fluid\Core\ViewHelper\Facets\CompilableInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 
 /**
@@ -13,7 +13,6 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
  */
 class TitleTagViewHelper extends AbstractViewHelper implements CompilableInterface
 {
-
     use CompileWithRenderStatic;
 
     /**
@@ -54,6 +53,5 @@ class TitleTagViewHelper extends AbstractViewHelper implements CompilableInterfa
             $GLOBALS['TSFE']->altPageTitle    = $title;
             $GLOBALS['TSFE']->indexedDocTitle = $title;
         }
-
     }
 }

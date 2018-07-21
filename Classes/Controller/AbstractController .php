@@ -92,7 +92,6 @@ abstract class AbstractController extends ActionController
      */
     const SETTINGS_FUNCTIONARY_ID = 'functionaryID';
 
-
     /**
      * typeConverterObjectConverter
      * @var RGU\Dvoconnector\Property\TypeConverter\ObjectConverter
