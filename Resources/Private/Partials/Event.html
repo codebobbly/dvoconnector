@@ -17,7 +17,14 @@
 
 <f:if condition="{event.eventlocation} || {event.address.street} || {event.address.location} || {event.address.zipcode}">
 
-  <iframe class="googlemap" width="100%" height="350" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=<f:format.urlencode>{event.address.street} {event.address.location} {event.address.zipcode}</f:format.urlencode>&amp;key=AIzaSyB82ai_imUWE0j2u9konAB-sCphotiRDaI" allowfullscreen=""></iframe>
+  <f:if condition="{googleAPIKey}">
+    <f:then>
+      <iframe class="googlemap" width="100%" height="350" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=<f:format.urlencode>{event.address.street} {event.address.location} {event.address.zipcode}</f:format.urlencode>&amp;key={googleAPIKey}" allowfullscreen=""></iframe>
+    </f:then>
+    <f:else>
+      <f:render partial="Address" arguments="{address: event.address, name: event.eventlocation}"/>
+    </f:else>
+  </f:if>
 
 </f:if>
 <hr>

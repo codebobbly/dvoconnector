@@ -3,7 +3,7 @@
 <rgdvo:Event associationID="{associationID}" eventID="{eventID}" as="event" insideAssociationID="{settings.associationID}">
 
   <f:render partial="Header/Event" arguments="{event: event}"/>
-  <f:render partial="Event" arguments="{detailPid: settings.additional.detailPid, event: event}"/>
+  <f:render partial="Event" arguments="{detailPid: settings.additional.detailPid, event: event, googleAPIKey: settings.additional.googleAPIKey}"/>
   <f:link.action pageUid="{settings.additional.listPid}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span> Zurück</f:link.action>
 
   <f:render partial="DvoLink/Event" arguments="{event: event, linkdvo: settings.additional.linkdvo}"/>
