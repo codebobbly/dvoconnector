@@ -33,7 +33,10 @@ class GenericRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
      *
     */
     protected function completeEntity($entity)
-    {
+    {	
+		if(is_null($entity)) {
+			return $entity;
+		}
         return $this->recursivCompleteEntity($entity);
     }
 
@@ -83,13 +86,17 @@ class GenericRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 
                             while ($objectStorage->valid()) {
                                 $subEntity = $objectStorage->current();
-
-                                $newSubEntity = $this->recursivCompleteEntity($subEntity);
-                                if ($newSubEntity) {
-                                    $newObjectStorage->attach($newSubEntity);
-                                } else {
-                                    $newObjectStorage->attach($subEntity);
-                                }
+								
+								if(!is_null($subEntity)) {
+									
+									$newSubEntity = $this->recursivCompleteEntity($subEntity);
+									if ($newSubEntity) {
+										$newObjectStorage->attach($newSubEntity);
+									} else {
+										$newObjectStorage->attach($subEntity);
+									}
+								
+								}
 
                                 $objectStorage->next();
                             }
@@ -100,8 +107,11 @@ class GenericRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
                         case is_a($propertyDefinition['type'], \TYPO3\CMS\Extbase\DomainObject\AbstractEntity::class, true):
 
                             $subEntity = $entity->_getProperty($propertyName);
-                            $newSubEntity = $this->recursivCompleteEntity($subEntity);
-                            $entity->_setProperty($propertyName, $newSubEntity);
+							
+							if(!is_null($subEntity)) {
+								$newSubEntity = $this->recursivCompleteEntity($subEntity);
+								$entity->_setProperty($propertyName, $newSubEntity);
+							}
 
                             break;
                     }
