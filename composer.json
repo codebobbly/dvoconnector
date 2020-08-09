@@ -39,7 +39,7 @@
     }
   },
   "replace": {
-    "dvoconnector": "self.version",
+    "rgu/dvoconnector": "self.version",
     "typo3-ter/dvoconnector": "self.version"
   },
   "config": {
